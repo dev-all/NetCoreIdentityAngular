@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "04877e19-ea02-47b6-a914-4a8437155d81": {
+      "ProjectGuid": "04877e19-ea02-47b6-a914-4a8437155d81",
+      "DisplayName": "allshop.api",
+      "ColorIndex": 0
+    },
+    "f4a631be-b432-4e83-bd32-af7ecdc53e49": {
+      "ProjectGuid": "f4a631be-b432-4e83-bd32-af7ecdc53e49",
+      "DisplayName": "allshop.domain",
+      "ColorIndex": 1
+    },
+    "fda0d44d-2efa-4e39-b269-c10a9e65506c": {
+      "ProjectGuid": "fda0d44d-2efa-4e39-b269-c10a9e65506c",
+      "DisplayName": "allshop.repository",
+      "ColorIndex": 2
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Archivos varios",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 3
+}
