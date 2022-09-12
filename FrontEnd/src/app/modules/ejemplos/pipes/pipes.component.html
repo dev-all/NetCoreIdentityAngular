@@ -1,0 +1,129 @@
+<nav class="page-breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a routerLink=".">Pipes</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Basic y  +
+
+
+
+    </li>
+  </ol>
+</nav>
+
+<div class="row">
+  <div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h6 class="card-title">Basic </h6>
+
+       <p>Currency Name is : {{curr}},    example: ( {{100 | currency}})       </p>
+       <p>Currency code is : {{code}}</p>
+       <p>Locale id is: {{for}}</p>
+       <p>Locale Currency symbol is : {{sym}}</p>
+       <p>Locale Direction is : {{dir}}</p>
+       <p> Today is {{dateVar | date:'short':'UTC -3'}}</p>
+  <!--output '0,245.950%'-->
+  <p>B: {{numB | percent:'4.3-5'}}</p>
+
+  <h1>{{ user.name | greeting  }}</h1>
+  <h1>{{ user.name | greeting: user.gender : user.role }}</h1>
+
+
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>datos</th>
+                <th>nota</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>JSON:</th>
+                <td>{{obj | json }}</td>
+                <td></td>
+
+              </tr>
+              <tr>
+                <th>Texto:</th>
+                <td>{{ stringVar | uppercase}}</td>
+                <td>mayuscula</td>
+              </tr>
+              <tr>
+                <th>Texto:</th>
+                <td>{{ stringVar | titlecase}}</td>
+                <td>titulo</td>
+              </tr>
+              <tr>
+                <th>date:</th>
+                <td>{{dateVar  | date}}</td>
+                <td>podria usar un servicio </td>
+              </tr>
+              <tr>
+                <th>date medium:</th>
+                <td>{{dateVar  | date :'medium'}}</td>
+                <td>podria usar un servicio </td>
+              </tr>
+              <tr>
+                <th>date full:</th>
+                <td>{{dateVar  | date :'full'}}</td>
+                <td>podria usar un servicio </td>
+              </tr>
+              <tr>
+                <th>date shortTime:</th>
+                <td>{{dateVar  | date :'shortTime'}}</td>
+                <td>podria usar un servicio </td>
+              </tr>
+              <tr>
+                <th>date mm:ss</th>
+                <td>{{dateVar  | date :'mm:ss'}}</td>
+                <td>podria usar un servicio </td>
+              </tr>
+              <tr>
+                <th>date fullTime</th>
+                <td>{{dateVar  | date :'fullTime'}}</td>
+                <td>podria usar un servicio </td>
+              </tr>
+              <tr>
+                <th>date Month</th>
+                <td>{{dateVar  | date :'MM'}}</td>
+                <td>podria usar un servicio </td>
+              </tr>
+              <tr>
+                <th>date Month</th>
+                <td>{{dateVar  | date :'MM'}}</td>
+                <td>podria usar un servicio </td>
+              </tr>
+              <tr>
+                <th>date Hora</th>
+                <td>{{dateVar  | date :'HH:mm ss'}}</td>
+                <td>podria usar un servicio </td>
+              </tr>
+
+
+              <tr>
+                <th> Currency</th>
+                <td>{{currencyVar  | currency }}</td>
+                <td></td>
+              </tr>
+              <tr>
+                <th> Currency</th>
+                <td>{{ currencyVar  | currency :'ARG' }}</td>
+                <td> </td>
+              </tr>
+              <tr>
+                <th> Currency en-US</th>
+                <td>{{ currencyVar | currency:'BTC ':'symbol':'3.2-2':'en-US'}}</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+

@@ -1,0 +1,61 @@
+
+h1 {
+	text-align: center;
+	margin-bottom: 1.5rem;
+}
+
+
+.button {
+	appearance: none;
+	outline: none;
+	border: none;
+	background: none;
+	cursor: pointer;
+	display: block;
+	padding: 0.5rem 1rem;
+	background-image: linear-gradient(to right, deeppink 50%, darkviolet 50%);
+	background-size: 200%;
+	color: white;
+	font-size: 1.125rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	transition: 0.4s;
+}
+.button:hover {
+	background-position: right;
+}
+
+.flex-1 {
+	display: block;
+	flex: 1 1 0%;
+}
+.myanime h2 {
+	color: #888;
+	font-weight: 400;
+	margin-bottom: 1.5rem;
+}
+.myanime .anime {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1.5rem;
+	background-color: #FFF;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+.anime img {
+	width: 72px;
+	height: 72px;
+	object-fit: cover;
+	border-radius: 1rem;
+	margin-right: 1rem;
+}
+.anime h3 {
+	color: #888;
+	font-size: 1.125rem;
+}
+.anime .episodes {
+	margin-right: 1rem;
+	color: #888;
+}
+

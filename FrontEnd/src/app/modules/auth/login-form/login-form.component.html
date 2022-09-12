@@ -1,0 +1,30 @@
+
+<form class="forms-sample">
+  <h5 class="text-muted fw-normal mb-4">¡Bienvenido! Inicie sesión en su cuenta.</h5>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Dirección de e-mail</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" value="admin@demo.com">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" autocomplete="current-password" placeholder="Password" value="12345678">
+  </div>
+
+  <div class="form-check mb-3">
+    <input type="checkbox" class="form-check-input" id="authCheck">
+
+    <label class="form-check-label" for="authCheck">Recuérdame </label>
+
+  </div>
+
+  <div class="mb-3 text-center">
+    <button type="submit" class="btn btn-primary me-2 mb-2 mb-md-0" (click)="onLoggedin($event)">Iniciar sesión</button>
+  </div>
+  <div class="mb-3">
+    <button type="button" class="btn btn-outline-primary btn-icon-text mb-2 mb-md-0">
+      <i class="feather icon-twitter btn-icon-prepend"></i>
+      Login with twitter
+    </button>
+  </div>
+  <a routerLink="/auth/register" class="d-block mt-3 text-muted">Crear una nueva cuenta</a>
+</form>

@@ -1,0 +1,38 @@
+{
+  "users": [
+  {
+    "id": 1,
+    "name": "Wilson valencia",
+    "age": 27,
+    "description": "Desarrollador Software",
+    "avatar": "https://ideapod.com/wp-content/uploads/2017/08/person-1.jpg",
+    "work": "Project manager",
+    "gender":"M"
+
+  },
+  {
+    "id": 2,
+    "name": "Martin Larios",
+    "age": 19,
+    "description": "Diseñador",
+    "avatar": "https://ideapod.com/wp-content/uploads/2017/08/person-1.jpg",
+    "gender":"f"
+  },
+  {
+    "id": 3,
+    "name": "Luis Larios",
+    "age": 27,
+    "description": "Desarrollador back",
+    "avatar": "https://ideapod.com/wp-content/uploads/2017/08/person-1.jpg",
+    "gender":""
+  },
+  {
+    "id": 4,
+    "name": "Hector Larios",
+    "age": 20,
+    "description": "Desarrollador front",
+    "avatar": "https://ideapod.com/wp-content/uploads/2017/08/person-1.jpg",
+    "gender":"M"
+  }
+]
+}
