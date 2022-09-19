@@ -10498,11 +10498,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Angular\\allshop\\backend\\allshop.api\\allshop.api.csproj",
+      "projectUniqueName": "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.api\\allshop.api.csproj",
       "projectName": "allshop.api",
-      "projectPath": "F:\\Angular\\allshop\\backend\\allshop.api\\allshop.api.csproj",
+      "projectPath": "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.api\\allshop.api.csproj",
       "packagesPath": "C:\\Users\\leoan\\.nuget\\packages\\",
-      "outputPath": "F:\\Angular\\allshop\\backend\\allshop.api\\obj\\",
+      "outputPath": "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\leoan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -10519,8 +10519,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "F:\\Angular\\allshop\\backend\\allshop.repository\\allshop.repository.csproj": {
-              "projectPath": "F:\\Angular\\allshop\\backend\\allshop.repository\\allshop.repository.csproj"
+            "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.repository\\allshop.repository.csproj": {
+              "projectPath": "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.repository\\allshop.repository.csproj"
             }
           }
         }

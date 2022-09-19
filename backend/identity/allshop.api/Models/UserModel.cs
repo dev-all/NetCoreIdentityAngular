@@ -7,13 +7,6 @@ namespace allshop.api.Models
 {
     public class UserModel
     {
-        //public UserModel()
-        //{
-        //    //this.Role = new RoleModel();
-        //    //this.Tenant = new TenantModel();
-
-        //}
-
         public Guid Id { get; set; }
        
         public string? FullName { get; set; }
@@ -35,11 +28,6 @@ namespace allshop.api.Models
 
         public Boolean Google { get; set; }
         public Boolean Active { get; set; }
-
-
- 
-        
-
 
     }
 }

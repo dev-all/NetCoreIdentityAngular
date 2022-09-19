@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
 
   onLoggedin(e: Event) {
     e.preventDefault();
-    console.log(this.loginForm.get('email')?.value);
+   // console.log(this.loginForm.get('email')?.value);
   }
 
   submitForm(){
@@ -51,7 +51,9 @@ export class LoginComponent implements OnInit {
    this.isFormSubmitted = true;
    localStorage.setItem('isLoggedin', 'true');
    if (localStorage.getItem('isLoggedin')) {
-      this.serviceAuth.emaillogin = this.loginForm.get('email')?.value;
+      
+    //this.serviceAuth.emaillogin = this.loginForm.get('email')?.value;
+      localStorage.setItem('InitLoginEmail', this.loginForm.get('email')?.value);
       this.router.navigate([`${this.returnUrl}${'auth/login-pass'}`]);
    }
   }

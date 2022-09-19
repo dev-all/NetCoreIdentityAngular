@@ -11,6 +11,7 @@ import { LayoutModule } from '@layout/layout.module';
 
 import { SharedModule } from './shared/shared.module';
 import { DATE_PIPE_DEFAULT_TIMEZONE, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -27,6 +28,7 @@ import { DATE_PIPE_DEFAULT_TIMEZONE, LocationStrategy, PathLocationStrategy } fr
     AppRoutingModule,
     BrowserAnimationsModule,
     LayoutModule,
+    NgbModule,
     //FontAwesomeModule
 
   ],

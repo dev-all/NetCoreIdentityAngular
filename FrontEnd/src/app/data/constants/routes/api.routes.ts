@@ -1,8 +1,10 @@
-import { environment as ENV} from "environments/environment";
+import { environment as ENV} from "environments/environment.prod";
 
 export const API_ROUTES = {
   AUTH:{
-    LOGIN: `${ENV.uri}auth/login`
+    SIGNUP: `${ENV.uri}auth/sign-up`,
+    SIGNIN: `${ENV.uri}auth/sign-in`,
+    SENDRECOVERYLIKN: `${ENV.uri}auth/send-recovery-link`    
   },
   USER:{
     list: `${ENV.uri}user/list`

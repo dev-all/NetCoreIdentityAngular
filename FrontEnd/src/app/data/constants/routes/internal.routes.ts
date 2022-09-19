@@ -4,8 +4,9 @@ export const ROUTER_PATHS ={
     LOGIN : 'login',
   },
   PANEL:{
-    DEFAULT: 'dashboard',
+    DEFAULT: '/general/blank-page',
     USER: 'user',
+    FORM: '/form-elements/basic-elements'
   }
 }
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kHd5WufTc5r/kAU0lJfjj5lxiV9LHtgFQgI1ksYPQN7AX8ekcsBDEcMw1bb2O8stZeJyVKtj07DQY2LHVAwvhw==",
+  "dgSpecHash": "IRTWNj8bPjnoaue8HN0QOlYP3j3JicMc/BsFleZsokderAKrXSo9aUkG9jz9Qu1m3wlH6Gw2ZzK4buaNRkoqBQ==",
   "success": true,
-  "projectFilePath": "F:\\Angular\\allshop\\backend\\allshop.repository\\allshop.repository.csproj",
+  "projectFilePath": "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.repository\\allshop.repository.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\leoan\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\leoan\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

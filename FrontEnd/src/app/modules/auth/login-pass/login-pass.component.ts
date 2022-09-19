@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UserModel } from '@data/schema';
 import { AuthService } from '@data/services/api/security/auth.service';
 import { faGooglePlusG } from '@fortawesome/free-brands-svg-icons';
 
@@ -17,20 +18,16 @@ export class LoginPassComponent implements OnInit {
   public loginForm: FormGroup;
 
   isFormSubmitted = false;
+  errorMessage!:string;
 
-
-  emailLogin : string = '';
-
-
-  //----------------------
-
-  constructor(private formBuilder : FormBuilder , private router: Router, private route: ActivatedRoute, private serviceAuth: AuthService) {
-    if (this.GetEmailLogin() =='') {
-      this.router.navigate([`${this.returnUrl}${'auth/login'}`]);
-    }
+  constructor(private formBuilder : FormBuilder 
+            , private router: Router
+            , private route: ActivatedRoute
+            , private serviceAuth: AuthService) {
+  
 
   this.loginForm = this.formBuilder.group({
-    email : [ this.GetEmailLogin() ,[Validators.required,
+    email : [ this.GetEmail() ,[Validators.required,
                 Validators.email,
                 Validators.pattern(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]],
     password: ['',[Validators.required,Validators.minLength(4)]],
@@ -38,16 +35,17 @@ export class LoginPassComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void {      
     // get return url from route parameters or default to '/'
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-
-
-
   }
 
-  GetEmailLogin() {
-   return this.serviceAuth.emaillogin;
+  GetEmail() :string{    
+    let email = localStorage.getItem('InitLoginEmail');
+    if (!email) {
+      this.serviceAuth.logout()     
+     }
+    return  email || "";
   }
 
 
@@ -57,60 +55,33 @@ export class LoginPassComponent implements OnInit {
   }
 
   onLoggedin() {
-
-    debugger;
+    
     if(this.loginForm.valid){
     localStorage.setItem('isLoggedin', 'true');
     if (localStorage.getItem('isLoggedin')) {
       this.router.navigate([this.returnUrl]);
     }
     }
-
-
   }
 
-  Authenticate() {
+  Authenticate(user : UserModel) {
 
     this.isFormSubmitted =true;
     if(!this.loginForm.valid ){
+      this.errorMessage= "Opss!!! revise los datos ingresados";
       return;
-    }
-
-    debugger;
-    localStorage.setItem('isLoggedin', 'true');
-    this.serviceAuth.login(this.loginForm.value).subscribe( r =>
-        {
-          console.log(r);
-        });
-
-    if (localStorage.getItem('isLoggedin')) {
-
-      this.router.navigate([this.returnUrl]);
-
-    }
-
-
+    }      
+    this.serviceAuth.signIn(user).subscribe( response =>
+      {     
+        debugger;   
+        console.log(response);
+        // if(response.status == "200")
+        //     {                  
+        //       this.setUserToLocalStorage(response.data);
+        //       this.userSubject$.next(response.data);
+        //       this.router.navigateByUrl(INTERNAL_ROUTES.PAGE_DEFAULT);
+        //     }            
+                      
+      });
   }
-
-
-
-
-  //   onLoggedin(e: Event) {
-  //     e.preventDefault();
-  //     debugger;
-  //     localStorage.setItem('isLoggedin', 'true');
-
-  //     if(!this.loginForm.valid){
-  //       return;
-  //     }
-
-
-  //     if (localStorage.getItem('isLoggedin')) {
-
-  //       this.router.navigate([this.returnUrl]);
-
-  //     }
-
-  // }
-
 }

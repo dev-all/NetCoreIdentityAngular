@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthComponent } from './auth.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LoginPassComponent } from './login-pass/login-pass.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { RequestPasswordComponent } from './request-password/request-password.component';
+import { NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 
 const routes: Routes = [
   {
@@ -28,20 +31,21 @@ const routes: Routes = [
         component: LoginPassComponent
       },
       {
-        path: 'register',
-        component: RegisterComponent
+        path: 'sign-up',
+        component: SignUpComponent
       }
     ]
   },
 ]
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent, AuthComponent, LoginFormComponent, LoginPassComponent],
+  declarations: [LoginComponent, SignUpComponent, AuthComponent, LoginFormComponent, LoginPassComponent, ResetPasswordComponent, RequestPasswordComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     FontAwesomeModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbAlertModule
   ]
 })
 export class AuthModule { }

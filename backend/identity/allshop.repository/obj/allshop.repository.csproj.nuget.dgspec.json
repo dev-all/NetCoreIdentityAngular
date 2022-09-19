@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Angular\\allshop\\backend\\allshop.repository\\allshop.repository.csproj": {}
+    "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.repository\\allshop.repository.csproj": {}
   },
   "projects": {
-    "F:\\Angular\\allshop\\backend\\allshop.dominio\\allshop.domain.csproj": {
+    "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.dominio\\allshop.domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Angular\\allshop\\backend\\allshop.dominio\\allshop.domain.csproj",
+        "projectUniqueName": "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.dominio\\allshop.domain.csproj",
         "projectName": "allshop.domain",
-        "projectPath": "F:\\Angular\\allshop\\backend\\allshop.dominio\\allshop.domain.csproj",
+        "projectPath": "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.dominio\\allshop.domain.csproj",
         "packagesPath": "C:\\Users\\leoan\\.nuget\\packages\\",
-        "outputPath": "F:\\Angular\\allshop\\backend\\allshop.dominio\\obj\\",
+        "outputPath": "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.dominio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\leoan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -59,14 +59,14 @@
         }
       }
     },
-    "F:\\Angular\\allshop\\backend\\allshop.repository\\allshop.repository.csproj": {
+    "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.repository\\allshop.repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Angular\\allshop\\backend\\allshop.repository\\allshop.repository.csproj",
+        "projectUniqueName": "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.repository\\allshop.repository.csproj",
         "projectName": "allshop.repository",
-        "projectPath": "F:\\Angular\\allshop\\backend\\allshop.repository\\allshop.repository.csproj",
+        "projectPath": "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.repository\\allshop.repository.csproj",
         "packagesPath": "C:\\Users\\leoan\\.nuget\\packages\\",
-        "outputPath": "F:\\Angular\\allshop\\backend\\allshop.repository\\obj\\",
+        "outputPath": "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\leoan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -83,8 +83,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "F:\\Angular\\allshop\\backend\\allshop.dominio\\allshop.domain.csproj": {
-                "projectPath": "F:\\Angular\\allshop\\backend\\allshop.dominio\\allshop.domain.csproj"
+              "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.dominio\\allshop.domain.csproj": {
+                "projectPath": "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.dominio\\allshop.domain.csproj"
               }
             }
           }

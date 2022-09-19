@@ -51,7 +51,6 @@ namespace allshop.api.Services
                 throw new Exception(ex.Message);
             }
         }
-
         public async Task<bool> SendEmailAsync(string fullname, string receiverEmail, string subject)
         {
             try
@@ -87,7 +86,6 @@ namespace allshop.api.Services
             emailService._body.Append("</html>");
             return await emailService.SendEmailAsync(fullname, email, $"Welcome {fullname}");
         }
-
         public async Task<bool> SendRecoveryLinkEmail(string recoveryLink, string fullName, string email)
         {
 
@@ -106,10 +104,5 @@ namespace allshop.api.Services
         }
 
         
-
-
-
-
-
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1r8mXVn81qR6GlFv0QcgcVTqHFd38vDEl1EVS5KVT7nCUnPizqeOFhxT6iNj8CXdX/TA1MiOTSZSusBtKaWm6g==",
+  "dgSpecHash": "3/7cCx5ul6nxj6r+LgT7xVEvdIL83Ghs1xpaF4EqHQg9ASg0ZBzBF6Rw1hLFB/Tp6KNSnLRAMH/U+S5KToapiw==",
   "success": true,
-  "projectFilePath": "F:\\Angular\\allshop\\backend\\allshop.api\\allshop.api.csproj",
+  "projectFilePath": "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.api\\allshop.api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\leoan\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\leoan\\.nuget\\packages\\google.apis\\1.57.0\\google.apis.1.57.0.nupkg.sha512",

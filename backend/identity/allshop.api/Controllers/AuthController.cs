@@ -5,6 +5,7 @@ using Google.Apis.Gmail.v1.Data;
 using Google.Apis.Gmail.v1;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using allshop.Models.Response;
 
 namespace allshop.api.Controllers
 {
@@ -17,6 +18,8 @@ namespace allshop.api.Controllers
         private readonly IRolesService _rolesService;
         private readonly IEmailService _emailService;
         private readonly IGmailApiService _gmailApiService;
+        private readonly Response _request = new Response();
+
         public AuthController(IUserService userService, IRolesService rolesService, IEmailService emailService, IGmailApiService gmailApiService)
         {
             _userService = userService;
@@ -25,25 +28,60 @@ namespace allshop.api.Controllers
             _gmailApiService = gmailApiService;
         }
 
-        [HttpPost("sign-in")]
-        public async Task<ActionResult<UserModel>> SignIn([FromBody] UserModel user)
+
+        [HttpGet]
+        public async Task<IActionResult> Test()
         {
             try
             {
+                _request.Message = null;
+               // List<ClientesModel> model = _mapper.Map<List<ClientesModel>>(await _repository.GetAll());
+                _request.Status = 200;
+                _request.Data = "ok";
+                _request.Timestamp = DateTime.Now.ToString();
+                return Ok(_request);
+
+            }
+            catch (Exception ex)
+            {
+                _request.Status = 500;
+                _request.Message = ex.Message.ToString();
+            }
+            return Ok(_request);
+        }
+
+        [HttpPost("sign-in")]
+        public async Task<ActionResult<UserModel>> SignIn([FromBody] UserModel user)
+        {
+
+
+
+             _request.Timestamp = DateTime.Now.ToString();
+
+            try
+            {                                                      
                 var dbuser = await _userService.SingIn(user.Email);
                 if (dbuser == null) return NotFound();
                 // Verify password 
                 if (Utils.Verify(user.Password, dbuser.Password))
                 {
+                    _request.Message = "ok";
+                    _request.Status = 200;
                     dbuser.Token = _userService.GenerateJWTToken(dbuser.Id, user.RememberMe);
-                    return Ok(dbuser);
+                    _request.Data = dbuser;
+                    return Ok(_request);
                 }
-
-                return BadRequest();
+                _request.Message = "Acceso no autorizado";
+                _request.Status = 201;
+                return Ok(_request);
+                //return BadRequest();
             }
             catch (Exception ex)
             {
-                return BadRequest(ex);
+                _request.Message = ex.Message.ToString();
+                _request.TypeMessage = "success";
+                _request.Status = 500;
+                return Ok(_request);
             }
         }
       

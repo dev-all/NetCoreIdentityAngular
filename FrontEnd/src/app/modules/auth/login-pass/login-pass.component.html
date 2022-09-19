@@ -8,10 +8,15 @@
 
             <a routerLink="." class="nobleui-logo d-block mb-2">SHOP <span> UI</span></a>
 
-      <!-- <form class="forms-sample"> -->
-              <form class="forms-sample" [formGroup]="loginForm" (ngSubmit)="Authenticate()">
+            <p>
+              <ngb-alert [dismissible]="false" [type]="'danger'" *ngIf="errorMessage">
+                <strong>Alert!</strong> {{errorMessage}}
+              </ngb-alert>
+            </p>
+             
+              <form class="forms-sample" [formGroup]="loginForm" (ngSubmit)="Authenticate(this.loginForm.value)">
               <h5 class="text-center fw-normal mb-1">¡Bienvenido!  </h5>
-              <h5 class="text-center fw-normal mb-4"> {{  GetEmailLogin()  }}</h5>
+              <h5 class="text-center fw-normal mb-4"> {{  GetEmail()  }}</h5>
               <div class="mb-3">
                 <label for="textInputPassword" class="form-label">Ingresá tu contraseña</label>
                 <input type="password" class="form-control"  formControlName="password"

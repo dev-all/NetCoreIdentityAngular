@@ -33,3 +33,15 @@ F:\Angular\allshop\backend\allshop.dominio\obj\Debug\net6.0\allshop.domain.dll
 F:\Angular\allshop\backend\allshop.dominio\obj\Debug\net6.0\refint\allshop.domain.dll
 F:\Angular\allshop\backend\allshop.dominio\obj\Debug\net6.0\allshop.domain.pdb
 F:\Angular\allshop\backend\allshop.dominio\obj\Debug\net6.0\ref\allshop.domain.dll
+E:\NetCoreIdentityAngular\backend\identity\allshop.dominio\bin\Debug\net6.0\allshop.domain.deps.json
+E:\NetCoreIdentityAngular\backend\identity\allshop.dominio\bin\Debug\net6.0\allshop.domain.dll
+E:\NetCoreIdentityAngular\backend\identity\allshop.dominio\bin\Debug\net6.0\allshop.domain.pdb
+E:\NetCoreIdentityAngular\backend\identity\allshop.dominio\obj\Debug\net6.0\allshop.domain.csproj.AssemblyReference.cache
+E:\NetCoreIdentityAngular\backend\identity\allshop.dominio\obj\Debug\net6.0\allshop.domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\NetCoreIdentityAngular\backend\identity\allshop.dominio\obj\Debug\net6.0\allshop.domain.AssemblyInfoInputs.cache
+E:\NetCoreIdentityAngular\backend\identity\allshop.dominio\obj\Debug\net6.0\allshop.domain.AssemblyInfo.cs
+E:\NetCoreIdentityAngular\backend\identity\allshop.dominio\obj\Debug\net6.0\allshop.domain.csproj.CoreCompileInputs.cache
+E:\NetCoreIdentityAngular\backend\identity\allshop.dominio\obj\Debug\net6.0\allshop.domain.dll
+E:\NetCoreIdentityAngular\backend\identity\allshop.dominio\obj\Debug\net6.0\refint\allshop.domain.dll
+E:\NetCoreIdentityAngular\backend\identity\allshop.dominio\obj\Debug\net6.0\allshop.domain.pdb
+E:\NetCoreIdentityAngular\backend\identity\allshop.dominio\obj\Debug\net6.0\ref\allshop.domain.dll

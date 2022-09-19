@@ -339,7 +339,7 @@ export const MENU: MenuItem[] = [
       },
       {
         label: 'Register',
-        link: '/auth/register',
+        link: '/auth/sign-up',
       },
     ]
   },
