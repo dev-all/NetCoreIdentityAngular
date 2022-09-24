@@ -14,7 +14,7 @@ export class LoginPassComponent implements OnInit {
 
   returnUrl: any;
   faGoogle = faGooglePlusG ;
-
+  isLoading: boolean = false;
   public loginForm: FormGroup;
 
   isFormSubmitted = false;
@@ -54,8 +54,7 @@ export class LoginPassComponent implements OnInit {
     return this.loginForm.controls;
   }
 
-  onLoggedin() {
-    
+  onLoggedin() {    
     if(this.loginForm.valid){
     localStorage.setItem('isLoggedin', 'true');
     if (localStorage.getItem('isLoggedin')) {
@@ -65,23 +64,15 @@ export class LoginPassComponent implements OnInit {
   }
 
   Authenticate(user : UserModel) {
-
+    this.isLoading=true;
     this.isFormSubmitted =true;
     if(!this.loginForm.valid ){
       this.errorMessage= "Opss!!! revise los datos ingresados";
       return;
     }      
     this.serviceAuth.signIn(user).subscribe( response =>
-      {     
-        debugger;   
-        console.log(response);
-        // if(response.status == "200")
-        //     {                  
-        //       this.setUserToLocalStorage(response.data);
-        //       this.userSubject$.next(response.data);
-        //       this.router.navigateByUrl(INTERNAL_ROUTES.PAGE_DEFAULT);
-        //     }            
-                      
+      {            
+        console.log(response);                                     
       });
   }
 }

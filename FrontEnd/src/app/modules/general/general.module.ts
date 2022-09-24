@@ -14,43 +14,45 @@ import { PricingComponent } from './pricing/pricing.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { Routes, RouterModule } from '@angular/router';
 import { SharedModule } from '@share/shared.module';
+import { AuthGuard } from '@core/guard/auth.guard';
 
-const routes: Routes = [
-  {
-    path: '',
-    component: GeneralComponent,
-    children: [
+const routes: Routes = [      
       {
         path: '',
         redirectTo: 'blank-page',
-        pathMatch: 'full'      /// esta propiedad es para redirigir exactamente a la propiedad redirectTo
+        canActivate :[AuthGuard]     
+        //pathMatch: 'full'      /// esta propiedad es para redirigir exactamente a la propiedad redirectTo
       },
       {
         path: 'blank-page',
-        component: BlankComponent
+        component: BlankComponent,
+        canActivate :[AuthGuard]     
       },
       {
         path: 'faq',
-        component: FaqComponent
+        component: FaqComponent,
+        canActivate :[AuthGuard]     
       },
       {
         path: 'invoice',
-        component: InvoiceComponent
+        component: InvoiceComponent,
+        canActivate :[AuthGuard]     
       },
       {
         path: 'profile',
-        component: ProfileComponent
+        component: ProfileComponent,
+        canActivate :[AuthGuard]     
       },
       {
         path: 'pricing',
-        component: PricingComponent
+        component: PricingComponent,
+        canActivate :[AuthGuard]     
       },
       {
         path: 'timeline',
-        component: TimelineComponent
-      }
-    ]
-  }
+        component: TimelineComponent,
+        canActivate :[AuthGuard]     
+      }    
 ]
 
 @NgModule({

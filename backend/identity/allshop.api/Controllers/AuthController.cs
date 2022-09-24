@@ -59,17 +59,20 @@ namespace allshop.api.Controllers
              _request.Timestamp = DateTime.Now.ToString();
 
             try
-            {                                                      
-                var dbuser = await _userService.SingIn(user.Email);
-                if (dbuser == null) return NotFound();
-                // Verify password 
-                if (Utils.Verify(user.Password, dbuser.Password))
-                {
-                    _request.Message = "ok";
-                    _request.Status = 200;
-                    dbuser.Token = _userService.GenerateJWTToken(dbuser.Id, user.RememberMe);
-                    _request.Data = dbuser;
-                    return Ok(_request);
+            {        
+                if (user.Email != null)
+                {            
+                    var dbuser = await _userService.SingIn(user.Email);
+                    if (dbuser == null) return NotFound();
+                    // Verify password 
+                    if (Utils.Verify(user.Password, dbuser.Password))
+                    {
+                        _request.Message = "ok";
+                        _request.Status = 200;
+                        dbuser.Token = _userService.GenerateJWTToken(dbuser.Id, user.RememberMe);
+                        _request.Data = dbuser;
+                        return Ok(_request);
+                    } 
                 }
                 _request.Message = "Acceso no autorizado";
                 _request.Status = 201;

@@ -2,11 +2,22 @@ export const ROUTER_PATHS ={
   AUTH:{
     DEFAULT : 'auth',
     LOGIN : 'login',
+    PASS : 'login-pass',
+    SIGNUP : 'sign-up',
   },
-  PANEL:{
-    DEFAULT: '/general/blank-page',
-    USER: 'user',
-    FORM: '/form-elements/basic-elements'
+  PAGE:{
+    DEFAULT: 'general',
+    GENERAL: 'general',    
+    USER:{
+      DEFAULT: 'user',
+      LIST: 'list',    
+      DETAIL: 'detail/:id',
+      PROFILE: 'profile/:id',
+    },
+    FORM: 'form-elements/basic-elements'
+  },
+  ERROR:{
+    API: 'error'
   }
 }
 
@@ -18,24 +29,41 @@ export const INTERNAL_PATHS = {
 
   AUTH_DEFAULT: `${ROUTER_PATHS.AUTH.DEFAULT}`,
   AUTH_LOGIN : `${ROUTER_PATHS.AUTH.LOGIN}`,
-
-
-
+  AUTH_PASS : `${ROUTER_PATHS.AUTH.PASS}`,
+  AUTH_SIGNUP : `${ROUTER_PATHS.AUTH.SIGNUP}`,
   /**
-   * PANEL
+   * PAGES
    */
 
-  PANEL_DEFAULT: `${ROUTER_PATHS.PANEL.DEFAULT}`,
+   PAGE_DEFAULT: `${ROUTER_PATHS.PAGE.DEFAULT}`,
 
-  PANEL_USER_LIST: `${ROUTER_PATHS.PANEL.USER}`,
+   /**
+    * USER
+    */
+   PAGE_USER: `${ROUTER_PATHS.PAGE.USER.DEFAULT}`,
+   PAGE_USER_LIST: `${ROUTER_PATHS.PAGE.USER.LIST}`,
+   PAGE_USER_DETAIL: `${ROUTER_PATHS.PAGE.USER.DETAIL}`,
+   PAGE_USER_PROFILE: `${ROUTER_PATHS.PAGE.USER.PROFILE}`,
 
+
+
+
+
+
+  /** ERROR */
+  ERROR: `${ROUTER_PATHS.ERROR.API}`,
 
 }
 
 export const INTERNAL_ROUTES = {
+      ERROR_API: `/${INTERNAL_PATHS.ERROR}`,
       AUTH_LOGIN : `/${INTERNAL_PATHS.AUTH_DEFAULT}/${INTERNAL_PATHS.AUTH_LOGIN}`,
-      PAGE_DEFAULT: `/${INTERNAL_PATHS.PANEL_DEFAULT}`,
-      PANEL_USER_LIST: `/${INTERNAL_PATHS.PANEL_DEFAULT}/${INTERNAL_PATHS.PANEL_USER_LIST}`
+      AUTH_LOGIN_PASS : `/${INTERNAL_PATHS.AUTH_DEFAULT}/${INTERNAL_PATHS.AUTH_PASS}`,
+
+      PAGE_DEFAULT: `/${INTERNAL_PATHS.PAGE_DEFAULT}`,
+
+      PANEL_USER: `/${INTERNAL_PATHS.PAGE_USER}`,
+      PANEL_USER_LIST: `/${INTERNAL_PATHS.PAGE_USER}/${INTERNAL_PATHS.PAGE_USER_LIST}`
 }
 
 

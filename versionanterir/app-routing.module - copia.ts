@@ -1,30 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '@core/guard/auth.guard';
-import { INTERNAL_PATHS, INTERNAL_ROUTES } from '@data/constants/routes';
 import { BaseComponent } from '@layout/base/base.component';
 import { ErrorPageComponent } from '@modules/error-page/error-page.component';
 
 const routes: Routes = [
-
   {
-    path: '',
-    redirectTo: INTERNAL_ROUTES.AUTH_LOGIN,     
-    pathMatch:'full'
-  },
-  {
-    path:'auth',
+    path:'auth', 
     loadChildren: () => import('@modules/auth/auth.module').then(m => m.AuthModule)
   },
   {
     path: '',
     component: BaseComponent,
     canActivate: [AuthGuard],
-    children: [              
+    children: [
       {
-        path: 'general',
-        loadChildren: () => import('@modules/general/general.module').then(m => m.GeneralModule)
-      },   
+        path: '',
+        loadChildren: () => import('@modules/user/user.module').then((m) => m.UserModule)
+      },
       {
         path: 'ejemplos',
         loadChildren: () => import('@modules/ejemplos/ejemplos.module').then(m => m.EjemplosModule)
@@ -32,7 +25,12 @@ const routes: Routes = [
       {
         path: 'user',
         loadChildren: () => import('@modules/user/user.module').then(m => m.UserModule)
-      },      
+      },
+
+      {
+        path: 'general',
+        loadChildren: () => import('@modules/general/general.module').then(m => m.GeneralModule)
+      },
       {
         path: 'anime',
         loadChildren: () => import('@modules/anime/anime.module').then(m => m.AnimeModule)

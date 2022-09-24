@@ -38,8 +38,7 @@ export class AuthService {
 
   constructor(  protected http: HttpClient
               , private router: Router){
-
-    this.userSubject$ =   this.GetItem();
+    this.userSubject$ =  this.GetItem();
     this.helper = new JwtHelperService();    
   }
   
@@ -56,7 +55,7 @@ export class AuthService {
     return this.http.post<Response>(API_ROUTES.AUTH.SIGNIN, user)
           .pipe(
             map(response => {             
-              //this.response = response;
+              
               if(response.status === 200)
               {                
                 this.setUserToLocalStorage(response.data);
@@ -65,10 +64,8 @@ export class AuthService {
               }            
               return response;
            }),
-            catchError(e => {      
-              // debugger;                      
-              // this.resp.message = e.message;  
-              // this.resp.status = e.status
+            catchError(e => {                    
+              this.router.navigateByUrl(INTERNAL_ROUTES.ERROR_API);
               return of(e.message);
             })
           );
@@ -79,11 +76,7 @@ export class AuthService {
   }
  
   public GetItem(){
-    return new BehaviorSubject<IApiUserAuthenticated>(
-                  JSON.parse(
-                    localStorage.getItem(this.userLocalStorage) || "[]"
-                    )
-                );
+    return new BehaviorSubject<IApiUserAuthenticated>(JSON.parse(localStorage.getItem(this.userLocalStorage)!));
    }
 
   public get getUser(): IApiUserAuthenticated{
