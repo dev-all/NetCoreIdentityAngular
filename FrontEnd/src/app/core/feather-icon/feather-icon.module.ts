@@ -5,9 +5,7 @@ import { FeatherIconDirective } from './feather-icon.directive';
 
 @NgModule({
   declarations: [FeatherIconDirective],
-  imports: [
-    CommonModule,
-  ],
-  exports: [FeatherIconDirective]
+  imports: [CommonModule],
+  exports: [FeatherIconDirective],
 })
-export class FeahterIconModule { }
+export class FeahterIconModule {}

@@ -2,62 +2,97 @@
   <div class="col-md-8 col-xl-4 mx-auto">
     <div class="card">
       <div class="row">
- 
         <div class="col-md-12 ps-md-0">
-          <div class="auth-form-wrapper px-4 py-5">    
-            <a routerLink="." class="nobleui-logo d-block mb-2">SHOP <span> UI</span></a>
+          <div class="auth-form-wrapper px-4 py-5">
+            <a routerLink="." class="nobleui-logo d-block mb-2"
+              >SHOP <span> UI</span></a
+            >
             <p>
-              <ngb-alert [dismissible]="false" [type]="'danger'" *ngIf="errorMessage">
-                <strong>Alert!</strong> {{errorMessage}}
+              <ngb-alert
+                [dismissible]="false"
+                [type]="'danger'"
+                *ngIf="errorMessage">
+                <strong>Alert!</strong> {{ errorMessage }}
               </ngb-alert>
             </p>
-            
-            <div contentAnimate >
-                  <form class="forms-sample" [formGroup]="loginForm" (ngSubmit)="Authenticate(this.loginForm.value)">
-                  <h5 class="text-center fw-normal mb-1">¡Bienvenido!  </h5>
-                  <h5 class="text-center fw-normal mb-4"> {{  GetEmail()  }}</h5>
-                  <div class="mb-3">
-                    <label for="textInputPassword" class="form-label">Ingresá tu contraseña</label>
-                    <input type="password" class="form-control"  formControlName="password"
-                    [ngClass]="{ 'is-invalid': (isFormSubmitted && fm['password'].errors) || (!fm['password'].pristine && fm['password'].invalid) }">
 
-                    <!-- Validation messages-->
-                    <p class="text-danger mt-1"
-                        *ngIf="fm['password'].errors &&
-                              (fm['password'].dirty ||
-                              fm['password'].touched)">
-                              <ng-container *ngIf=" fm['password'].errors?.['required']">Ingrese su password...</ng-container>
-                              <ng-container *ngIf=" fm['password'].errors?.['email']"> Cuenta no valida</ng-container>
-                              <ng-container *ngIf=" fm['password'].errors?.['minlength']"> Se requiere que la longitud del password sea mayor </ng-container>
-                            </p>
-                  </div>
-                  <div class="mb-3 text-center">
-                      <div *ngIf="!isLoading">
-                        <button type="submit" class="btn btn-primary me-2 mb-2 mb-md-0">Iniciar sesión</button>
-                     </div>
-                    <!-- Spinner for lazyload modules -->
-                    <div *ngIf="isLoading" >
-                      <button class="btn btn-primary" type="button" disabled>
-                        <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
-                        Loading...
-                      </button>
-                    </div>
-                  </div>
+            <div contentAnimate>
+              <form
+                class="forms-sample"
+                [formGroup]="loginForm"
+                (ngSubmit)="Authenticate(this.loginForm.value)">
+                <h5 class="text-center fw-normal mb-1">¡Bienvenido!</h5>
+                <h5 class="text-center fw-normal mb-4">{{ GetEmail() }}</h5>
+                <div class="mb-3">
+                  <label for="textInputPassword" class="form-label"
+                    >Ingresá tu contraseña</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control"
+                    formControlName="password"
+                    [ngClass]="{
+                      'is-invalid':
+                        (isFormSubmitted && fm['password'].errors) ||
+                        (!fm['password'].pristine && fm['password'].invalid)
+                    }" />
 
-
-                  <a routerLink="/auth/register" class="d-block mt-3 text-center">¿Olvidaste tu contraseña?</a>
-                  <a routerLink="/auth/register" class="d-block mt-3 text-center">Iniciar con otra cuenta</a>
-                  <hr> <div class="mb-3 text-center">
-
-
-                    <p class="mb-3 ">o usar una de estas opciones</p>
-                  <button type="button" class="btn btn-icon-text btn-twitter m-2 mb-md-0">
-                      <i class="feather icon-twitter btn-icon-prepend"></i>
-                      <!-- Login with twitter -->
-                      Iniciar con twitter
+                  <!-- Validation messages-->
+                  <p
+                    class="text-danger mt-1"
+                    *ngIf="
+                      fm['password'].errors &&
+                      (fm['password'].dirty || fm['password'].touched)
+                    ">
+                    <ng-container *ngIf=" fm['password'].errors?.['required']"
+                      >Ingrese su password...</ng-container
+                    >
+                    <ng-container *ngIf=" fm['password'].errors?.['email']">
+                      Cuenta no valida</ng-container
+                    >
+                    <ng-container *ngIf=" fm['password'].errors?.['minlength']">
+                      Se requiere que la longitud del password sea mayor
+                    </ng-container>
+                  </p>
+                </div>
+                <div class="mb-3 text-center">
+                  <div *ngIf="!isLoading">
+                    <button
+                      type="submit"
+                      class="btn btn-primary me-2 mb-2 mb-md-0">
+                      Iniciar sesión
                     </button>
+                  </div>
+                  <!-- Spinner for lazyload modules -->
+                  <div *ngIf="isLoading">
+                    <button class="btn btn-primary" type="button" disabled>
+                      <span
+                        class="spinner-grow spinner-grow-sm"
+                        role="status"
+                        aria-hidden="true"></span>
+                      Loading...
+                    </button>
+                  </div>
+                </div>
 
-                    <!-- <button type="button" class="btn btn-icon-text btn-github m-2 mb-md-0">
+                <a routerLink="/auth/register" class="d-block mt-3 text-center"
+                  >¿Olvidaste tu contraseña?</a
+                >
+                <a routerLink="/auth/register" class="d-block mt-3 text-center"
+                  >Iniciar con otra cuenta</a
+                >
+                <hr />
+                <div class="mb-3 text-center">
+                  <p class="mb-3">o usar una de estas opciones</p>
+                  <button
+                    type="button"
+                    class="btn btn-icon-text btn-twitter m-2 mb-md-0">
+                    <i class="feather icon-twitter btn-icon-prepend"></i>
+                    <!-- Login with twitter -->
+                    Iniciar con twitter
+                  </button>
+
+                  <!-- <button type="button" class="btn btn-icon-text btn-github m-2 mb-md-0">
                       <i class="feather icon-github btn-icon-prepend"></i>
                       Github
                     </button> -->
@@ -65,27 +100,39 @@
                       <i class="feather icon-twitter btn-icon-prepend"></i>
                       Login with twitter
                     </button> -->
-                    <button type="button" class="btn btn-icon-text  btn-googleplus m-2 mb-md-0">
-                      <!-- <svg  version="1.1" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 48 48">
+                  <button
+                    type="button"
+                    class="btn btn-icon-text btn-googleplus m-2 mb-md-0">
+                    <!-- <svg  version="1.1" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 48 48">
                         <g>
                           <path data-v-02221f05="" fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path> <path data-v-02221f05="" fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path> <path data-v-02221f05="" fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path> <path data-v-02221f05="" fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path> <path data-v-02221f05="" fill="none" d="M0 0h48v48H0z"></path>
                         </g>
                       </svg> -->
-                      <fa-icon [icon]="faGoogle" class="feather btn-icon-prepend"></fa-icon>
-                      <!-- Login with Google -->
-                      Iniciar con Google
-                    </button>
-                  </div>
-                  <!-- <p class="msg"> y la Política de privacidad</p> -->
-                  <div class="footer d-flex flex-column flex-md-row align-items-center justify-content-between px-4 py-3 border-top small">
-                    <p class="text-muted mb-1 mb-md-0">Al iniciar sesión o crear una cuenta, estás aceptando nuestros
-                      <a href="https://www.nobleui.com" target="_blank">Términos y condiciones </a> y la
-                      <a href="https://www.nobleui.com" target="_blank">Política de privacidad </a>
-                    </p>
-                    </div>
-                </form>
-              </div>
+                    <fa-icon
+                      [icon]="faGoogle"
+                      class="feather btn-icon-prepend"></fa-icon>
+                    <!-- Login with Google -->
+                    Iniciar con Google
+                  </button>
+                </div>
+                <!-- <p class="msg"> y la Política de privacidad</p> -->
+                <div
+                  class="footer d-flex flex-column flex-md-row align-items-center justify-content-between px-4 py-3 border-top small">
+                  <p class="text-muted mb-1 mb-md-0">
+                    Al iniciar sesión o crear una cuenta, estás aceptando
+                    nuestros
+                    <a href="https://www.nobleui.com" target="_blank"
+                      >Términos y condiciones
+                    </a>
+                    y la
+                    <a href="https://www.nobleui.com" target="_blank"
+                      >Política de privacidad
+                    </a>
+                  </p>
+                </div>
+              </form>
             </div>
+          </div>
         </div>
       </div>
     </div>

@@ -10,16 +10,15 @@ import { ErrorPageComponent } from '@modules/error-page/error-page.component';
 import { LayoutModule } from '@layout/layout.module';
 
 import { SharedModule } from './shared/shared.module';
-import { DATE_PIPE_DEFAULT_TIMEZONE, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import {
+  DATE_PIPE_DEFAULT_TIMEZONE,
+  LocationStrategy,
+  PathLocationStrategy,
+} from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-
-
 @NgModule({
-  declarations: [
-    AppComponent,
-    ErrorPageComponent,
-  ],
+  declarations: [AppComponent, ErrorPageComponent],
   imports: [
     BrowserModule,
     // Core
@@ -30,16 +29,18 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     LayoutModule,
     NgbModule,
     //FontAwesomeModule
-
   ],
-  providers: [{
-    provide:[ LocationStrategy,
-            {provide: DEFAULT_CURRENCY_CODE, useValue: 'ARS' },
-            {provide: LOCALE_ID, useValue: 'es-AR'},
-            {provide: DATE_PIPE_DEFAULT_TIMEZONE, useValue: 'UTC-3' }
-          ],
-    useClass: PathLocationStrategy
-  }],
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide: [
+        LocationStrategy,
+        { provide: DEFAULT_CURRENCY_CODE, useValue: 'ARS' },
+        { provide: LOCALE_ID, useValue: 'es-AR' },
+        { provide: DATE_PIPE_DEFAULT_TIMEZONE, useValue: 'UTC-3' },
+      ],
+      useClass: PathLocationStrategy,
+    },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

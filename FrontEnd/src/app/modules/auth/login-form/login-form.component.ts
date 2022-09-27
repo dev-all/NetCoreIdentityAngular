@@ -4,17 +4,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
-  styleUrls: ['./login-form.component.scss']
+  styleUrls: ['./login-form.component.scss'],
 })
 export class LoginFormComponent implements OnInit {
-
   returnUrl: any;
 
-
-  constructor(private router: Router, private route: ActivatedRoute) {
-
-
-  }
+  constructor(private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     // get return url from route parameters or default to '/'
@@ -28,5 +23,4 @@ export class LoginFormComponent implements OnInit {
       this.router.navigate([this.returnUrl]);
     }
   }
-
 }

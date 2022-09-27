@@ -9,17 +9,25 @@ import { LoginPassComponent } from './login-pass/login-pass.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { RequestPasswordComponent } from './request-password/request-password.component';
-import { NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthRoutingModule } from './auth-routing.module';
 
 @NgModule({
-  declarations: [LoginComponent, SignUpComponent, AuthComponent, LoginFormComponent, LoginPassComponent, ResetPasswordComponent, RequestPasswordComponent],
+  declarations: [
+    LoginComponent,
+    SignUpComponent,
+    AuthComponent,
+    LoginFormComponent,
+    LoginPassComponent,
+    ResetPasswordComponent,
+    RequestPasswordComponent,
+  ],
   imports: [
     CommonModule,
     AuthRoutingModule,
     FontAwesomeModule,
     ReactiveFormsModule,
-    NgbAlertModule
-  ]
+    NgbAlertModule,
+  ],
 })
-export class AuthModule { }
+export class AuthModule {}

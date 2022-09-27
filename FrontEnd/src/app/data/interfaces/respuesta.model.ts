@@ -1,5 +1,5 @@
 export interface Respuesta {
-    error: boolean;
-    msg: string;
-    data: any | null;
-  }
+  error: boolean;
+  msg: string;
+  data: any | null;
+}

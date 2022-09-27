@@ -1,1 +1,1 @@
-export * from './validations-options.enum'
+export * from './validations-options.enum';

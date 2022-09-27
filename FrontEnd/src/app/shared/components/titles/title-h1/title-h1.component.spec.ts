@@ -7,9 +7,8 @@ describe('TitleH1Component', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TitleH1Component ]
-    })
-    .compileComponents();
+      declarations: [TitleH1Component],
+    }).compileComponents();
   });
 
   beforeEach(() => {

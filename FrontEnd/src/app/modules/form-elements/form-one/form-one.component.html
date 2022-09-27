@@ -1,143 +1,209 @@
 <nav class="page-breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a routerLink=".">Forms</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Basic Form with ngModule and validations for services </li>
+    <li class="breadcrumb-item active" aria-current="page">
+      Basic Form with ngModule and validations for services
+    </li>
   </ol>
 </nav>
 
-
-
 <div class="row">
-
   <div class="col-md-6 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <h6 class="card-title">Horizontal Reactive Forms FormGroup and FormControl </h6>
+        <h6 class="card-title">
+          Horizontal Reactive Forms FormGroup and FormControl
+        </h6>
 
-
-        <form class="forms-sample" [formGroup]="myForm" (ngSubmit)="submitForm()">
-
+        <form
+          class="forms-sample"
+          [formGroup]="myForm"
+          (ngSubmit)="submitForm()">
           <div class="row mb-3">
-            <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Username</label>
+            <label for="exampleInputUsername2" class="col-sm-3 col-form-label"
+              >Username</label
+            >
             <div class="col-sm-9">
-              <input type="text" class="form-control" placeholder="Email" formControlName="username">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Email"
+                formControlName="username" />
             </div>
 
-             <!-- Validation messages -->
-            <small class="bg-danger text-light mt-1 px-2 py-1 rounded"
-            *ngIf="myForm.controls['username'].invalid &&
-                  (myForm.controls['username'].dirty ||
-                  myForm.controls['username'].touched)">
-                   <ng-container *ngIf=" myForm.controls['username'].errors?.['required']">Campo required</ng-container>
+            <!-- Validation messages -->
+            <small
+              class="bg-danger text-light mt-1 px-2 py-1 rounded"
+              *ngIf="
+                myForm.controls['username'].invalid &&
+                (myForm.controls['username'].dirty ||
+                  myForm.controls['username'].touched)
+              ">
+              <ng-container
+                *ngIf=" myForm.controls['username'].errors?.['required']"
+                >Campo required</ng-container
+              >
             </small>
-
           </div>
 
           <div class="row mb-3">
-            <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Email</label>
+            <label for="exampleInputEmail2" class="col-sm-3 col-form-label"
+              >Email</label
+            >
             <div class="col-sm-9">
               <!-- <input type="email" class="form-control"  autocomplete="off" placeholder="Email" formControlName="email"> -->
-            <input type="text" formControlName="email" class="form-control" placeholder="Enter email"
-              [ngClass]="{ 'is-invalid': (isFormSubmitted && fm['email'].errors) || (!fm['email'].pristine && fm['email'].invalid) }">
+              <input
+                type="text"
+                formControlName="email"
+                class="form-control"
+                placeholder="Enter email"
+                [ngClass]="{
+                  'is-invalid':
+                    (isFormSubmitted && fm['email'].errors) ||
+                    (!fm['email'].pristine && fm['email'].invalid)
+                }" />
             </div>
-             <!-- Validation messages -->
-            <small class="bg-danger text-light mt-1 px-2 py-1 rounded"
-            *ngIf="fm['email'].errors &&
-                  (fm['email'].dirty ||
-                   fm['email'].touched)">
-                   <ng-container *ngIf=" fm['email'].errors?.['required']">Password is required</ng-container>
-                   <ng-container *ngIf=" fm['email'].errors?.['email']"> Email no valido</ng-container>
-                   <ng-container *ngIf=" fm['email'].errors?.['pattern']"> No cumple el patron para email</ng-container>
+            <!-- Validation messages -->
+            <small
+              class="bg-danger text-light mt-1 px-2 py-1 rounded"
+              *ngIf="
+                fm['email'].errors && (fm['email'].dirty || fm['email'].touched)
+              ">
+              <ng-container *ngIf=" fm['email'].errors?.['required']"
+                >Password is required</ng-container
+              >
+              <ng-container *ngIf=" fm['email'].errors?.['email']">
+                Email no valido</ng-container
+              >
+              <ng-container *ngIf=" fm['email'].errors?.['pattern']">
+                No cumple el patron para email</ng-container
+              >
             </small>
-            </div>
+          </div>
 
-          <div class="row mb-3" >
-            <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Password</label>
+          <div class="row mb-3">
+            <label for="exampleInputPassword2" class="col-sm-3 col-form-label"
+              >Password</label
+            >
             <div class="col-sm-9">
-              <input type="password" class="form-control" autocomplete="off" placeholder="Password" formControlName="password">
+              <input
+                type="password"
+                class="form-control"
+                autocomplete="off"
+                placeholder="Password"
+                formControlName="password" />
             </div>
-             <!-- Validation messages -->
-            <small class="bg-danger text-light mt-1 px-2 py-1 rounded"
-            *ngIf="fm['password'].errors &&
-                  (fm['password'].dirty ||
-                   fm['password'].touched)">
-                    <ng-container *ngIf=" fm['password'].errors?.['required']">Password is required</ng-container>
-                    <ng-container *ngIf=" fm['password'].errors?.['minlength']">Password debe tener 4 caracteres minimo</ng-container>
+            <!-- Validation messages -->
+            <small
+              class="bg-danger text-light mt-1 px-2 py-1 rounded"
+              *ngIf="
+                fm['password'].errors &&
+                (fm['password'].dirty || fm['password'].touched)
+              ">
+              <ng-container *ngIf=" fm['password'].errors?.['required']"
+                >Password is required</ng-container
+              >
+              <ng-container *ngIf=" fm['password'].errors?.['minlength']"
+                >Password debe tener 4 caracteres minimo</ng-container
+              >
             </small>
           </div>
           <div class="form-check mb-3">
-            <input type="checkbox" class="form-check-input" id="exampleCheck2" formControlName="remember">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              id="exampleCheck2"
+              formControlName="remember" />
             <label class="form-check-label" for="exampleCheck2">
               Remember me
             </label>
           </div>
 
           <div class="form-check mb-3">
-          <label for="sport">Select a Sport:</label>
-          <div *ngFor="let sport of sportsList">
-            <input id="sport-{{sport.id}}" type="radio" value="{{sport.value}}" name="{{sport.name}}" formControlName="{{sport.name}}">
-            <label for="sport-{{sport.id}}">{{sport.label}}</label>
-          </div>
-           <!-- Validation messages -->
-            <small class="bg-danger text-light mt-1 px-2 py-1 rounded"
-            *ngIf="fm['sport'].errors &&
-                  (fm['sport'].dirty ||
-                  fm['sport'].touched)">
-                    <ng-container *ngIf=" fm['sport'].errors?.['required']"> is required</ng-container>
+            <label for="sport">Select a Sport:</label>
+            <div *ngFor="let sport of sportsList">
+              <input
+                id="sport-{{ sport.id }}"
+                type="radio"
+                value="{{ sport.value }}"
+                name="{{ sport.name }}"
+                formControlName="{{ sport.name }}" />
+              <label for="sport-{{ sport.id }}">{{ sport.label }}</label>
+            </div>
+            <!-- Validation messages -->
+            <small
+              class="bg-danger text-light mt-1 px-2 py-1 rounded"
+              *ngIf="
+                fm['sport'].errors && (fm['sport'].dirty || fm['sport'].touched)
+              ">
+              <ng-container *ngIf=" fm['sport'].errors?.['required']">
+                is required</ng-container
+              >
             </small>
-
-        </div>
-
-        <!-- direccion -->
-
-        <div formGroupName="address">
-          <h2>Address</h2>
-
-          <label for="street">Street: </label>
-          <input id="street" type="text" formControlName="street">
-
-          <label for="city">City: </label>
-          <input id="city" type="text" formControlName="city">
-
-          <label for="state">State: </label>
-          <input id="state" type="text" formControlName="state">
-
-          <label for="zip">Zip Code: </label>
-          <input id="zip"type="text" formControlName="zip">
-        </div>
-
-        <!-- alias -->
-
-        <div formArrayName="aliases">
-          <h2>Aliases</h2>
-          <button type="button" (click)="addAlias()">+ Add another alias</button>
-
-          <div *ngFor="let alias of aliases.controls; let i=index">
-            <!-- The repeated alias template -->
-            <label for="alias-{{ i }}">Alias:</label>
-            <input id="alias-{{ i }}" type="text" [formControlName]="i">
           </div>
-        </div>
 
+          <!-- direccion -->
 
+          <div formGroupName="address">
+            <h2>Address</h2>
 
+            <label for="street">Street: </label>
+            <input id="street" type="text" formControlName="street" />
 
+            <label for="city">City: </label>
+            <input id="city" type="text" formControlName="city" />
 
-          <div *ngIf=" fm['password'].errors && ( fm['password'].dirty ||  fm['password'].touched)">
-            <p *ngIf=" fm['password'].errors?.['required']">Password is required</p>
-            <p *ngIf=" fm['password'].errors?.['minlength']">Password must be 8 characters long</p>
+            <label for="state">State: </label>
+            <input id="state" type="text" formControlName="state" />
+
+            <label for="zip">Zip Code: </label>
+            <input id="zip" type="text" formControlName="zip" />
           </div>
-          <p>{{myForm.valid}}</p>
+
+          <!-- alias -->
+
+          <div formArrayName="aliases">
+            <h2>Aliases</h2>
+            <button type="button" (click)="addAlias()">
+              + Add another alias
+            </button>
+
+            <div *ngFor="let alias of aliases.controls; let i = index">
+              <!-- The repeated alias template -->
+              <label for="alias-{{ i }}">Alias:</label>
+              <input id="alias-{{ i }}" type="text" [formControlName]="i" />
+            </div>
+          </div>
+
+          <div
+            *ngIf="
+              fm['password'].errors &&
+              (fm['password'].dirty || fm['password'].touched)
+            ">
+            <p *ngIf=" fm['password'].errors?.['required']">
+              Password is required
+            </p>
+            <p *ngIf=" fm['password'].errors?.['minlength']">
+              Password must be 8 characters long
+            </p>
+          </div>
+          <p>{{ myForm.valid }}</p>
           <p>Form Value: {{ myForm.value | json }}</p>
 
           <p>Form Status: {{ myForm.status }}</p>
-          <button type="submit" class="btn btn-primary me-2" [disabled]="!myForm.valid">Submit</button>
+          <button
+            type="submit"
+            class="btn btn-primary me-2"
+            [disabled]="!myForm.valid">
+            Submit
+          </button>
           <button class="btn btn-secondary">Cancel</button>
 
-          <button type="button" (click)="updateProfile()">Update Profile</button>
+          <button type="button" (click)="updateProfile()">
+            Update Profile
+          </button>
         </form>
       </div>
     </div>
   </div>
-
 </div>

@@ -25,14 +25,13 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
   // Change this to your upload POST address:
   url: 'https://httpbin.org/post',
   maxFilesize: 50,
-  acceptedFiles: 'image/*'
+  acceptedFiles: 'image/*',
 };
 
 import { AdvancedFormElementsComponent } from './advanced-form-elements.component';
 import { FormValidationComponent } from './form-validation/form-validation.component';
 import { NgSelectComponent } from './ng-select/ng-select.component';
 import { NgxDropzoneWrapperComponent } from './ngx-dropzone-wrapper/ngx-dropzone-wrapper.component';
-
 
 const routes: Routes = [
   {
@@ -42,44 +41,49 @@ const routes: Routes = [
       {
         path: '',
         redirectTo: 'form-validation',
-        pathMatch: 'full'
+        pathMatch: 'full',
       },
       {
         path: 'form-validation',
-        component: FormValidationComponent
+        component: FormValidationComponent,
       },
       {
         path: 'ng-select',
-        component: NgSelectComponent
+        component: NgSelectComponent,
       },
 
       {
         path: 'ngx-dropzone-wrapper',
-        component: NgxDropzoneWrapperComponent
+        component: NgxDropzoneWrapperComponent,
       },
-    ]
-  }
-]
+    ],
+  },
+];
 
 @NgModule({
-  declarations: [AdvancedFormElementsComponent, FormValidationComponent,  NgSelectComponent,NgxDropzoneWrapperComponent],
+  declarations: [
+    AdvancedFormElementsComponent,
+    FormValidationComponent,
+    NgSelectComponent,
+    NgxDropzoneWrapperComponent,
+  ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     FormsModule,
     ReactiveFormsModule,
-   // CustomFormsModule, // Ngx-custom-validators
-  //  NgxMaskModule.forRoot({ validation: true}), // Ngx-mask
+    // CustomFormsModule, // Ngx-custom-validators
+    //  NgxMaskModule.forRoot({ validation: true}), // Ngx-mask
     NgSelectModule, // Ng-select
-  //  TagInputModule, // Ngx-chips
+    //  TagInputModule, // Ngx-chips
     //ColorPickerModule, // Ngx-color-picker
     DropzoneModule, // Ngx-dropzone-wrapper
   ],
   providers: [
     {
       provide: DROPZONE_CONFIG,
-      useValue: DEFAULT_DROPZONE_CONFIG
+      useValue: DEFAULT_DROPZONE_CONFIG,
     }, // Ngx-dropzone-wrapper
-  ]
+  ],
 })
-export class AdvancedFormElementsModule { }
+export class AdvancedFormElementsModule {}

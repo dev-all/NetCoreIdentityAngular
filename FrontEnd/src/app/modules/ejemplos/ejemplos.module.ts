@@ -6,7 +6,6 @@ import { PipesComponent } from './pipes/pipes.component';
 import { InternacionalComponent } from './internacional/internacional.component';
 import { SharedModule } from '@share/shared.module';
 
-
 const routes: Routes = [
   {
     path: '',
@@ -15,26 +14,22 @@ const routes: Routes = [
       {
         path: '',
         redirectTo: 'pipes',
-        pathMatch: 'full'      /// esta propiedad es para redirigir exactamente a la propiedad redirectTo
+        pathMatch: 'full', /// esta propiedad es para redirigir exactamente a la propiedad redirectTo
       },
       {
         path: 'pipes',
-        component: PipesComponent
+        component: PipesComponent,
       },
       {
         path: 'inter',
-        component: InternacionalComponent
+        component: InternacionalComponent,
       },
-    ]
-  }
-]
+    ],
+  },
+];
 
 @NgModule({
-  declarations: [EjemplosComponent,PipesComponent, InternacionalComponent],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    SharedModule
-  ]
+  declarations: [EjemplosComponent, PipesComponent, InternacionalComponent],
+  imports: [CommonModule, RouterModule.forChild(routes), SharedModule],
 })
-export class EjemplosModule { }
+export class EjemplosModule {}

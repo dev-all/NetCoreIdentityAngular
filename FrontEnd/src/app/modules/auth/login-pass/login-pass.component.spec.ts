@@ -8,9 +8,8 @@ describe('LoginPassComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoginPassComponent ]
-    })
-    .compileComponents();
+      declarations: [LoginPassComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

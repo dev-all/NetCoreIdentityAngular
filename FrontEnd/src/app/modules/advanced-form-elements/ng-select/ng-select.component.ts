@@ -5,10 +5,9 @@ import { PeoplesData, Person } from '@core/dummy-datas/peoples.data';
 @Component({
   selector: 'app-ng-select',
   templateUrl: './ng-select.component.html',
-  styleUrls: ['./ng-select.component.scss']
+  styleUrls: ['./ng-select.component.scss'],
 })
 export class NgSelectComponent implements OnInit {
-
   simpleItems: any = [];
   selectedSimpleItem: any = null;
 
@@ -23,16 +22,13 @@ export class NgSelectComponent implements OnInit {
 
   customTemplateSelectedPeople: any = null;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
-
     // simple array
     this.simpleItems = [true, 'Two', 3];
 
     // array of objects
     this.people = PeoplesData.peoples;
-
   }
-
 }

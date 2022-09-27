@@ -1,16 +1,14 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'greeting'
+  name: 'greeting',
 })
 export class GreetingPipe implements PipeTransform {
-
   transform(name: string, gender: string = 'M', role: string = 'Usuario'): any {
-
     //const grt = (gender ==='F'? 'Bienvenida' : 'Bienvenido');
     let grt = '';
 
-    switch (gender){
+    switch (gender) {
       case 'F':
         grt = 'Bienvenida';
         break;
@@ -22,8 +20,6 @@ export class GreetingPipe implements PipeTransform {
         break;
     }
 
-
     return `${grt} ${name}, tienes permisos de ${role}`;
   }
-
 }

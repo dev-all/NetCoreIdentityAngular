@@ -8,9 +8,8 @@ describe('NgxDropzoneWrapperComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NgxDropzoneWrapperComponent ]
-    })
-    .compileComponents();
+      declarations: [NgxDropzoneWrapperComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

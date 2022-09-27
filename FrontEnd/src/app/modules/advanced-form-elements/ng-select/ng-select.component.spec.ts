@@ -8,9 +8,8 @@ describe('NgSelectComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NgSelectComponent ]
-    })
-    .compileComponents();
+      declarations: [NgSelectComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

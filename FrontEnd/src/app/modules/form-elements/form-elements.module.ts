@@ -11,7 +11,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // angular-archwizard
 //import { ArchwizardModule } from 'angular-archwizard';
 
-
 import { FormElementsComponent } from './form-elements.component';
 import { BasicElementsComponent } from './basic-elements/basic-elements.component';
 import { ArchwizardModule } from 'angular-archwizard';
@@ -28,35 +27,38 @@ const routes: Routes = [
       {
         path: '',
         redirectTo: 'basic-elements',
-        pathMatch: 'full'
+        pathMatch: 'full',
       },
       {
         path: 'basic-elements',
-        component: BasicElementsComponent
+        component: BasicElementsComponent,
       },
       {
         path: 'form-one',
-        component: FormOneComponent
+        component: FormOneComponent,
       },
       {
         path: 'editors',
-        component: EditorsComponent
-      }
-
-    ]
-  }
-]
+        component: EditorsComponent,
+      },
+    ],
+  },
+];
 
 @NgModule({
-  declarations: [FormElementsComponent, BasicElementsComponent, FormOneComponent],
+  declarations: [
+    FormElementsComponent,
+    BasicElementsComponent,
+    FormOneComponent,
+  ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes),
     FeahterIconModule,
-   // QuillModule.forRoot(), // ngx-quill
+    // QuillModule.forRoot(), // ngx-quill
     ArchwizardModule, // angular-archwizard
-  ]
+  ],
 })
-export class FormElementsModule { }
+export class FormElementsModule {}

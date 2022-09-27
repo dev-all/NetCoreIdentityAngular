@@ -1,7 +1,9 @@
 <nav class="page-breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a routerLink=".">Forms</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Basic Form with ngModule and validations for services </li>
+    <li class="breadcrumb-item active" aria-current="page">
+      Basic Form with ngModule and validations for services
+    </li>
   </ol>
 </nav>
 
@@ -9,46 +11,72 @@
   <div class="col-md-6 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <h6 class="card-title">  Ejemplo input con NGMODEL [atributo de entrada] (evento de salida)</h6>
+        <h6 class="card-title">
+          Ejemplo input con NGMODEL [atributo de entrada] (evento de salida)
+        </h6>
         <form class="forms-sample">
-
           <div class="mb-3">
             <label class="form-label">texto</label>
-            <input type="text" class="form-control"
-            #modelInput
-            [ngModel]="model"
-            (ngModelChange)="cambioTexto($event)"
-            [ngModelOptions]="{standalone: true}">
+            <input
+              type="text"
+              class="form-control"
+              #modelInput
+              [ngModel]="model"
+              (ngModelChange)="cambioTexto($event)"
+              [ngModelOptions]="{ standalone: true }" />
 
-            <p>Valor de Model: {{model}}</p>
-            <p>Model isValid: {{modelIsValid}}</p>
+            <p>Valor de Model: {{ model }}</p>
+            <p>Model isValid: {{ modelIsValid }}</p>
           </div>
-
         </form>
       </div>
     </div>
   </div>
 
- <div class="col-md-6 grid-margin stretch-card">
+  <div class="col-md-6 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <h6 class="card-title"> Form Ejemplo con NGMODEL</h6>
+        <h6 class="card-title">Form Ejemplo con NGMODEL</h6>
         <form class="forms-sample">
-
           <div class="mb-3">
             <label class="form-label">Email address</label>
             <!-- <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email"  > -->
-            <input type="email" class="form-control" placeholder="Email" [(ngModel)]="loginForm.email.val" #email="ngModel" [ngModelOptions]="{standalone: true}">
-            <p class="text-danger mt-1" *ngIf="!loginForm.email.isValid() && email.touched">{{ loginForm.email.error}}</p>
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Email"
+              [(ngModel)]="loginForm.email.val"
+              #email="ngModel"
+              [ngModelOptions]="{ standalone: true }" />
+            <p
+              class="text-danger mt-1"
+              *ngIf="!loginForm.email.isValid() && email.touched">
+              {{ loginForm.email.error }}
+            </p>
           </div>
           <div class="mb-3">
-            <label  class="form-label">Password</label>
+            <label class="form-label">Password</label>
             <!-- <input type="password" class="form-control" id="exampleInputPassword1" autocomplete="off" placeholder="Password"> -->
-            <input type="password" class="form-control"  placeholder="Password" [(ngModel)]="loginForm.password.val" #password="ngModel" [ngModelOptions]="{standalone: true}">
-            <p class="text-danger mt-1" *ngIf="!loginForm.password.isValid() && password.touched">{{ loginForm.password.error}}</p>
+            <input
+              type="password"
+              class="form-control"
+              placeholder="Password"
+              [(ngModel)]="loginForm.password.val"
+              #password="ngModel"
+              [ngModelOptions]="{ standalone: true }" />
+            <p
+              class="text-danger mt-1"
+              *ngIf="!loginForm.password.isValid() && password.touched">
+              {{ loginForm.password.error }}
+            </p>
           </div>
 
-          <button type="submit" class="btn btn-primary me-2" [disabled]="!isValidForm">Submit</button>
+          <button
+            type="submit"
+            class="btn btn-primary me-2"
+            [disabled]="!isValidForm">
+            Submit
+          </button>
           <button class="btn btn-secondary">Cancel</button>
         </form>
       </div>
@@ -56,104 +84,163 @@
   </div>
 </div>
 
-
 <div class="row">
-
   <div class="col-md-6 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <h6 class="card-title">  Ejemplo form  con FormControl</h6>
+        <h6 class="card-title">Ejemplo form con FormControl</h6>
         <form class="forms-sample">
-
           <div class="mb-3">
             <label class="form-label">Input form control</label>
-            <input type="text" class="form-control"
-            #modelForControl
-            [formControl] = "control">
+            <input
+              type="text"
+              class="form-control"
+              #modelForControl
+              [formControl]="control" />
 
-            <p>Valor de Model: {{model}}</p>
-            <p>control isValid: {{control.valid}}</p>
-            <p *ngIf="!control.valid && control.touched"> isValid and touched: {{control.valid}}</p>
+            <p>Valor de Model: {{ model }}</p>
+            <p>control isValid: {{ control.valid }}</p>
+            <p *ngIf="!control.valid && control.touched">
+              isValid and touched: {{ control.valid }}
+            </p>
 
             <div *ngIf="!control.valid && control.touched">
-              <p *ngIf="control.errors"> is required!!!</p>
+              <p *ngIf="control.errors">is required!!!</p>
             </div>
 
-
-
-            <button type="submit" class="btn btn-primary me-2" [disabled]="!control.valid">Submit</button>
+            <button
+              type="submit"
+              class="btn btn-primary me-2"
+              [disabled]="!control.valid">
+              Submit
+            </button>
           </div>
-
         </form>
       </div>
     </div>
   </div>
 
-
   <div class="col-md-6 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <h6 class="card-title">Horizontal Reactive Forms FormGroup and FormControl </h6>
+        <h6 class="card-title">
+          Horizontal Reactive Forms FormGroup and FormControl
+        </h6>
 
-
-        <form class="forms-sample" [formGroup]="myForm" (ngSubmit)="submitForm()">
-
+        <form
+          class="forms-sample"
+          [formGroup]="myForm"
+          (ngSubmit)="submitForm()">
           <div class="row mb-3">
-            <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Username</label>
+            <label for="exampleInputUsername2" class="col-sm-3 col-form-label"
+              >Username</label
+            >
             <div class="col-sm-9">
-              <input type="text" class="form-control" placeholder="Email" formControlName="username">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Email"
+                formControlName="username" />
             </div>
-            <small class="bg-danger text-light mt-1 px-2 py-1 rounded"
-            *ngIf="myForm.controls['username'].invalid &&
-                  (myForm.controls['username'].dirty ||
-                  myForm.controls['username'].touched)">
-                   <ng-container *ngIf=" myForm.controls['username'].errors?.['required']">Campo required</ng-container>
+            <small
+              class="bg-danger text-light mt-1 px-2 py-1 rounded"
+              *ngIf="
+                myForm.controls['username'].invalid &&
+                (myForm.controls['username'].dirty ||
+                  myForm.controls['username'].touched)
+              ">
+              <ng-container
+                *ngIf=" myForm.controls['username'].errors?.['required']"
+                >Campo required</ng-container
+              >
             </small>
-
           </div>
 
           <div class="row mb-3">
-            <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Email</label>
+            <label for="exampleInputEmail2" class="col-sm-3 col-form-label"
+              >Email</label
+            >
             <div class="col-sm-9">
-              <input type="email" class="form-control"  autocomplete="off" placeholder="Email" formControlName="email">
+              <input
+                type="email"
+                class="form-control"
+                autocomplete="off"
+                placeholder="Email"
+                formControlName="email" />
             </div>
-            <small class="bg-danger text-light mt-1 px-2 py-1 rounded"
-            *ngIf="fm['email'].errors &&
-                  (fm['email'].dirty ||
-                   fm['email'].touched)">
-                   <ng-container *ngIf=" fm['email'].errors?.['required']">Email is required</ng-container>
-                   <ng-container *ngIf=" fm['email'].errors?.['email']"> Email no valido</ng-container>
-                   <ng-container *ngIf=" fm['email'].errors?.['pattern']"> No cumple el patron para email</ng-container>
+            <small
+              class="bg-danger text-light mt-1 px-2 py-1 rounded"
+              *ngIf="
+                fm['email'].errors && (fm['email'].dirty || fm['email'].touched)
+              ">
+              <ng-container *ngIf=" fm['email'].errors?.['required']"
+                >Email is required</ng-container
+              >
+              <ng-container *ngIf=" fm['email'].errors?.['email']">
+                Email no valido</ng-container
+              >
+              <ng-container *ngIf=" fm['email'].errors?.['pattern']">
+                No cumple el patron para email</ng-container
+              >
             </small>
-            </div>
+          </div>
 
-          <div class="row mb-3" >
-            <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Password</label>
+          <div class="row mb-3">
+            <label for="exampleInputPassword2" class="col-sm-3 col-form-label"
+              >Password</label
+            >
             <div class="col-sm-9">
-              <input type="password" class="form-control" autocomplete="off" placeholder="Password" formControlName="password">
+              <input
+                type="password"
+                class="form-control"
+                autocomplete="off"
+                placeholder="Password"
+                formControlName="password" />
             </div>
-            <small class="bg-danger text-light mt-1 px-2 py-1 rounded"
-            *ngIf="fm['password'].errors &&
-                  (fm['password'].dirty ||
-                   fm['password'].touched)">
-                    <ng-container *ngIf=" fm['password'].errors?.['required']">Password is required</ng-container>
-                    <ng-container *ngIf=" fm['password'].errors?.['minlength']">Password debe tener 4 caracteres minimo</ng-container>
+            <small
+              class="bg-danger text-light mt-1 px-2 py-1 rounded"
+              *ngIf="
+                fm['password'].errors &&
+                (fm['password'].dirty || fm['password'].touched)
+              ">
+              <ng-container *ngIf=" fm['password'].errors?.['required']"
+                >Password is required</ng-container
+              >
+              <ng-container *ngIf=" fm['password'].errors?.['minlength']"
+                >Password debe tener 4 caracteres minimo</ng-container
+              >
             </small>
           </div>
           <div class="form-check mb-3">
-            <input type="checkbox" class="form-check-input" id="exampleCheck2" formControlName="remember">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              id="exampleCheck2"
+              formControlName="remember" />
             <label class="form-check-label" for="exampleCheck2">
               Remember me
             </label>
           </div>
-          <div *ngIf=" fm['password'].errors && ( fm['password'].dirty ||  fm['password'].touched)">
-            <p *ngIf=" fm['password'].errors?.['required']">Password is required</p>
-            <p *ngIf=" fm['password'].errors?.['minlength']">Password must be 8 characters long</p>
+          <div
+            *ngIf="
+              fm['password'].errors &&
+              (fm['password'].dirty || fm['password'].touched)
+            ">
+            <p *ngIf=" fm['password'].errors?.['required']">
+              Password is required
+            </p>
+            <p *ngIf=" fm['password'].errors?.['minlength']">
+              Password must be 8 characters long
+            </p>
           </div>
-          <p>{{myForm.valid}}</p>
-          <button type="submit" class="btn btn-primary me-2" [disabled]="!myForm.valid">Submit</button>
+          <p>{{ myForm.valid }}</p>
+          <button
+            type="submit"
+            class="btn btn-primary me-2"
+            [disabled]="!myForm.valid">
+            Submit
+          </button>
           <button class="btn btn-secondary">Cancel</button>
-
         </form>
       </div>
     </div>

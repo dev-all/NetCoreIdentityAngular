@@ -8,26 +8,25 @@ import { ICardUser } from '@share/components/cards/card-user/icard-user.metadata
 @Component({
   selector: 'app-user-detail',
   templateUrl: './user-detail.component.html',
-  styleUrls: ['./user-detail.component.scss']
+  styleUrls: ['./user-detail.component.scss'],
 })
 export class UserDetailComponent implements OnInit {
   public users: ICardUser[] = USERS_DATA;
 
   public currentUser?: ICardUser;
-  public id:number;
-  public title:string;
-  constructor(private route:ActivatedRoute
-            , private userServices: UserService) {
-     this.id = +this.route.snapshot.params['id'];
-     this.currentUser = this.users.find(u => u.id === +this.id);
+  public id: number;
+  public title: string;
+  constructor(
+    private route: ActivatedRoute,
+    private userServices: UserService
+  ) {
+    this.id = +this.route.snapshot.params['id'];
+    this.currentUser = this.users.find(u => u.id === +this.id);
 
-     this.title= userServices.getTitle();
+    this.title = userServices.getTitle();
     console.log(this.currentUser);
-   // console.log({users: this.users});
-
+    // console.log({users: this.users});
   }
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 }

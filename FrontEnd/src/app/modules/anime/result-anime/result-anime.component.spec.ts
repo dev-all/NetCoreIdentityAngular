@@ -8,9 +8,8 @@ describe('ResultAnimeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ResultAnimeComponent ]
-    })
-    .compileComponents();
+      declarations: [ResultAnimeComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

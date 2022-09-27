@@ -6,23 +6,22 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '@core/guard/auth.guard';
 import { INTERNAL_PATHS } from '@data/constants/routes';
 
-const routes: Routes = [  
-      {
-        path: INTERNAL_PATHS.PAGE_USER_LIST,
-        component: UserListComponent,
-        canActivate :[AuthGuard]        
-      },
-      {
-        path: INTERNAL_PATHS.PAGE_USER_DETAIL,
-        component: UserDetailComponent,
-        canActivate :[AuthGuard] 
-      }
-      ,
-      {
-        path: INTERNAL_PATHS.PAGE_USER_PROFILE,
-        component: UserProfileComponent,
-        canActivate :[AuthGuard] 
-      }        
+const routes: Routes = [
+  {
+    path: INTERNAL_PATHS.PAGE_USER_LIST,
+    component: UserListComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: INTERNAL_PATHS.PAGE_USER_DETAIL,
+    component: UserDetailComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: INTERNAL_PATHS.PAGE_USER_PROFILE,
+    component: UserProfileComponent,
+    canActivate: [AuthGuard],
+  },
 ];
 
 @NgModule({

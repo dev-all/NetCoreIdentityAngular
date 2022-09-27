@@ -7,8 +7,6 @@ import { SelectedAnimeComponent } from './selected-anime/selected-anime.componen
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
-
-
 const routes: Routes = [
   {
     path: '',
@@ -17,19 +15,18 @@ const routes: Routes = [
       {
         path: '',
         redirectTo: 'Shearch',
-        pathMatch: 'full'      /// esta propiedad es para redirigir exactamente a la propiedad redirectTo
-      } 
-      
-    ]
-  }
-]
+        pathMatch: 'full', /// esta propiedad es para redirigir exactamente a la propiedad redirectTo
+      },
+    ],
+  },
+];
 @NgModule({
-  declarations: [AnimeComponent, SearchAnimeComponent,ResultAnimeComponent,SelectedAnimeComponent],
-  imports: [
-
-    CommonModule,
-    RouterModule.forChild(routes),
-    FormsModule,
-  ]
+  declarations: [
+    AnimeComponent,
+    SearchAnimeComponent,
+    ResultAnimeComponent,
+    SelectedAnimeComponent,
+  ],
+  imports: [CommonModule, RouterModule.forChild(routes), FormsModule],
 })
-export class AnimeModule { }
+export class AnimeModule {}

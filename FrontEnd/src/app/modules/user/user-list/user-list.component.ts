@@ -6,35 +6,34 @@ import { Subscription } from 'rxjs/internal/Subscription';
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.scss']
+  styleUrls: ['./user-list.component.scss'],
 })
-export class UserListComponent implements AfterViewInit, OnInit ,OnDestroy {
-
-
-  public users?: ICardUser[] ; //= USERS_DATA;
-  public title!:string;
+export class UserListComponent implements AfterViewInit, OnInit, OnDestroy {
+  public users?: ICardUser[]; //= USERS_DATA;
+  public title!: string;
   public userSubscription!: Subscription;
 
   public pricePesos: number = 0;
 
-  constructor(private userService:UserService){
-    this.pricePesos =0;
+  constructor(private userService: UserService) {
+    this.pricePesos = 0;
     this.userService.setTitle('List User');
-    this.title=this.userService.getTitle();
+    this.title = this.userService.getTitle();
   }
   ngAfterViewInit(): void {
-    console.log('User list | afterViewInit se ejecuta cuando la vista esta completa');
-
+    console.log(
+      'User list | afterViewInit se ejecuta cuando la vista esta completa'
+    );
   }
 
-  addAmount(){
-    this.pricePesos+=10;
+  addAmount() {
+    this.pricePesos += 10;
   }
 
   ngOnDestroy(): void {
-   if (this.userSubscription){
-     this.userSubscription.unsubscribe();
-   }
+    if (this.userSubscription) {
+      this.userSubscription.unsubscribe();
+    }
     this.userService.clearTitle();
   }
 
@@ -43,16 +42,9 @@ export class UserListComponent implements AfterViewInit, OnInit ,OnDestroy {
     console.log(' user list | oninit');
   }
 
-
-  getUsers(){
-   this.userSubscription =  this.userService
-   .getAllUser()
-   .subscribe(r => {
-         this.users=r;
+  getUsers() {
+    this.userSubscription = this.userService.getAllUser().subscribe(r => {
+      this.users = r;
     });
   }
-
-
-
-
 }

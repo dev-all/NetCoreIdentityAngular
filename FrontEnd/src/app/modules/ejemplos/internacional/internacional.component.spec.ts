@@ -8,9 +8,8 @@ describe('InternacionalComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InternacionalComponent ]
-    })
-    .compileComponents();
+      declarations: [InternacionalComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

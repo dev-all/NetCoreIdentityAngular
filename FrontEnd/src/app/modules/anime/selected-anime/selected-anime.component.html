@@ -1,16 +1,30 @@
 <h1>view</h1>
 <div *ngIf="anime_selected.length > 0" class="myanime">
-    <div *ngFor="let anime of anime_selected" class="anime">
-        <img [src]="anime.image">
-        <h3>{{ anime.title }}</h3>
-        <div class="flex-1"></div>
-        <span class="episodes">{{ anime.watched_episodes }} / {{ anime.total_episodes }}</span>
-        <div *ngIf="anime.total_episodes">   </div>
+  <div *ngFor="let anime of anime_selected" class="anime">
+    <img [src]="anime.image" />
+    <h3>{{ anime.title }}</h3>
+    <div class="flex-1"></div>
+    <span class="episodes"
+      >{{ anime.watched_episodes }} / {{ anime.total_episodes }}</span
+    >
+    <div *ngIf="anime.total_episodes"></div>
 
-        <button type="button" *ngIf="anime.total_episodes && anime.watched_episodes !== anime.total_episodes"
-        (click)="increaseWatch(anime)" class="button">+</button>
+    <button
+      type="button"
+      *ngIf="
+        anime.total_episodes && anime.watched_episodes !== anime.total_episodes
+      "
+      (click)="increaseWatch(anime)"
+      class="button">
+      +
+    </button>
 
-        <button type="button" *ngIf="anime.watched_episodes > 0" (click)="decreaseWatch(anime)" class="button">-</button>
-
-    </div>
+    <button
+      type="button"
+      *ngIf="anime.watched_episodes > 0"
+      (click)="decreaseWatch(anime)"
+      class="button">
+      -
+    </button>
+  </div>
 </div>

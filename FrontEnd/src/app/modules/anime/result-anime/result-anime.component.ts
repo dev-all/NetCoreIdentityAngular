@@ -6,47 +6,42 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-result-anime',
   templateUrl: './result-anime.component.html',
-  styleUrls: ['./result-anime.component.scss']
+  styleUrls: ['./result-anime.component.scss'],
 })
 export class ResultAnimeComponent implements OnInit, OnDestroy {
+  //var global
+  anime_results: Anime[] = [];
+  animeSubscription!: Subscription;
 
-  //var global  
-  anime_results : Anime[]=[];
-animeSubscription!: Subscription;
+  constructor(private animeService: AnimeService) {}
 
-  constructor( private animeService: AnimeService) { }
- 
- 
   ngOnDestroy(): void {
- this.animeSubscription.unsubscribe
+    this.animeSubscription.unsubscribe;
   }
 
   ngOnInit(): void {
-
-      // aqui se subscribe al servicio que es quien comparte el rultado
-      this.animeSubscription =  this.animeService.getResultAnime().subscribe(result => {      
-      //console.log('estoy en result-anime-componet', result);   
-      this.anime_results = result;
-    });
-
+    // aqui se subscribe al servicio que es quien comparte el rultado
+    this.animeSubscription = this.animeService
+      .getResultAnime()
+      .subscribe(result => {
+        //console.log('estoy en result-anime-componet', result);
+        this.anime_results = result;
+      });
   }
 
-
-  addAnime(anime:Anime){
+  addAnime(anime: Anime) {
     //console.log(anime);
 
     const addAnime: MyAnime = {
-      id : anime.mal_id,
-      title:anime.title,
+      id: anime.mal_id,
+      title: anime.title,
       image: anime.images['jpg'].image_url,
       total_episodes: anime.episodes,
-      watched_episodes:0
-    }
+      watched_episodes: 0,
+    };
 
     this.animeService.animeSelected(addAnime);
 
-    this.anime_results=[];
+    this.anime_results = [];
   }
-
-
 }

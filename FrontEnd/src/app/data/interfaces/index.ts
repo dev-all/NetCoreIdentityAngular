@@ -1,5 +1,5 @@
 // Interfaces UI
-export * from './ui/menu.model'
+export * from './ui/menu.model';
 
 // interfaces Services
 export * from './services/iresponse-validation.metadata';
@@ -12,4 +12,3 @@ export * from './forms/ifield.metadata';
 export * from './api/iapi-auth-user.metadata';
 
 export * from './api/response';
-

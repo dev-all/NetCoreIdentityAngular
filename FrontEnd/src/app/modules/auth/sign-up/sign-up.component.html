@@ -3,89 +3,150 @@
     <div class="card">
       <div class="row">
         <div class="col-md-4 pe-md-0">
-          <div class="auth-side-wrapper" [ngStyle]="{ 'background-image': 'url(https://via.placeholder.com/219x452)' }">
-
-          </div>
+          <div
+            class="auth-side-wrapper"
+            [ngStyle]="{
+              'background-image': 'url(https://via.placeholder.com/219x452)'
+            }"></div>
         </div>
         <div class="col-md-8 ps-md-0">
           <div class="auth-form-wrapper px-4 py-5">
-            <a routerLink="." class="nobleui-logo d-block mb-2">Noble<span>UI</span></a>
+            <a routerLink="." class="nobleui-logo d-block mb-2"
+              >Noble<span>UI</span></a
+            >
             <h5 class="text-muted fw-normal mb-4">Create a free account.</h5>
-          
+
             <p>
-              <ngb-alert [dismissible]="false" [type]="'danger'" *ngIf="errorMessage">
-                <strong>Alert!</strong> {{errorMessage}}
+              <ngb-alert
+                [dismissible]="false"
+                [type]="'danger'"
+                *ngIf="errorMessage">
+                <strong>Alert!</strong> {{ errorMessage }}
               </ngb-alert>
             </p>
-             
 
-              <form class="forms-sample" [formGroup]="authForm" (ngSubmit)="submitForm(this.authForm.value)">
-             
+            <form
+              class="forms-sample"
+              [formGroup]="authForm"
+              (ngSubmit)="submitForm(this.authForm.value)">
               <div class="mb-3">
-                <label for="exampleInputfullname1" class="form-label">Fullname</label>                
-                <input type="text" formControlName="fullname"
-                class="form-control"
-                placeholder="fullname"
-                [ngClass]="{ 'is-invalid': (isFormSubmitted && fm['fullname'].errors) || (!fm['fullname'].pristine && fm['fullname'].invalid) }">
-
-                 <!-- Validation messages-->
-                 <p class="text-danger mt-1"
-                    *ngIf="fm['fullname'].invalid &&
-                          (fm['fullname'].dirty ||
-                          fm['fullname'].touched)">                   
-                          <ng-container *ngIf=" fm['fullname'].errors?.['required']">Enter your Username...</ng-container>
-                        </p>
-              </div>            
-              <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="text" formControlName="email"
-                class="form-control"
-                placeholder="email"
-                [ngClass]="{ 'is-invalid': (isFormSubmitted && fm['email'].errors) || (!fm['email'].pristine && fm['email'].invalid) }">
+                <label for="exampleInputfullname1" class="form-label"
+                  >Fullname</label
+                >
+                <input
+                  type="text"
+                  formControlName="fullname"
+                  class="form-control"
+                  placeholder="fullname"
+                  [ngClass]="{
+                    'is-invalid':
+                      (isFormSubmitted && fm['fullname'].errors) ||
+                      (!fm['fullname'].pristine && fm['fullname'].invalid)
+                  }" />
 
                 <!-- Validation messages-->
-                 <p class="text-danger mt-1"
-                    *ngIf="fm['email'].errors &&
-                          (fm['email'].dirty ||
-                          fm['email'].touched)">
-                          <ng-container *ngIf=" fm['email'].errors?.['required']">Enter your email...</ng-container>
-                          <ng-container *ngIf=" fm['email'].errors?.['email']"> Invalid email</ng-container>
-                          <ng-container *ngIf=" fm['email'].errors?.['pattern']"> Not recognized as a valid email</ng-container>
-                        </p>
+                <p
+                  class="text-danger mt-1"
+                  *ngIf="
+                    fm['fullname'].invalid &&
+                    (fm['fullname'].dirty || fm['fullname'].touched)
+                  ">
+                  <ng-container *ngIf=" fm['fullname'].errors?.['required']"
+                    >Enter your Username...</ng-container
+                  >
+                </p>
               </div>
               <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control"  formControlName="password"
-                [ngClass]="{ 'is-invalid': (isFormSubmitted && fm['password'].errors) || (!fm['password'].pristine && fm['password'].invalid) }">
+                <label for="exampleInputEmail1" class="form-label"
+                  >Email address</label
+                >
+                <input
+                  type="text"
+                  formControlName="email"
+                  class="form-control"
+                  placeholder="email"
+                  [ngClass]="{
+                    'is-invalid':
+                      (isFormSubmitted && fm['email'].errors) ||
+                      (!fm['email'].pristine && fm['email'].invalid)
+                  }" />
 
                 <!-- Validation messages-->
-                 <p class="text-danger mt-1"
-                    *ngIf="fm['password'].errors &&
-                          (fm['password'].dirty ||
-                          fm['password'].touched)">
-                          <ng-container *ngIf=" fm['password'].errors?.['required']">Enter your password...</ng-container>
-                          <ng-container *ngIf=" fm['password'].errors?.['email']"> Invalid account</ng-container>
-                          <ng-container *ngIf=" fm['password'].errors?.['minlength']"> Password length required to be longer</ng-container>
-                        </p>
+                <p
+                  class="text-danger mt-1"
+                  *ngIf="
+                    fm['email'].errors &&
+                    (fm['email'].dirty || fm['email'].touched)
+                  ">
+                  <ng-container *ngIf=" fm['email'].errors?.['required']"
+                    >Enter your email...</ng-container
+                  >
+                  <ng-container *ngIf=" fm['email'].errors?.['email']">
+                    Invalid email</ng-container
+                  >
+                  <ng-container *ngIf=" fm['email'].errors?.['pattern']">
+                    Not recognized as a valid email</ng-container
+                  >
+                </p>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label"
+                  >Password</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  formControlName="password"
+                  [ngClass]="{
+                    'is-invalid':
+                      (isFormSubmitted && fm['password'].errors) ||
+                      (!fm['password'].pristine && fm['password'].invalid)
+                  }" />
+
+                <!-- Validation messages-->
+                <p
+                  class="text-danger mt-1"
+                  *ngIf="
+                    fm['password'].errors &&
+                    (fm['password'].dirty || fm['password'].touched)
+                  ">
+                  <ng-container *ngIf=" fm['password'].errors?.['required']"
+                    >Enter your password...</ng-container
+                  >
+                  <ng-container *ngIf=" fm['password'].errors?.['email']">
+                    Invalid account</ng-container
+                  >
+                  <ng-container *ngIf=" fm['password'].errors?.['minlength']">
+                    Password length required to be longer</ng-container
+                  >
+                </p>
               </div>
               <div class="form-check mb-3">
-                <input type="checkbox" class="form-check-input" id="authCheck" formControlName="agreeTerm">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="authCheck"
+                  formControlName="agreeTerm" />
                 <label class="form-check-label" for="authCheck">
-                 Agree to terms and conditions
+                  Agree to terms and conditions
                 </label>
               </div>
 
-
-
               <div>
-                <button type="submit" class="btn btn-primary me-2 mb-2 mb-md-0">Sign up</button>
+                <button type="submit" class="btn btn-primary me-2 mb-2 mb-md-0">
+                  Sign up
+                </button>
 
-                <button type="button" class="btn btn-outline-primary btn-icon-text mb-2 mb-md-0">
+                <button
+                  type="button"
+                  class="btn btn-outline-primary btn-icon-text mb-2 mb-md-0">
                   <i class="feather icon-twitter btn-icon-prepend"></i>
                   Sign up with twitter
                 </button>
               </div>
-              <a routerLink="/auth/login" class="d-block mt-3 text-muted">Already a user? Sign in</a>
+              <a routerLink="/auth/login" class="d-block mt-3 text-muted"
+                >Already a user? Sign in</a
+              >
             </form>
           </div>
         </div>

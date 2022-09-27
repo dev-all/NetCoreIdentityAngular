@@ -8,9 +8,8 @@ describe('HookonchangeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HookonchangeComponent ]
-    })
-    .compileComponents();
+      declarations: [HookonchangeComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

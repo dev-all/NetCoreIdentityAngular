@@ -3,12 +3,12 @@ import { MenuItem } from '@data/interfaces/ui/menu.model';
 export const MENU: MenuItem[] = [
   {
     label: '',
-    isTitle: true
+    isTitle: true,
   },
   {
     label: 'Dashboard',
     icon: 'home',
-    link: '/dashboard'
+    link: '/dashboard',
   },
   {
     label: 'Angular',
@@ -16,14 +16,13 @@ export const MENU: MenuItem[] = [
     subItems: [
       {
         label: 'Pipes',
-        link: '/ejemplos/pipes'
+        link: '/ejemplos/pipes',
       },
       {
         label: 'Inter',
-        link: '/ejemplos/inter'
-      }
-    ]
-
+        link: '/ejemplos/inter',
+      },
+    ],
   },
   {
     label: 'Anime',
@@ -32,12 +31,12 @@ export const MENU: MenuItem[] = [
       {
         label: 'Search',
         link: '/anime',
-      }
-    ]
+      },
+    ],
   },
   {
     label: 'Web Apps',
-    isTitle: true
+    isTitle: true,
   },
   {
     label: 'Email',
@@ -49,13 +48,13 @@ export const MENU: MenuItem[] = [
       },
       {
         label: 'Read',
-        link: '/apps/email/read'
+        link: '/apps/email/read',
       },
       {
         label: 'Compose',
-        link: '/apps/email/compose'
+        link: '/apps/email/compose',
       },
-    ]
+    ],
   },
   {
     label: 'Chat',
@@ -69,11 +68,11 @@ export const MENU: MenuItem[] = [
     badge: {
       variant: 'primary',
       text: 'Event',
-    }
+    },
   },
   {
     label: 'Components',
-    isTitle: true
+    isTitle: true,
   },
   {
     label: 'UI Kit',
@@ -179,7 +178,7 @@ export const MENU: MenuItem[] = [
         label: 'Typeadhed',
         link: '/ui-components/typeahead',
       },
-    ]
+    ],
   },
   {
     label: 'Advanced UI',
@@ -197,7 +196,7 @@ export const MENU: MenuItem[] = [
         label: 'Sweet alert',
         link: '/advanced-ui/sweet-alert',
       },
-    ]
+    ],
   },
   {
     label: 'Forms',
@@ -205,35 +204,34 @@ export const MENU: MenuItem[] = [
     subItems: [
       {
         label: 'Basic elements',
-        link: '/form-elements/basic-elements'
+        link: '/form-elements/basic-elements',
       },
       {
         label: 'Form-one',
-        link: '/form-elements/form-one'
+        link: '/form-elements/form-one',
       },
       {
         label: 'Advanced elements',
         subItems: [
           {
             label: 'Form validation',
-            link: '/advanced-form-elements/form-validation'
+            link: '/advanced-form-elements/form-validation',
           },
           {
             label: 'Ng-select',
-            link: '/advanced-form-elements/ng-select'
+            link: '/advanced-form-elements/ng-select',
           },
           {
             label: 'Ngx-dropzone',
-            link: '/advanced-form-elements/ngx-dropzone-wrapper'
+            link: '/advanced-form-elements/ngx-dropzone-wrapper',
           },
-        ]
+        ],
       },
       {
         label: 'Editors',
-        link: '/form-elements/editors'
+        link: '/form-elements/editors',
       },
-
-    ]
+    ],
   },
   {
     label: 'Charts & graphs',
@@ -247,7 +245,7 @@ export const MENU: MenuItem[] = [
         label: 'ChartJs',
         link: '/charts-graphs/chartjs',
       },
-    ]
+    ],
   },
   {
     label: 'Tables',
@@ -263,9 +261,9 @@ export const MENU: MenuItem[] = [
       },
       {
         label: 'Ngx-datatable',
-        link: '/tables/ngx-datatable'
-      }
-    ]
+        link: '/tables/ngx-datatable',
+      },
+    ],
   },
   {
     label: 'Icons',
@@ -278,12 +276,12 @@ export const MENU: MenuItem[] = [
       {
         label: 'Mdi icons',
         link: '/icons/mdi-icons',
-      }
-    ]
+      },
+    ],
   },
   {
     label: 'Pages',
-    isTitle: true
+    isTitle: true,
   },
   {
     label: 'Special pages',
@@ -312,8 +310,8 @@ export const MENU: MenuItem[] = [
       {
         label: 'Timeline',
         link: '/general/timeline',
-      }
-    ]
+      },
+    ],
   },
   {
     label: 'Usuarios',
@@ -327,7 +325,7 @@ export const MENU: MenuItem[] = [
         label: 'Detail',
         link: '/user/detail/1',
       },
-    ]
+    ],
   },
   {
     label: 'Authentication',
@@ -341,7 +339,7 @@ export const MENU: MenuItem[] = [
         label: 'Register',
         link: '/auth/sign-up',
       },
-    ]
+    ],
   },
   {
     label: 'Error',
@@ -355,6 +353,6 @@ export const MENU: MenuItem[] = [
         label: '500',
         link: '/error/500',
       },
-    ]
+    ],
   },
 ];
