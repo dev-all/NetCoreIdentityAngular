@@ -10,7 +10,7 @@ using allshop.repository.Context;
 
 namespace allshop.repository.Migrations
 {
-    [DbContext(typeof(allshopContext))]
+    [DbContext(typeof(DatabaseContext))]
     partial class allshopContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

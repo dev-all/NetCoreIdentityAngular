@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.api\\allshop.api.csproj": {}
+    "F:\\NetCoreIdentityAngular\\NetCoreIdentityAngular\\backend\\identity\\allshop.api\\allshop.api.csproj": {}
   },
   "projects": {
-    "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.api\\allshop.api.csproj": {
+    "F:\\NetCoreIdentityAngular\\NetCoreIdentityAngular\\backend\\identity\\allshop.api\\allshop.api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.api\\allshop.api.csproj",
+        "projectUniqueName": "F:\\NetCoreIdentityAngular\\NetCoreIdentityAngular\\backend\\identity\\allshop.api\\allshop.api.csproj",
         "projectName": "allshop.api",
-        "projectPath": "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.api\\allshop.api.csproj",
-        "packagesPath": "C:\\Users\\leoan\\.nuget\\packages\\",
-        "outputPath": "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.api\\obj\\",
+        "projectPath": "F:\\NetCoreIdentityAngular\\NetCoreIdentityAngular\\backend\\identity\\allshop.api\\allshop.api.csproj",
+        "packagesPath": "C:\\Users\\31098540\\.nuget\\packages\\",
+        "outputPath": "F:\\NetCoreIdentityAngular\\NetCoreIdentityAngular\\backend\\identity\\allshop.api\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\leoan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\31098540\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +32,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.repository\\allshop.repository.csproj": {
-                "projectPath": "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.repository\\allshop.repository.csproj"
+              "F:\\NetCoreIdentityAngular\\NetCoreIdentityAngular\\backend\\identity\\allshop.repository\\allshop.repository.csproj": {
+                "projectPath": "F:\\NetCoreIdentityAngular\\NetCoreIdentityAngular\\backend\\identity\\allshop.repository\\allshop.repository.csproj"
               }
             }
           }
@@ -99,8 +103,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -112,21 +115,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.dominio\\allshop.domain.csproj": {
+    "F:\\NetCoreIdentityAngular\\NetCoreIdentityAngular\\backend\\identity\\allshop.dominio\\allshop.domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.dominio\\allshop.domain.csproj",
+        "projectUniqueName": "F:\\NetCoreIdentityAngular\\NetCoreIdentityAngular\\backend\\identity\\allshop.dominio\\allshop.domain.csproj",
         "projectName": "allshop.domain",
-        "projectPath": "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.dominio\\allshop.domain.csproj",
-        "packagesPath": "C:\\Users\\leoan\\.nuget\\packages\\",
-        "outputPath": "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.dominio\\obj\\",
+        "projectPath": "F:\\NetCoreIdentityAngular\\NetCoreIdentityAngular\\backend\\identity\\allshop.dominio\\allshop.domain.csproj",
+        "packagesPath": "C:\\Users\\31098540\\.nuget\\packages\\",
+        "outputPath": "F:\\NetCoreIdentityAngular\\NetCoreIdentityAngular\\backend\\identity\\allshop.dominio\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\leoan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\31098540\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -157,8 +164,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -167,21 +173,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.repository\\allshop.repository.csproj": {
+    "F:\\NetCoreIdentityAngular\\NetCoreIdentityAngular\\backend\\identity\\allshop.repository\\allshop.repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.repository\\allshop.repository.csproj",
+        "projectUniqueName": "F:\\NetCoreIdentityAngular\\NetCoreIdentityAngular\\backend\\identity\\allshop.repository\\allshop.repository.csproj",
         "projectName": "allshop.repository",
-        "projectPath": "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.repository\\allshop.repository.csproj",
-        "packagesPath": "C:\\Users\\leoan\\.nuget\\packages\\",
-        "outputPath": "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.repository\\obj\\",
+        "projectPath": "F:\\NetCoreIdentityAngular\\NetCoreIdentityAngular\\backend\\identity\\allshop.repository\\allshop.repository.csproj",
+        "packagesPath": "C:\\Users\\31098540\\.nuget\\packages\\",
+        "outputPath": "F:\\NetCoreIdentityAngular\\NetCoreIdentityAngular\\backend\\identity\\allshop.repository\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\leoan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\31098540\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -195,8 +205,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.dominio\\allshop.domain.csproj": {
-                "projectPath": "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.dominio\\allshop.domain.csproj"
+              "F:\\NetCoreIdentityAngular\\NetCoreIdentityAngular\\backend\\identity\\allshop.dominio\\allshop.domain.csproj": {
+                "projectPath": "F:\\NetCoreIdentityAngular\\NetCoreIdentityAngular\\backend\\identity\\allshop.dominio\\allshop.domain.csproj"
               }
             }
           }
@@ -242,8 +252,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -252,7 +261,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

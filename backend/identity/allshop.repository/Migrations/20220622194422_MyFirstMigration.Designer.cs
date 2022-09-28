@@ -11,7 +11,7 @@ using allshop.repository.Context;
 
 namespace allshop.repository.Migrations
 {
-    [DbContext(typeof(allshopContext))]
+    [DbContext(typeof(DatabaseContext))]
     [Migration("20220622194422_MyFirstMigration")]
     partial class MyFirstMigration
     {
