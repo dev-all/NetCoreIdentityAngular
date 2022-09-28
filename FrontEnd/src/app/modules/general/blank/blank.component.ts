@@ -5,11 +5,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './blank.component.html',
   styleUrls: ['./blank.component.scss']
 })
-export class BlankComponent implements OnInit {
+export class BlankComponent {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+
 
 }

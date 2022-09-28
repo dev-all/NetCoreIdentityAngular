@@ -19,14 +19,25 @@
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "rules": {
+        // "@angular-eslint/directive-selector": [
+        //   "error",
+        //   {
+        //     "type": "attribute",
+        //     "prefix": "app",
+        //     "style": "camelCase"
+        //   }
+        // ],
         "@angular-eslint/directive-selector": [
           "error",
-          {
-            "type": "attribute",
-            "prefix": "app",
-            "style": "camelCase"
-          }
-        ],
+           {
+             "type": "attribute",
+             "prefix": [
+               "dir",
+               "ng"
+             ],
+             "style": "kebab-case"
+           }
+         ],
         "@angular-eslint/component-selector": [
           "error",
           {

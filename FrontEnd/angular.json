@@ -39,13 +39,17 @@
               "src/assets"
             ],
             "stylePreprocessorOptions": {
-              "includePaths": ["src/assets/scss"]
+              "includePaths": [
+                "src/assets/scss"
+              ]
             },
             "styles": [
               "src/styles.scss"
             ],
             "scripts": [],
-            "localize": ["es-AR"]
+            "localize": [
+              "es-AR"
+            ]
           },
           "configurations": {
             "production": {
@@ -132,10 +136,21 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "salud"
+  "defaultProject": "salud",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }
-

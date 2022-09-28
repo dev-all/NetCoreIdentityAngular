@@ -6,10 +6,11 @@ import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 /**
- * Page load animation
+ * Page load animation contentAnimate
  */
 @Directive({
-	selector: '[contentAnimate]'
+  selector: '[dir-content-animate]'
+
 })
 export class ContentAnimateDirective implements OnInit, OnDestroy {
   

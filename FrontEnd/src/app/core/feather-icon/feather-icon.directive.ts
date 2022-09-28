@@ -2,11 +2,11 @@ import { Directive, AfterViewInit } from '@angular/core';
 import * as feather from 'feather-icons';
 
 @Directive({
-  selector: '[appFeatherIcon]'
+  selector: '[dir-feather-icon]'
 })
 export class FeatherIconDirective implements AfterViewInit {
-
-  constructor() { }
+ 
+ // constructor() { }
 
   ngAfterViewInit() {
     // feather icon
