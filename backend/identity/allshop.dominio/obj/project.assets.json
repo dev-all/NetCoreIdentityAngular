@@ -8,24 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\31098540\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\leoan\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\NetCoreIdentityAngular\\NetCoreIdentityAngular\\backend\\identity\\allshop.dominio\\allshop.domain.csproj",
+      "projectUniqueName": "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.dominio\\allshop.domain.csproj",
       "projectName": "allshop.domain",
-      "projectPath": "F:\\NetCoreIdentityAngular\\NetCoreIdentityAngular\\backend\\identity\\allshop.dominio\\allshop.domain.csproj",
-      "packagesPath": "C:\\Users\\31098540\\.nuget\\packages\\",
-      "outputPath": "F:\\NetCoreIdentityAngular\\NetCoreIdentityAngular\\backend\\identity\\allshop.dominio\\obj\\",
+      "projectPath": "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.dominio\\allshop.domain.csproj",
+      "packagesPath": "C:\\Users\\leoan\\.nuget\\packages\\",
+      "outputPath": "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.dominio\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\31098540\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\leoan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -56,7 +51,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -65,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

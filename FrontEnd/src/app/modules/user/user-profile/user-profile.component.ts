@@ -8,7 +8,7 @@ import { ICardUser } from '@share/components/cards/card-user/icard-user.metadata
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.scss']
 })
-export class UserProfileComponent implements OnInit {
+export class UserProfileComponent {
 
   public users: ICardUser[] = USERS_DATA;
 
@@ -21,7 +21,6 @@ export class UserProfileComponent implements OnInit {
     // console.log({users: this.users});
   }  
 
-  ngOnInit(): void {
-  }
+
 
 }

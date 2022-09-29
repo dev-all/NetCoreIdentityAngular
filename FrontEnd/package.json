@@ -10,7 +10,14 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "backend": "json-server --port 7000 --watch ./src/app/data/backend/db.json --delay 3000",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "lint:fix": "ng lint --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick && npm run lint",
+      "pre-push": "ng test --no-watch"
+    }
   },
   "private": true,
   "dependencies": {
