@@ -45,3 +45,14 @@ E:\NetCoreIdentityAngular\backend\identity\allshop.dominio\obj\Debug\net6.0\alls
 E:\NetCoreIdentityAngular\backend\identity\allshop.dominio\obj\Debug\net6.0\refint\allshop.domain.dll
 E:\NetCoreIdentityAngular\backend\identity\allshop.dominio\obj\Debug\net6.0\allshop.domain.pdb
 E:\NetCoreIdentityAngular\backend\identity\allshop.dominio\obj\Debug\net6.0\ref\allshop.domain.dll
+F:\NetCoreIdentityAngular\NetCoreIdentityAngular\backend\identity\allshop.dominio\bin\Debug\net6.0\allshop.domain.deps.json
+F:\NetCoreIdentityAngular\NetCoreIdentityAngular\backend\identity\allshop.dominio\bin\Debug\net6.0\allshop.domain.dll
+F:\NetCoreIdentityAngular\NetCoreIdentityAngular\backend\identity\allshop.dominio\bin\Debug\net6.0\ref\allshop.domain.dll
+F:\NetCoreIdentityAngular\NetCoreIdentityAngular\backend\identity\allshop.dominio\bin\Debug\net6.0\allshop.domain.pdb
+F:\NetCoreIdentityAngular\NetCoreIdentityAngular\backend\identity\allshop.dominio\obj\Debug\net6.0\allshop.domain.GeneratedMSBuildEditorConfig.editorconfig
+F:\NetCoreIdentityAngular\NetCoreIdentityAngular\backend\identity\allshop.dominio\obj\Debug\net6.0\allshop.domain.AssemblyInfoInputs.cache
+F:\NetCoreIdentityAngular\NetCoreIdentityAngular\backend\identity\allshop.dominio\obj\Debug\net6.0\allshop.domain.AssemblyInfo.cs
+F:\NetCoreIdentityAngular\NetCoreIdentityAngular\backend\identity\allshop.dominio\obj\Debug\net6.0\allshop.domain.csproj.CoreCompileInputs.cache
+F:\NetCoreIdentityAngular\NetCoreIdentityAngular\backend\identity\allshop.dominio\obj\Debug\net6.0\allshop.domain.dll
+F:\NetCoreIdentityAngular\NetCoreIdentityAngular\backend\identity\allshop.dominio\obj\Debug\net6.0\ref\allshop.domain.dll
+F:\NetCoreIdentityAngular\NetCoreIdentityAngular\backend\identity\allshop.dominio\obj\Debug\net6.0\allshop.domain.pdb
