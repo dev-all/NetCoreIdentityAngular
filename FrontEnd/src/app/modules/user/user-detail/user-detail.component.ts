@@ -10,7 +10,7 @@ import { ICardUser } from '@share/components/cards/card-user/icard-user.metadata
   templateUrl: './user-detail.component.html',
   styleUrls: ['./user-detail.component.scss']
 })
-export class UserDetailComponent implements OnInit {
+export class UserDetailComponent {
   public users: ICardUser[] = USERS_DATA;
 
   public currentUser?: ICardUser;
@@ -27,7 +27,5 @@ export class UserDetailComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {
-
-  }
+ 
 }
