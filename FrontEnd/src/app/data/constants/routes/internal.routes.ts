@@ -7,10 +7,10 @@ export const ROUTER_PATHS ={
   },
   PAGE:{
     DEFAULT: 'general',
-    GENERAL: 'general',    
+    GENERAL: 'general',
     USER:{
       DEFAULT: 'user',
-      LIST: 'list',    
+      LIST: 'list',
       DETAIL: 'detail/:id',
       PROFILE: 'profile/:id',
     },
@@ -31,6 +31,7 @@ export const INTERNAL_PATHS = {
   AUTH_LOGIN : `${ROUTER_PATHS.AUTH.LOGIN}`,
   AUTH_PASS : `${ROUTER_PATHS.AUTH.PASS}`,
   AUTH_SIGNUP : `${ROUTER_PATHS.AUTH.SIGNUP}`,
+
   /**
    * PAGES
    */
@@ -46,19 +47,17 @@ export const INTERNAL_PATHS = {
    PAGE_USER_PROFILE: `${ROUTER_PATHS.PAGE.USER.PROFILE}`,
 
 
-
-
-
-
   /** ERROR */
   ERROR: `${ROUTER_PATHS.ERROR.API}`,
 
 }
 
 export const INTERNAL_ROUTES = {
+
       ERROR_API: `/${INTERNAL_PATHS.ERROR}`,
       AUTH_LOGIN : `/${INTERNAL_PATHS.AUTH_DEFAULT}/${INTERNAL_PATHS.AUTH_LOGIN}`,
       AUTH_LOGIN_PASS : `/${INTERNAL_PATHS.AUTH_DEFAULT}/${INTERNAL_PATHS.AUTH_PASS}`,
+     AUTH_SIGNUP : `/${INTERNAL_PATHS.AUTH_DEFAULT}/${INTERNAL_PATHS.AUTH_SIGNUP}`,
 
       PAGE_DEFAULT: `/${INTERNAL_PATHS.PAGE_DEFAULT}`,
 

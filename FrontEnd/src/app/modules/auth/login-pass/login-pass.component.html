@@ -2,16 +2,16 @@
   <div class="col-md-8 col-xl-4 mx-auto">
     <div class="card">
       <div class="row">
- 
+
         <div class="col-md-12 ps-md-0">
-          <div class="auth-form-wrapper px-4 py-5">    
+          <div class="auth-form-wrapper px-4 py-5">
             <a routerLink="." class="nobleui-logo d-block mb-2">SHOP <span> UI</span></a>
             <p>
               <ngb-alert [dismissible]="false" [type]="'danger'" *ngIf="errorMessage">
                 <strong>Alert!</strong> {{errorMessage}}
               </ngb-alert>
             </p>
-            
+
             <div dir-content-animate>
                   <form class="forms-sample" [formGroup]="loginForm" (ngSubmit)="Authenticate(this.loginForm.value)">
                   <h5 class="text-center fw-normal mb-1">¡Bienvenido!  </h5>
@@ -26,9 +26,9 @@
                         *ngIf="fm['password'].errors &&
                               (fm['password'].dirty ||
                               fm['password'].touched)">
-                              <ng-container *ngIf=" fm['password'].errors?.['required']">Ingrese su password...</ng-container>
+                              <ng-container *ngIf=" fm['password'].errors?.['required']">Ingrese su contraseña...</ng-container>
                               <ng-container *ngIf=" fm['password'].errors?.['email']"> Cuenta no valida</ng-container>
-                              <ng-container *ngIf=" fm['password'].errors?.['minlength']"> Se requiere que la longitud del password sea mayor </ng-container>
+                              <ng-container *ngIf=" fm['password'].errors?.['minlength']"> Se requiere que la longitud de la contraseña sea mayor </ng-container>
                             </p>
                   </div>
                   <div class="mb-3 text-center">
@@ -46,7 +46,7 @@
 
 
                   <a routerLink="/auth/register" class="d-block mt-3 text-center">¿Olvidaste tu contraseña?</a>
-                  <a routerLink="/auth/register" class="d-block mt-3 text-center">Iniciar con otra cuenta</a>
+                  <a routerLink="/auth/login" class="d-block mt-3 text-center">Iniciar con otra cuenta</a>
                   <hr> <div class="mb-3 text-center">
 
 

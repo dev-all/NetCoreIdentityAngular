@@ -20,11 +20,11 @@ export class LoginPassComponent implements OnInit {
   isFormSubmitted = false;
   errorMessage!:string;
 
-  constructor(private formBuilder : FormBuilder 
+  constructor(private formBuilder : FormBuilder
             , private router: Router
             , private route: ActivatedRoute
             , private serviceAuth: AuthService) {
-  
+
 
   this.loginForm = this.formBuilder.group({
     email : [ this.GetEmail() ,[Validators.required,
@@ -35,15 +35,15 @@ export class LoginPassComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {      
+  ngOnInit(): void {
     // get return url from route parameters or default to '/'
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
-  GetEmail() :string{    
+  GetEmail() :string{
     let email = localStorage.getItem('InitLoginEmail');
     if (!email) {
-      this.serviceAuth.logout()     
+      this.serviceAuth.logout()
      }
     return  email || "";
   }
@@ -54,7 +54,7 @@ export class LoginPassComponent implements OnInit {
     return this.loginForm.controls;
   }
 
-  onLoggedin() {    
+  onLoggedin() {
     if(this.loginForm.valid){
     localStorage.setItem('isLoggedin', 'true');
     if (localStorage.getItem('isLoggedin')) {
@@ -69,10 +69,16 @@ export class LoginPassComponent implements OnInit {
     if(!this.loginForm.valid ){
       this.errorMessage= "Opss!!! revise los datos ingresados";
       return;
-    }      
-    this.serviceAuth.signIn(user).subscribe( response =>
-      {            
-        console.log(response);                                     
-      });
+    }
+    this.serviceAuth.signIn(user).subscribe(
+      response => {
+      if(response.status === 201)
+        {
+          this.isLoading=false;
+          this.errorMessage= response.message || "" ;
+          return;
+        }
+      }
+      );
   }
 }

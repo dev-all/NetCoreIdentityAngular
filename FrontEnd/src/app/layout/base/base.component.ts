@@ -7,7 +7,7 @@ import { Router, RouteConfigLoadStart, RouteConfigLoadEnd } from '@angular/route
   templateUrl: './base.component.html',
   styleUrls: ['./base.component.scss']
 })
-export class BaseComponent implements AfterViewInit, OnInit {
+export class BaseComponent implements AfterViewInit {
 
   isLoading: boolean = true;
 
@@ -34,11 +34,8 @@ export class BaseComponent implements AfterViewInit, OnInit {
     this.isLoading = false;
     }, 1000);
 
-    console.log('afterViewInit baseComponent');
+
   }
 
-  ngOnInit(): void {
-    console.log(' OnInit baseComponent');
-  }
 
 }

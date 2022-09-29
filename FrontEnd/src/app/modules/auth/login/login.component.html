@@ -11,7 +11,7 @@
 
 
               <form class="forms-sample" [formGroup]="loginForm" (ngSubmit)="submitForm()">
-              
+
               <h5 class="text-muted fw-normal mb-4">¡Bienvenido! Inicie sesión en su cuenta.</h5>
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Dirección de e-mail</label>
@@ -66,8 +66,7 @@
                 </button>
               </div>
 
-              <a routerLink="/auth/register" class="d-block mt-3 text-center">Crear una nueva cuenta</a>
-
+              <a (click)="signUp()" class="d-block mt-3 text-center">Crear una nueva cuenta</a>
 
               <!-- <p class="msg"> y la Política de privacidad</p> -->
               <div class="footer d-flex flex-column flex-md-row align-items-center justify-content-between px-4 py-3 border-top small">

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component,   OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { INTERNAL_ROUTES } from '@data/constants/routes';
@@ -47,6 +47,7 @@ export class LoginComponent implements OnInit {
    // console.log(this.loginForm.get('email')?.value);
   }
 
+
   submitForm(){
    if (this.loginForm.valid){
    this.isFormSubmitted = true;
@@ -54,10 +55,14 @@ export class LoginComponent implements OnInit {
   //  if (localStorage.getItem('isLoggedin')) {
   //     }
     //this.serviceAuth.emaillogin = this.loginForm.get('email')?.value;
-      localStorage.setItem('InitLoginEmail', this.loginForm.get('email')?.value);     
+      localStorage.setItem('InitLoginEmail', this.loginForm.get('email')?.value);
       this.router.navigate([`${this.returnUrl}${INTERNAL_ROUTES.AUTH_LOGIN_PASS}`]);
-   
+
   }
  }
+
+ signUp(){
+  this.router.navigate([`${this.returnUrl}${INTERNAL_ROUTES.AUTH_SIGNUP}`]);
+}
 
 }

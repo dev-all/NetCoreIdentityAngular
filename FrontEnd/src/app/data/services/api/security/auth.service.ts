@@ -27,8 +27,8 @@ export class AuthService {
   public userSubject$! : BehaviorSubject<IApiUserAuthenticated>; //tipo especial de observable
 
   //usaría BehaviorSubjectpara un servicio de datos, ya que un servicio angular
-  //a menudo se inicializa antes de que el componente y el sujeto de comportamiento 
-  //garanticen que el componente que consume el servicio reciba los últimos datos 
+  //a menudo se inicializa antes de que el componente y el sujeto de comportamiento
+  //garanticen que el componente que consume el servicio reciba los últimos datos
   //actualizados, incluso si no hay nuevas actualizaciones desde la suscripción del componente a estos datos.
   //public usuario$ : Observable<IApiUserAuthenticated>;
 
@@ -39,42 +39,67 @@ export class AuthService {
   constructor(  protected http: HttpClient
               , private router: Router){
     this.userSubject$ =  this.GetItem();
-    this.helper = new JwtHelperService();    
+    this.helper = new JwtHelperService();
   }
-  
 
 
+
+
+  // signUp(user : UserModel):Observable<UserModel>{
+  //   return this.http.post<UserModel>(API_ROUTES.AUTH.SIGNUP, user)
+  // }
 
   signUp(user : UserModel):Observable<UserModel>{
-    return this.http.post<UserModel>(API_ROUTES.AUTH.SIGNUP, user)   
+
+    return this.http.post<Response>(API_ROUTES.AUTH.SIGNUP, user)
+    .pipe(
+      map(response => {
+        debugger;
+        if(response.status === 200)
+        {
+          // this.setUserToLocalStorage(response.data);
+          // this.userSubject$.next(response.data);
+          this.router.navigateByUrl(INTERNAL_ROUTES.PAGE_DEFAULT);
+        }
+        return response;
+     }),
+      catchError(e => {
+
+        this.router.navigateByUrl(INTERNAL_ROUTES.ERROR_API);
+        return of(e.message);
+
+      })
+    );
   }
   // signIn(user : UserModel):Observable<UserModel>{
-  //   return this.http.post<UserModel>(API_ROUTES.AUTH.SIGNIN, user)       
+  //   return this.http.post<UserModel>(API_ROUTES.AUTH.SIGNIN, user)
   // }
   signIn(user : UserModel):Observable<Response>{
     return this.http.post<Response>(API_ROUTES.AUTH.SIGNIN, user)
           .pipe(
-            map(response => {             
-              
+            map(response => {
+
               if(response.status === 200)
-              {                
+              {
                 this.setUserToLocalStorage(response.data);
-                this.userSubject$.next(response.data);                
+                this.userSubject$.next(response.data);
                 this.router.navigateByUrl(INTERNAL_ROUTES.PAGE_DEFAULT);
-              }            
+              }
               return response;
            }),
-            catchError(e => {                    
+            catchError(e => {
+
               this.router.navigateByUrl(INTERNAL_ROUTES.ERROR_API);
               return of(e.message);
+
             })
           );
   }
 
   sendRecoveryLink(user : UserModel):Observable<UserModel>{
-    return this.http.post<UserModel>(API_ROUTES.AUTH.SENDRECOVERYLIKN, user)         
+    return this.http.post<UserModel>(API_ROUTES.AUTH.SENDRECOVERYLIKN, user)
   }
- 
+
   public GetItem(){
     return new BehaviorSubject<IApiUserAuthenticated>(JSON.parse(localStorage.getItem(this.userLocalStorage)!));
    }
@@ -91,7 +116,7 @@ export class AuthService {
 
   //         this.response.error = r.error;
   //         this.response.msg = r.msg;
-  //         this.response.data = r.data;        
+  //         this.response.data = r.data;
   //         this.setUserToLocalStorage(r.data);
   //         this.userSubject$.next(r.data);
   //         if (!this.response.error) {

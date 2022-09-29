@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-/* Importing Bootstrap SCSS file. 
+/* Importing Bootstrap SCSS file.
 @import '~bootstrap/scss/bootstrap';*/
 
 // Global icon font
@@ -30,12 +30,12 @@
 // @import '~@swimlane/ngx-datatable/themes/bootstrap.css';
 // @import '~@swimlane/ngx-datatable/assets/icons.css';
 
-
+// NobleUI styles For RTL
+// @import "./assets/scss/style.rtl.css";
+/* Importing Bootstrap SCSS file.
+@import '~bootstrap/scss/bootstrap';
+*/
 // NobleUI styles for LTR
 @import "./assets/scss/style";
 
 
-// NobleUI styles For RTL
-// @import "./assets/scss/style.rtl.css";
-/* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';

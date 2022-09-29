@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { INTERNAL_ROUTES } from '@data/constants/routes';
 import { UserModel } from '@data/schema';
 import { AuthService } from '@data/services/api/security/auth.service';
 
@@ -9,18 +10,18 @@ import { AuthService } from '@data/services/api/security/auth.service';
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.scss']
 })
-export class SignUpComponent  {
-
+export class SignUpComponent implements OnInit {
+  returnUrl: any;
   errorMEssage!:string;
   public authForm: FormGroup;
   isFormSubmitted = false;
   errorMessage!:string;
 
   constructor(private router: Router
-    ,private formBuilder: FormBuilder    
+    ,private formBuilder: FormBuilder
     , private route: ActivatedRoute
-    , private serviceAuth: AuthService) { 
-     
+    , private serviceAuth: AuthService) {
+
     this.authForm = this.formBuilder.group({
       fullname : ['',Validators.required],
       email : ['',[Validators.required,
@@ -31,8 +32,10 @@ export class SignUpComponent  {
     });
 
     }
-
- 
+    ngOnInit(): void {
+      // get return url from route parameters or default to '/'
+      this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+    }
   get fm(){
     return this.authForm.controls;
   }
@@ -46,9 +49,8 @@ export class SignUpComponent  {
       }
       // deberia obtener el id del back para el rol invitado
       user.roleId='091da15d-3ae4-4f6e-aafb-8160d1c524a5';
-      return this.serviceAuth.signUp(user).subscribe( 
+      return this.serviceAuth.signUp(user).subscribe(
         user =>{
-            console.log(user);
             localStorage.setItem('isLoggedin', 'true');
             localStorage.setItem('user', JSON.stringify(user));
             this.router.navigate(['/']);
@@ -56,12 +58,12 @@ export class SignUpComponent  {
         error => {
             console.log(error);
             if(error.status === 409){
-              this.errorMessage = "Error 409";              
+              this.errorMessage = "Error 409";
             }else{
-            this.errorMessage = "Error 409 Please try again!";   
+            this.errorMessage = "Error 409 Please try again!";
             }
-            return;   
-          });          
+            return;
+          });
       // this.isFormSubmitted = true;
       // localStorage.setItem('isLoggedin', 'true');
       // if (localStorage.getItem('isLoggedin')) {
@@ -71,6 +73,8 @@ export class SignUpComponent  {
     return;
    }
 
+   signIn(){
+    this.router.navigate([`${this.returnUrl }${INTERNAL_ROUTES.AUTH_LOGIN}`]);
+  }
 
-  
 }

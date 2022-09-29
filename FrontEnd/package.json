@@ -9,7 +9,7 @@
     "build:prod": "ng build --c-prod",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "backend": "json-server --watch ./src/app/data/backend/db.json --delay 3000",
+    "backend": "json-server --port 7000 --watch ./src/app/data/backend/db.json --delay 3000",
     "lint": "ng lint"
   },
   "private": true,
