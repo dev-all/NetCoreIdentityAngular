@@ -14,8 +14,9 @@ export class ErrorInterceptor implements HttpInterceptor{
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(req).pipe(
       catchError((ex) => {
+        debugger;
           console.log(ex)
-          if([401,403,404].indexOf(ex.status) !== -1 ){
+          if([400,401,403,404].indexOf(ex.status) !== -1 ){
             this.routes.navigateByUrl('/'+ ex.status);
           }
           return throwError(ex);

@@ -74,16 +74,15 @@ namespace allshop.api.Controllers
                 }
                 _request.Message = "Acceso no autorizado";
                 _request.Status = 201;
-               // return Ok(_request);
-                return BadRequest(_request);
+                return Ok(_request);
+                //return BadRequest();
             }
             catch (Exception ex)
             {
                 _request.Message = ex.Message.ToString();
                 _request.TypeMessage = "success";
                 _request.Status = 500;
-                // return Ok(_request);
-                return BadRequest(_request);
+                return Ok(_request);
             }
         }
       
