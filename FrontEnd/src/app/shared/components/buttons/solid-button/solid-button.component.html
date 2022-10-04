@@ -1,0 +1,8 @@
+<button 
+class="btn btn-outline-{{type}}"
+[routerLink]="url"
+(click)="action.emit(type)">
+{{title}}
+</button>
+<!-- si implemento en user-list.component (click)="action.emit($event)">-->
+

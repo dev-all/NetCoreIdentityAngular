@@ -1,0 +1,12 @@
+<p>ejemplo-one works!</p>
+
+<app-title-h1 [text]="'New'" #mainTitle></app-title-h1>
+
+<app-solid-button 
+[title]="'btn view'" 
+[type]="$btnTypes.PRIMARY"
+(action)="
+mainTitle.text = 'Actualizar usuario';
+mainBtn.title = 'Actualizar'
+"
+#mainBtn> </app-solid-button>
