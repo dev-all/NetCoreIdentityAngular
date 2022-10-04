@@ -1,4 +1,21 @@
 <p>ejemplo-three works!</p>
 
-<app-full-table [data]="data">
+<!-- <app-full-table [data]="data">
+</app-full-table> -->
+<app-full-table>
+
+  <tr recordsHead>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Edad</th>
+    <th>Position</th>
+  </tr>
+
+   <tr recordsBody *ngFor=" let user of users">
+    <td >{{user.name}}</td>
+    <td >{{user.lastname}}</td>
+    <td >{{user.age}}</td>
+    <td >{{user.position}}</td>
+  </tr>
+  
 </app-full-table>

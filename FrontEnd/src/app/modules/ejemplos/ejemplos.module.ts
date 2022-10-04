@@ -5,6 +5,11 @@ import { EjemplosComponent } from './ejemplos.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { InternacionalComponent } from './internacional/internacional.component';
 import { SharedModule } from '@share/shared.module';
+import { EjemploOneComponent } from './ejemplo-one/ejemplo-one.component';
+import { AuthGuard } from '@core/guard/auth.guard';
+import { EjemploTwoComponent } from './ejemplo-two/ejemplo-two.component';
+import { EjemploThreeComponent } from './ejemplo-three/ejemplo-three.component';
+import { EjemploFourComponent } from './ejemplo-four/ejemplo-four.component';
 
 
 const routes: Routes = [
@@ -25,12 +30,27 @@ const routes: Routes = [
         path: 'inter',
         component: InternacionalComponent
       },
+      {
+        path: 'one',
+        component: EjemploOneComponent,
+        canActivate :[AuthGuard] 
+      },
+      {
+        path: 'two',
+        component: EjemploTwoComponent,
+        canActivate :[AuthGuard] 
+      },
+      {
+        path: 'three',
+        component: EjemploThreeComponent,
+        canActivate :[AuthGuard] 
+      },
     ]
   }
 ]
 
 @NgModule({
-  declarations: [EjemplosComponent,PipesComponent, InternacionalComponent],
+  declarations: [EjemplosComponent,PipesComponent, InternacionalComponent, EjemploOneComponent, EjemploTwoComponent, EjemploThreeComponent, EjemploFourComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

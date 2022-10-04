@@ -8,14 +8,13 @@ import { ResultAnimeComponent } from '../result-anime/result-anime.component';
   templateUrl: './search-anime.component.html',
   styleUrls: ['./search-anime.component.scss']
 })
-export class SearchAnimeComponent implements OnInit {
+export class SearchAnimeComponent {
 
   searchTerm: string ='';
 
   constructor(private animeService :AnimeService) { }
 
-  ngOnInit(): void {
-  }
+ 
 
   search(){   
      this.animeService.getAnimes(this.searchTerm).subscribe( result => {

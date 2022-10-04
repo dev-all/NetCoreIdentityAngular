@@ -12,6 +12,27 @@
       <button class="btn btn-primary" (click)="addAmount()">add 10 $</button>
     </div>
 
+    <app-solid-button 
+    [title]="'Solid Button'" 
+    [type]="$btnTypes.SUCCESS"
+    [url]="'/user/user-list'"
+    > </app-solid-button>
+
+    <app-solid-button 
+    [title]="'btn Action'" 
+    [type]="$btnTypes.SUCCESS"
+    (action)="onAction($event)"> </app-solid-button>
+
+    <app-solid-button 
+    [title]="'btn Action'" 
+    [type]="$btnTypes.PRIMARY"
+    (action)="onContinue($event)"> </app-solid-button>
+
+    <app-solid-button 
+    [title]="'btn view'" 
+    [type]="$btnTypes.PRIMARY"
+    (action)="onView($event)"
+    #mainBtn> </app-solid-button>
 
     <ng-container  *ngIf="users; else elseUsersLoad">
       <app-card-user [data]="user" *ngFor="let user of users;" class="col-12 col-md-6 col-xl-3"></app-card-user>

@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class FtTheadComponent  {
   @Input() data: Array<string>=[];
-  constructor() { }
+  constructor() {}
 
 
 }

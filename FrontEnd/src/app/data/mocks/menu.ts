@@ -21,6 +21,18 @@ export const MENU: MenuItem[] = [
       {
         label: 'Inter',
         link: '/ejemplos/inter'
+      },
+      {
+        label: 'template',
+        link: '/ejemplos/one'
+      },
+      {
+        label: 'table full',
+        link: '/ejemplos/two'
+      },
+      {
+        label: 'ngContent',
+        link: '/ejemplos/three'
       }
     ]
 

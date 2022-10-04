@@ -3,3 +3,20 @@ table{
   border-collapse: collapse;
   
 }
+
+::ng-deep{
+  table.full-table{
+    tr{ 
+    border-bottom: 1px solid rgba($color: #f9faf8f6, $alpha: 1.0);
+    th{
+      padding: 16px;
+      border-bottom: 1px solid rgba($color: #8bfa6a, $alpha: 1.0);
+    };
+    td{
+      padding: 16px;
+    }
+  }
+  }
+ 
+}
+

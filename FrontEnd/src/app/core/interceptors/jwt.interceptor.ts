@@ -12,9 +12,7 @@ export class JwtInterceptor implements HttpInterceptor{
               ,private authServices: AuthService){ }
 
   intercept(req: HttpRequest<any>
-          , next: HttpHandler): Observable<HttpEvent<any>> {
-
-            debugger;
+          , next: HttpHandler): Observable<HttpEvent<any>> {          
       const currentUser = this.authServices.getUser;
       const isAuthenticated = currentUser && currentUser.token;
 
@@ -27,7 +25,6 @@ export class JwtInterceptor implements HttpInterceptor{
             }
           })
       }
-
       return next.handle(req);
   }
 
