@@ -3,7 +3,9 @@
   {
     "id": 1,
     "name": "Wilson valencia",
+    "lastname": "valencia",
     "age": 27,
+    "position": "Desarrollador Software",
     "description": "Desarrollador Software",
     "avatar": "https://ideapod.com/wp-content/uploads/2017/08/person-1.jpg",
     "work": "Project manager",
@@ -13,7 +15,9 @@
   {
     "id": 2,
     "name": "Martin Larios",
+    "lastname": "Larios",
     "age": 19,
+    "position": "Diseñador",
     "description": "Diseñador",
     "avatar": "https://ideapod.com/wp-content/uploads/2017/08/person-1.jpg",
     "gender":"f"
@@ -21,7 +25,9 @@
   {
     "id": 3,
     "name": "Luis Larios",
+    "lastname": "Larios",
     "age": 27,
+    "position": "Desarrollador back",
     "description": "Desarrollador back",
     "avatar": "https://ideapod.com/wp-content/uploads/2017/08/person-1.jpg",
     "gender":""
@@ -29,7 +35,9 @@
   {
     "id": 4,
     "name": "Hector Larios",
+    "lastname": "Larios",
     "age": 20,
+    "position": "Desarrollador front",
     "description": "Desarrollador front",
     "avatar": "https://ideapod.com/wp-content/uploads/2017/08/person-1.jpg",
     "gender":"M"

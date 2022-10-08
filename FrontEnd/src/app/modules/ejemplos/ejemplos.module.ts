@@ -45,6 +45,11 @@ const routes: Routes = [
         component: EjemploThreeComponent,
         canActivate :[AuthGuard] 
       },
+      {
+        path: 'four',
+        component: EjemploFourComponent,
+        canActivate :[AuthGuard] 
+      },
     ]
   }
 ]

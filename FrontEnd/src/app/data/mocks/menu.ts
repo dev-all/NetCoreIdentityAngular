@@ -33,6 +33,10 @@ export const MENU: MenuItem[] = [
       {
         label: 'ngContent',
         link: '/ejemplos/three'
+      },
+      {
+        label: 'ComponentServcice',
+        link: '/ejemplos/four'
       }
     ]
 

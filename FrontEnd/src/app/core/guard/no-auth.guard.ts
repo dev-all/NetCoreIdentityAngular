@@ -21,8 +21,8 @@ export class NoAuthGuard implements CanActivate {
     const currentUser = this.authService.getUser;
     if(currentUser){
       debugger;
-       // INTERNAL_ROUTES.PAGE_DEFAULT es una page que no necesita autenticacion
-      //this.router.navigateByUrl(INTERNAL_ROUTES.PAGE_DEFAULT);
+      // INTERNAL_ROUTES.PAGE_DEFAULT es una page que no necesita autenticacion
+      // this.router.navigateByUrl(INTERNAL_ROUTES.PAGE_DEFAULT);
       return false;
     }
 
