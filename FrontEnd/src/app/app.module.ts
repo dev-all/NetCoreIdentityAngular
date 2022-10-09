@@ -8,8 +8,6 @@ import { AppComponent } from './app.component';
 import { ErrorPageComponent } from '@modules/error-page/error-page.component';
 
 import { LayoutModule } from '@layout/layout.module';
-
-import { SharedModule } from './shared/shared.module';
 import { DATE_PIPE_DEFAULT_TIMEZONE, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -24,7 +22,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     // Core
     CoreModule,
-    SharedModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     LayoutModule,

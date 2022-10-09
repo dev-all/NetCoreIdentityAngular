@@ -14,7 +14,7 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     RouterModule
   ],
-  declarations: [...fromComponents.components, ...fromPipes.pipes],
+  declarations: [...fromComponents.components, ...fromPipes.pipes, ],
   exports: [
     FormsModule,
     ReactiveFormsModule,

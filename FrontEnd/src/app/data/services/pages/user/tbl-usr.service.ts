@@ -22,6 +22,7 @@ export class TblUsrService extends FullTableClass  {
 
   override getData(): void {
     this.userService.getAllUsers().subscribe(r => {
+      console.log('call service tblUsrService  ')
       this.subjecTable.next({data: r, total: r.length})
     })
   }

@@ -1,4 +1,4 @@
-<p>ejemplo-four componentes basados en servicios!</p>
+<p>ejemplo-four componentes basados en servicios!  inyeccion de servicios</p>
 <app-full-table #t [service] ="serviceTable">
 
   <tr recordsHead>
@@ -9,7 +9,7 @@
   </tr>
 
    <tr recordsBody *ngFor=" let user of serviceTable.getCurrentItems">
-    <td >{{user.name}}</td>
+    <td style="text-decoration: underline;" [routerLink]="'/user/detail/'+user.id">{{user.name}}</td>
     <td >{{user.lastname}}</td>
     <td >{{user.age}}</td>
     <td >{{user.position}}</td>

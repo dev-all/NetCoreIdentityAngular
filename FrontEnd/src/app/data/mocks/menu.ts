@@ -38,6 +38,11 @@ export const MENU: MenuItem[] = [
         label: 'ComponentServcice',
         link: '/ejemplos/four'
       }
+      ,
+      {
+        label: 'Host and sys row',
+        link: '/ejemplos/five'
+      }
     ]
 
   },
