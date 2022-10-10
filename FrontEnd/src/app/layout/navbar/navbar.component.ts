@@ -7,15 +7,13 @@ import { Router } from '@angular/router';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
 
   constructor(
     @Inject(DOCUMENT) private document: Document,     
     private router: Router
   ) { }
 
-  ngOnInit(): void {
-  }
 
   /**
    * Sidebar toggle on hamburger button click

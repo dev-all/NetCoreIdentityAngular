@@ -9,6 +9,8 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class TblUsrService extends FullTableClass  {
 
+  
+
   constructor(
     private userService:UserService
   ) { 

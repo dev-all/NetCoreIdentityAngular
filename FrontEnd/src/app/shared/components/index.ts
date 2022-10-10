@@ -6,6 +6,7 @@ import { ColComponent } from './columns/col/col.component';
 import { RowComponent } from './columns/row/row.component';
 import { HookonchangeComponent } from './hookonchange/hookonchange.component';
 import { CardLoaderComponent } from './loaders/card-loader/card-loader.component';
+import { MmodalComponent } from './modals/mmodal/mmodal.component';
 import { FtTbodyComponent } from './tables/full-table/ft-tbody/ft-tbody.component';
 import { FtTfootComponent } from './tables/full-table/ft-tfoot/ft-tfoot.component';
 import { FtTheadComponent } from './tables/full-table/ft-thead/ft-thead.component';
@@ -34,7 +35,10 @@ export const components: any[] = [
     CardBasicComponent,
     //columns
     RowComponent ,
-    ColComponent
+    ColComponent,
+
+    //Modal
+    MmodalComponent
 
 ];
 
@@ -51,3 +55,4 @@ export * from './tables/full-table/full-table.component';
 export * from './cards/card-basic/card-basic.component';
 export * from './columns/row/row.component';
 export * from './columns/col/col.component';
+export * from './modals/mmodal/mmodal.component';

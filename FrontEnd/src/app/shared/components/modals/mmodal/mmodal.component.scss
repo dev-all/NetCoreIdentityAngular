@@ -1,0 +1,53 @@
+.modalc{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba($color: #000000, $alpha: 0.75);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  z-index: 999999;
+  &-content{
+    width: 100%;
+    max-width: 500px;    
+  }
+  &-header{
+    height: 80px;
+    display: flex;    
+    align-items: center;
+    padding: 0 32px;
+  
+    background-color: #e5e5f7;
+    opacity: 0.8;
+    background-image:  linear-gradient(#e8e9fd 2px, transparent 2px), linear-gradient(90deg, #e8e9fd 2px, transparent 2px), linear-gradient(#e8e9fd 1px, transparent 1px), linear-gradient(90deg, #e8e9fd 1px, #e5e5f7 1px);
+    background-size: cover;
+    background-blend-mode: multiply;
+   
+    background-position: center;
+    border-radius: 4px 4px 0 0;
+    > svg{
+      height: 45px;
+      width: 45px;
+      &:hover{
+        cursor: pointer;
+        opacity: 0.75;
+      }
+    }
+   }  
+   &-title{
+      font-size: 24px;
+      font-weight: 600;
+      color: #333;
+    }
+   
+    &-container{
+      padding: 32px;
+      background: #fff;
+      border-radius: 0 0 4px 4px;
+    }
+ 
+}
