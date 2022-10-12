@@ -153,8 +153,6 @@ namespace allshop.api.Controllers
             {
                 return BadRequest(ModelState);
             }
-
-
         }
 
         [HttpPost("send-recovery-link")]

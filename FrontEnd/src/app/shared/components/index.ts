@@ -12,6 +12,7 @@ import { FtTfootComponent } from './tables/full-table/ft-tfoot/ft-tfoot.componen
 import { FtTheadComponent } from './tables/full-table/ft-thead/ft-thead.component';
 import { FullTableComponent } from './tables/full-table/full-table.component';
 import { TitleH1Component } from './titles/title-h1/title-h1.component'
+import { ToastComponent } from './toast/toast.component';
 
 
 export const components: any[] = [
@@ -38,7 +39,10 @@ export const components: any[] = [
     ColComponent,
 
     //Modal
-    MmodalComponent
+    MmodalComponent,
+
+    // toast
+    ToastComponent
 
 ];
 
@@ -56,3 +60,4 @@ export * from './cards/card-basic/card-basic.component';
 export * from './columns/row/row.component';
 export * from './columns/col/col.component';
 export * from './modals/mmodal/mmodal.component';
+export * from './toast/toast.component';

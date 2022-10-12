@@ -1,0 +1,32 @@
+<div class="container-toasts">
+  <ng-container *ngFor="let toast of serviceToast.toasts.reverse();" >
+    <div class="toast" [ngClass]="{ 
+      'toast-danger' : toast.type === __types.DANGER,
+      'toast-success' : toast.type === __types.SUCCESS,
+      'toast-primary' : toast.type === __types.PRIMARY,
+      'toast-simple' : !toast.userDefaultImage && toast.resourse === null
+    }">
+      <i class="fas fa-time toast__close" (click)="serviceToast.hideToast(toast.id)"></i>
+      <ng-container *ngIf="toast.userDefaultImage || toast.resourse !== null" >
+
+           <div class="toast_image"
+          [ngStyle]="{
+            'backgroundImage' : 'url(' + ((toast.userDefaultImage)? 'assets/images/face1.jpg': toast.resourse) + ')'
+          }"></div>
+      </ng-container>
+   
+        <div class="toast__info">
+          <div class="toast__title">
+            {{toast.title}}
+          </div>
+          <div class="toast__description">
+           {{toast.description}}
+          </div>
+          <button class="toast__btn" (click)="serviceToast.hideToast(toast.id)">
+            Continuar...
+          </button>
+        </div>
+      
+    </div>
+  </ng-container>
+</div>

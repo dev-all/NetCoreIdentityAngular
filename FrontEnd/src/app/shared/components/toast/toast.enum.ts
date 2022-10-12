@@ -1,0 +1,5 @@
+export enum TOAST_TYPE{
+  DANGER  = 'DANGER',
+  SUCCESS = 'SUCCESS',
+  PRIMARY = 'PRIMARY',
+}

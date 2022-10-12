@@ -1,0 +1,140 @@
+// Custom variables
+//@import 'assets/scss/variables';
+$primary:         #6571ff !default;
+$success:         #05a34a !default;
+$info:            #66d1d1 !default;
+$warning:         #fbbc06 !default;
+$danger:          #ff3366 !default;
+
+
+$colors: ('primary' $primary,'success' $success,'danger' $danger);
+$positions: 'left' 'bottom', 'left' 'top', 'right' 'bottom', 'right' 'top';
+//@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap');
+
+// *{
+//   font-family: 'Montserrat' sans-serif;
+// }
+
+@keyframes rightleft{
+  0%{
+    position: fixed;   
+    right: 0;
+    z-index: 99999;    
+  }
+  100%{
+    position: fixed;
+    right: 16px;
+    z-index: 99999;
+  }
+}
+
+.container-toasts{
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.toast{
+  width: 300px;
+  padding: 16px;
+  border-radius: 5px;
+  position: relative !important;
+  display: flex;
+  box-shadow: 1px 1px 6px 2px rgba($color: #000000, $alpha: 0.15);
+  overflow: hidden;
+  margin-bottom: 16px;
+  animation: rightLeft 0.75s 1;
+  &__close{
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    color: rgba($color: #000000, $alpha: 1.0);
+    &:hover{
+      opacity: 0.75;
+      cursor: pointer;
+    }
+  }
+  &__image{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url('./es.svg');
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100%;
+    box-shadow: 2px 0px 5px -2px rgba($color: #000000, $alpha: 0.5);
+
+  }
+  &__info{
+    margin-left: 104px;    
+  }
+  &__title{
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 8px;    
+  }
+  &__description{
+    font-size: 12px;
+    margin: 0 0 12px 0;
+  }
+  &__btn{
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    padding-left: 16px;
+    padding-right: 16px;
+    float: right;
+    color: #fff;
+    background: #333;
+    font-weight: 600;
+    outline: none;
+    &:hover{
+      opacity: 0.75;
+      cursor: pointer;
+    }
+
+  }
+  &-simple{
+    .toast__info{
+      margin-left:4px;
+      width: 100%;
+    }
+  }
+  @each $x, $y in $positions {
+    &-#{$x}-#{$y}, &-#{$y}-#{$x}{
+      position: fixed;
+      @if $x =='left' {
+        left:16px;        
+      }else{
+        right: 16px;
+      }
+      @if $y =='top'{
+        top: 16px;
+      }else{
+        bottom: 16px;
+      }
+
+    }
+  }
+}
+
+@each $name, $color in colors {
+  .toast-#{$name}{
+    background: $color;
+    color: #fff;
+    .toast__close{
+      color: #fff;
+    }
+    .toast_btn{
+      color: $color;
+      background: #fff;
+    }
+  }
+  
+}
