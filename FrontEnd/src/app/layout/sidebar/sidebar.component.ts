@@ -18,6 +18,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
   sidebarToggler!: ElementRef ;
 
   menuItems: MenuItem[] = [];
+
   @ViewChild('sidebarMenu') sidebarMenu!: ElementRef ;
 
   constructor(@Inject(DOCUMENT) private document: Document, private renderer: Renderer2, router: Router) {
@@ -51,6 +52,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
       this.iconSidebar;
     });
     this.iconSidebar(desktopMedium);
+    
   }
 
   ngAfterViewInit() {

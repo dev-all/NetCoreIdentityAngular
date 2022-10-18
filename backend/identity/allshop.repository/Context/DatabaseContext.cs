@@ -1,39 +1,35 @@
 ﻿
 using allshop.domain.Entities;
+using allshop.domain.Entities.Auth;
+using allshop.repository.Contracts;
+using DataAccess.EntityConfig;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-
+ 
 namespace allshop.repository.Context
 {
-    public class DatabaseContext : DbContext
+    public class DatabaseContext : IdentityDbContext<AuthUser, AuthRole, string>, IAppDBContext
     {
-       // public DatabaseContext() { }
-        public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options) { }
-    
+        //public DbSet<User> Users { get; set; } = null!;
+        //public DbSet<Role> Roles { get; set; }
+        
+        public DbSet<Customer> Customers { get; set; }       
+        public DbSet<AuthUser> AuthUsers { get; set; }
+        public DbSet<AuthRole> AuthRoles { get; set; }
+
+        public DatabaseContext(DbContextOptions options) : base(options) { }
+        public DatabaseContext() { }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             => optionsBuilder.EnableSensitiveDataLogging();
 
-        public  DbSet<User> Users { get; set; } = null!;
-        public DbSet<Role> Roles { get; set; }
-        public DbSet<Tenant> Tenants { get; set; }
+   
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-        ///  Create default roles with migration
-            modelBuilder.Entity<Role>().HasData(
-                new Role()
-                {
-                    Id = Guid.NewGuid(),
-                    Name = "Admin",
-                    CreatedAt = DateTime.Now
-                },
-                new Role()
-                {
-                    Id = Guid.NewGuid(),
-                    Name = "User",
-                    CreatedAt = DateTime.Now
-                }
-            );
+            CustomerConfig.SetEntityBuilder(modelBuilder.Entity<Customer>());
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

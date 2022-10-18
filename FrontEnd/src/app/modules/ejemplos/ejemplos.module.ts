@@ -10,6 +10,8 @@ import { AuthGuard } from '@core/guard/auth.guard';
 import { EjemploTwoComponent } from './ejemplo-two/ejemplo-two.component';
 import { EjemploThreeComponent } from './ejemplo-three/ejemplo-three.component';
 import { EjemploFourComponent } from './ejemplo-four/ejemplo-four.component';
+import { EjemploFiveComponent } from './ejemplo-five/ejemplo-five.component';
+import { EjemploSixComponent } from './ejemplo-six/ejemplo-six.component';
 
 
 const routes: Routes = [
@@ -45,12 +47,27 @@ const routes: Routes = [
         component: EjemploThreeComponent,
         canActivate :[AuthGuard] 
       },
+      {
+        path: 'four',
+        component: EjemploFourComponent,
+        canActivate :[AuthGuard] 
+      },
+      {
+        path: 'five',
+        component: EjemploFiveComponent,
+        canActivate :[AuthGuard] 
+      },
+      {
+        path: 'six',
+        component: EjemploSixComponent,
+        canActivate :[AuthGuard] 
+      },
     ]
   }
 ]
 
 @NgModule({
-  declarations: [EjemplosComponent,PipesComponent, InternacionalComponent, EjemploOneComponent, EjemploTwoComponent, EjemploThreeComponent, EjemploFourComponent],
+  declarations: [EjemplosComponent,PipesComponent, InternacionalComponent, EjemploOneComponent, EjemploTwoComponent, EjemploThreeComponent, EjemploFourComponent, EjemploFiveComponent, EjemploSixComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

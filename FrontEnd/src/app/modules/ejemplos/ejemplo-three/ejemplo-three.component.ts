@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '@data/services/api/user.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-ejemplo-three',
   templateUrl: './ejemplo-three.component.html',
   styleUrls: ['./ejemplo-three.component.scss']
 })
-export class EjemploThreeComponent  {
+export class EjemploThreeComponent implements OnInit {
 
   // public data = {
   //   head: ['Nombre', 'Apellido', 'Edad', 'Puesto'],
@@ -17,6 +19,8 @@ export class EjemploThreeComponent  {
   //   ]
   // }
 
+  public userSubscription!: Subscription;
+  public data: any = [];
   public users : Array<{name:string,lastname:string,age:number,position:string}> =
     [
       {
@@ -40,6 +44,18 @@ export class EjemploThreeComponent  {
     ]
   
 
-  constructor() { }
+    constructor(private userService:UserService){  
+    }
+  ngOnInit(): void {
+    this.getData()
+  }
+
+  getData(){
+    this.userSubscription =  this.userService
+    .getAllUser()
+    .subscribe(r => {
+          this.data=r;
+     });
+   }
 
 }

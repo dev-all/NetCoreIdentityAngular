@@ -1,1 +1,25 @@
-<p>ejemplo-four componentes basados en servicios!</p>
+<p>ejemplo-four componentes basados en servicios!  inyeccion de servicios</p>
+<app-full-table #t [service] ="serviceTable">
+
+  <tr recordsHead>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Edad</th>
+    <th>Position</th>
+  </tr>
+
+   <tr recordsBody *ngFor=" let user of serviceTable.getCurrentItems">
+    <td style="text-decoration: underline;" [routerLink]="'/user/detail/'+user.id">{{user.name}}</td>
+    <td >{{user.lastname}}</td>
+    <td >{{user.age}}</td>
+    <td >{{user.position}}</td>
+  </tr>
+  
+</app-full-table>
+
+<app-solid-button 
+[title]="'Get Data'" 
+[type]="$btnTypes.PRIMARY"
+(action)="serviceTable.getData()"
+#mainBtn> </app-solid-button>
+

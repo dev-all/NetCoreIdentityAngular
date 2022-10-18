@@ -17,13 +17,8 @@ export class UserListComponent implements AfterViewInit, OnInit ,OnDestroy {
   public users?: ICardUser[] ; //= USERS_DATA;
   public title!:string;
   public userSubscription!: Subscription;
-
   public pricePesos: number = 0;
-
   public $btnTypes= SOLID_BUTTON_TYPE_ENUM;
-
-
-
 
   constructor(private userService:UserService){
     this.pricePesos =0;

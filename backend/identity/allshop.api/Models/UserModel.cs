@@ -10,8 +10,8 @@ namespace allshop.api.Models
         public Guid Id { get; set; }
        
         public string? FullName { get; set; }
+        public string UserName { get; set; }
 
-       
         [RegularExpression("^[a-zA-Z0-9_\\.-]+@([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$", ErrorMessage = "E-mail is not valid")]
         public string? Email { get; set; }
         public string? Password { get; set; }
@@ -21,11 +21,9 @@ namespace allshop.api.Models
         public bool RememberMe { get; set; }      
         public string? Token { get; set; }      
         public string? AppOriginUrl { get; set; }
-        public Guid RoleId { get; set; }
-        public RoleModel? Role { get; set; }
-        public Guid TenantId { get; set; }
-        public TenantModel? Tenant { get; set; }
-
+        //public Guid RoleId { get; set; }
+        //public RoleModel? Role { get; set; }
+        public string Role { get; set; }
         public Boolean Google { get; set; }
         public Boolean Active { get; set; }
 

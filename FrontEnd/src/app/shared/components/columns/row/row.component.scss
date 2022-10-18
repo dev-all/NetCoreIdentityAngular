@@ -1,0 +1,7 @@
+//:host aplica style al elemento padre
+
+:host{
+  display: flex;
+  flex-wrap: wrap; 
+  width:100%;
+}

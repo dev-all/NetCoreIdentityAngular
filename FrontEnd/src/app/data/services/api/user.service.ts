@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { IApiUser } from '@data/interfaces';
 import { ICardUser } from '@share/components/cards/card-user/icard-user.metadata';
 import { environment } from 'environments/environment';
 import { Observable } from 'rxjs';
@@ -36,7 +37,9 @@ export class UserService  {
 
    }
 
-
-
+   getAllUsers(): Observable<IApiUser[]> {
+    return this.http.get<IApiUser[]>(this.url + 'users');
+   }
+   
 
 }

@@ -12,6 +12,7 @@ import { LoginModel } from '@data/interfaces/api/login.model';
 
 import { JwtHelperService} from '@auth0/angular-jwt';
 import { UserModel } from '@data/schema';
+import { MmodalComponent } from '@share/components';
 
 @Injectable({
   providedIn: 'root'
@@ -36,18 +37,14 @@ export class AuthService {
   helper: JwtHelperService;
 
 
+  //comunicacion entre componentes
+  public titleModal = 'Titulo desde el Servicio'
+
   constructor(  protected http: HttpClient
               , private router: Router){
     this.userSubject$ =  this.GetItem();
     this.helper = new JwtHelperService();
   }
-
-
-
-
-  // signUp(user : UserModel):Observable<UserModel>{
-  //   return this.http.post<UserModel>(API_ROUTES.AUTH.SIGNUP, user)
-  // }
 
   signUp(user : UserModel):Observable<UserModel>{
 
@@ -71,9 +68,7 @@ export class AuthService {
       })
     );
   }
-  // signIn(user : UserModel):Observable<UserModel>{
-  //   return this.http.post<UserModel>(API_ROUTES.AUTH.SIGNIN, user)
-  // }
+
   signIn(user : UserModel):Observable<Response>{
     return this.http.post<Response>(API_ROUTES.AUTH.SIGNIN, user)
           .pipe(
@@ -142,10 +137,16 @@ export class AuthService {
   }
 
 
-
-
-
-
+  changeTitleModal(m : MmodalComponent )
+  {
+    //m.title = 
+    this.titleModal = 'Modal new title';
+    m.showModal();
+  }
+  
+  clearServices(){
+    this.userSubject$.next(this.user);
+  }
 
 
 }

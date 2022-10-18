@@ -1,0 +1,10 @@
+<p>ejemplo-five works!  :host</p>
+<app-row>
+  <ng-container *ngFor="let u of serviceTable.getCurrentItems">
+    <app-col [sizes]="{xs:12,md:6,lg:4,xl:4,xxl:3,xxxl:2}" [classes]="'test'">
+      <app-card-basic [data]="u"></app-card-basic>
+    </app-col>
+  </ng-container>
+</app-row>
+
+<app-toast></app-toast>

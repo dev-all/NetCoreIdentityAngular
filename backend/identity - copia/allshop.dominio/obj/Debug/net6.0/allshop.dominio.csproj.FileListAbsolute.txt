@@ -1,0 +1,11 @@
+C:\Users\31098540\Documents\Angular\allshop\backend\allshop.dominio\bin\Debug\net6.0\allshop.dominio.deps.json
+C:\Users\31098540\Documents\Angular\allshop\backend\allshop.dominio\bin\Debug\net6.0\allshop.dominio.dll
+C:\Users\31098540\Documents\Angular\allshop\backend\allshop.dominio\bin\Debug\net6.0\ref\allshop.dominio.dll
+C:\Users\31098540\Documents\Angular\allshop\backend\allshop.dominio\bin\Debug\net6.0\allshop.dominio.pdb
+C:\Users\31098540\Documents\Angular\allshop\backend\allshop.dominio\obj\Debug\net6.0\allshop.dominio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\31098540\Documents\Angular\allshop\backend\allshop.dominio\obj\Debug\net6.0\allshop.dominio.AssemblyInfoInputs.cache
+C:\Users\31098540\Documents\Angular\allshop\backend\allshop.dominio\obj\Debug\net6.0\allshop.dominio.AssemblyInfo.cs
+C:\Users\31098540\Documents\Angular\allshop\backend\allshop.dominio\obj\Debug\net6.0\allshop.dominio.csproj.CoreCompileInputs.cache
+C:\Users\31098540\Documents\Angular\allshop\backend\allshop.dominio\obj\Debug\net6.0\allshop.dominio.dll
+C:\Users\31098540\Documents\Angular\allshop\backend\allshop.dominio\obj\Debug\net6.0\ref\allshop.dominio.dll
+C:\Users\31098540\Documents\Angular\allshop\backend\allshop.dominio\obj\Debug\net6.0\allshop.dominio.pdb

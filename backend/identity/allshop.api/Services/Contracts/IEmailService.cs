@@ -1,6 +1,5 @@
 ﻿using allshop.Models.Response;
 using allshop.Models.Request;
-using allshop.api.Models;
 using allshop.domain.Entities;
 
 namespace allshop.api.Services.Contracts

@@ -7,5 +7,5 @@
   <tbody app-ft-tbody> 
     <ng-content select="[recordsBody]"></ng-content>
   </tbody>
-  <tfoot app-ft-tfoot></tfoot>
+  <tfoot app-ft-tfoot [tableService]="tableServices"></tfoot>
 </table>

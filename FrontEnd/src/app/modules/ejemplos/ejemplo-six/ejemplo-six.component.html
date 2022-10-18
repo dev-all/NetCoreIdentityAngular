@@ -1,0 +1,26 @@
+
+<app-title-h1 [text]="title" #idTitle></app-title-h1>
+
+ {{idTitle.text}} {{title}}
+<app-row>
+ 
+  <app-solid-button 
+    [title]="'Cambiar'"
+    idTitle.text = 'nuevo titulo'
+ 
+    (click)="authServices.changeTitleModal(idModal)" >
+  </app-solid-button>
+</app-row>
+
+<app-mmodal #idModal [title]="authServices.titleModal">
+  CREATE src/app/modules/ejemplos/ejemplo-six/ejemplo-six.component.html (26 bytes)
+  CREATE src/app/modules/ejemplos/ejemplo-six/ejemplo-six.component.spec.ts (655 bytes)
+  CREATE src/app/modules/ejemplos/ejemplo-six/ejemplo-six.component.ts (295 bytes)
+  CREATE src/app/modules/ejemplos/ejemplo-six/ejemplo-six.component.scss (0 bytes)
+  UPDATE src/app/modules/ejemplos/ejemplos.module.ts (2330 bytes)
+</app-mmodal>
+
+<!-- 
+      (click)="idModal.showModal()" >
+(click)="idTitle.text= 'segundo titulo'" >
+(click)="changeTitle()" > -->

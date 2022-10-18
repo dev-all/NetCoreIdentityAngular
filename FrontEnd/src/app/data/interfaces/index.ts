@@ -10,6 +10,7 @@ export * from './forms/ifield.metadata';
 // interfaces Api
 
 export * from './api/iapi-auth-user.metadata';
+export * from './api/iapi-user.metatada';
 
 export * from './api/response';
 

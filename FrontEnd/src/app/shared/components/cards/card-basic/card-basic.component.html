@@ -1,0 +1,12 @@
+<div class="card" *ngIf="data" >
+  <img src="https://www.nobleui.com/angular/template/demo1/assets/images/others/placeholder.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{data.name}}</h5>
+    <p >{{data.position}}</p>
+    <p class="card-text mb-3" *ngIf="data.position">{{data.position}}</p>
+    <a href="" (click)="false" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+
+
