@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CyBX+EuhG9dvUKCNGyiXNPgXqS8mpUWw7jxUlWBH+jy2hn6vAt5OQvsbsnjmQArbhjUrRd1iZiChF+wJwDgOsQ==",
+  "dgSpecHash": "vZG3KsklmnBfQ2UXMsCr9Wk8KvtANs35kIaVXzSycowBhzHZA3vtk2PW5eEO7ClgyvNLxkhaYfzT03F7Ja2w/A==",
   "success": true,
-  "projectFilePath": "E:\\NetCoreIdentityAngular\\backend\\identity\\allshop.dominio\\allshop.domain.csproj",
+  "projectFilePath": "C:\\Users\\31098540\\Documents\\Angular\\NetCoreIdentityAngular\\backend\\identity\\allshop.dominio\\allshop.domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
