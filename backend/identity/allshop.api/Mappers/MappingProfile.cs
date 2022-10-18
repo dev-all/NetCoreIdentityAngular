@@ -7,7 +7,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using allshop.domain.Entities;
 using AutoMapper;
-using allshop.api.Models;
 
 namespace allshop.Mappers
 {
@@ -22,16 +21,12 @@ namespace allshop.Mappers
         public void FromDomainToModel()
         {
 
-            CreateMap<User, UserModel>();
-            CreateMap<Role, RoleModel>();
-            CreateMap<Tenant, TenantModel>();
+         
         }
 
         public void FromModelToDomain()
         {
-            CreateMap<UserModel, User>();
-            CreateMap<RoleModel, Role>();
-            CreateMap<TenantModel, Tenant>();
+          
 
         }
     }
