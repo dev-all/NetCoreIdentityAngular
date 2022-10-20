@@ -4,7 +4,7 @@ using System.Net.Mail;
 using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Threading.Tasks;
-using allshop.api.Services.Contracts;
+using allshop.api.Contracts.Services;
 
 namespace allshop.api.Services
 {

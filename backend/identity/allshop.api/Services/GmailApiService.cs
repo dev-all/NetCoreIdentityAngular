@@ -1,4 +1,4 @@
-﻿using allshop.api.Services.Contracts;
+﻿using allshop.api.Contracts.Services;
 using allshop.api.Tools;
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.Gmail.v1;

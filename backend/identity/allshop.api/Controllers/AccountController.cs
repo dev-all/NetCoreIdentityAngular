@@ -45,12 +45,11 @@ namespace allshop.api.Controllers
         }
 
 
-        [HttpPost]
-        [Route("Login")]
+        [HttpPost("sign-in")]
+        //[Route("Login")]
         //POST : /api/ApplicationUser/Login
         public async Task<IActionResult> Login(LoginModel model)
         {
-
             var user = await _userManager.FindByNameAsync(model.UserName);
             if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
             {
@@ -138,6 +137,37 @@ namespace allshop.api.Controllers
             }
             return BadRequest(ModelState);
                                  
+        }
+
+
+
+        /// <summary>
+        /// 
+        ///  se llama al metodo de verificacion del email
+        /// </summary>
+        /// <param name="email"></param>
+        /// 
+        /// <returns></returns>
+
+        [AcceptVerbs("Get", "Post")]
+        [AllowAnonymous]
+        public async Task<IActionResult> IsEmailInUse(string email)
+        {
+          
+            if (ModelState.IsValid)
+            {
+                var user = await _userManager.FindByEmailAsync(email);
+                if (user == null)
+                {
+                    return Ok(true);
+                }
+                else
+                {
+                    return Ok($"Email {email} is already in use.");
+                }
+            }
+
+            return Ok($"Email {email} is not valid.");
         }
 
 

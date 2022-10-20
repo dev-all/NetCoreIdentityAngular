@@ -1,4 +1,4 @@
-using allshop.api.Services.Contracts;
+
 using allshop.api.Services;
 using allshop.Mappers;
 using allshop.repository.Context;
@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using System;
 using allshop.domain.Entities.Auth;
-
+using allshop.api.Contracts.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 var myAllowSpecificOrigins = builder.Configuration["AppSettings:CorsPolicy"];

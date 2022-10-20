@@ -2,7 +2,7 @@
 using allshop.Models.Request;
 using allshop.domain.Entities;
 
-namespace allshop.api.Services.Contracts
+namespace allshop.api.Contracts.Services
 {
     public interface IEmailService
     {
