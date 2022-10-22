@@ -10,6 +10,9 @@ import { ErrorPageComponent } from '@modules/error-page/error-page.component';
 import { LayoutModule } from '@layout/layout.module';
 import { DATE_PIPE_DEFAULT_TIMEZONE, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { IdentityComponent } from './modules/identity/identity.component';
+import { SignInComponent } from './modules/identity/sign-in/sign-in.component';
+import { SignUpComponent } from './modules/identity/sign-up/sign-up.component';
 
 
 
@@ -17,6 +20,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   declarations: [
     AppComponent,
     ErrorPageComponent,
+    IdentityComponent,
+    SignInComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,

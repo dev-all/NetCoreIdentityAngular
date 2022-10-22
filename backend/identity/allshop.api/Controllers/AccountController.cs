@@ -99,13 +99,13 @@ namespace allshop.api.Controllers
 
 
         [HttpPost]
-        [Route("Register")]
+        [Route("sign-up")]
         //POST : /api/ApplicationUser/Register
         public async Task<ActionResult<UserModel>> PostApplicationUser(UserModel model)
         {
             if (ModelState.IsValid)
             {
-            model.Role = "Admin";
+            model.Role = "Customer";
             var applicationUser = new AuthUser()
             {
                 UserName = model.UserName,
