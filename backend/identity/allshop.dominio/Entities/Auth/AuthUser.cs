@@ -14,6 +14,8 @@ namespace allshop.domain.Entities.Auth
         public string? FullName { get; set; }
         public bool Externo { get; set; }
         public bool Activo { get; set; }
+
+
     }
 
 }

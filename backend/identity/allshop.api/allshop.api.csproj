@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Filters\**" />
+    <Content Remove="Filters\**" />
+    <EmbeddedResource Remove="Filters\**" />
+    <None Remove="Filters\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Controllers\AuthController - Copia.cs" />
     <Compile Remove="Controllers\AuthController.cs" />
     <Compile Remove="Tools\Encrypt.cs" />
@@ -14,10 +21,6 @@
 
   <ItemGroup>
     <None Remove="Services\IUserService.cs~RF556ab6e.TMP" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Filters\" />
   </ItemGroup>
 
   <ItemGroup>
