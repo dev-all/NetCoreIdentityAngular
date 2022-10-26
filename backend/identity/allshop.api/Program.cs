@@ -14,10 +14,11 @@ using Microsoft.AspNetCore.Identity;
 using System;
 using allshop.domain.Entities.Auth;
 using allshop.api.Contracts.Services;
+using allshop.Models.Common;
 
 var builder = WebApplication.CreateBuilder(args);
 var myAllowSpecificOrigins = builder.Configuration["AppSettings:CorsPolicy"];
-var Client_URL = builder.Configuration["AppSettings:ClientURL"];
+var Client_URL = builder.Configuration["AppSettings:Client_URL"];
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -43,6 +44,8 @@ builder.Services.AddSingleton(mapper);
 
 builder.Services.AddTransient<IEmailService, EmailService>();
 builder.Services.AddTransient<IGmailApiService, GmailApiService>();
+//Inject AppSettings
+builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
 
 
 //Remove reference looping exception 

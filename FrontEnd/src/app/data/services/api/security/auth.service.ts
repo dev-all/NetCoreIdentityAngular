@@ -47,7 +47,7 @@ export class AuthService {
   }
 
   signUp(user : UserModel):Observable<UserModel>{
-
+debugger;
     return this.http.post<Response>(API_ROUTES.AUTH.SIGNUP, user)
     .pipe(
       map(response => {
@@ -139,11 +139,11 @@ export class AuthService {
 
   changeTitleModal(m : MmodalComponent )
   {
-    //m.title = 
+    //m.title =
     this.titleModal = 'Modal new title';
     m.showModal();
   }
-  
+
   clearServices(){
     this.userSubject$.next(this.user);
   }

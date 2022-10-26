@@ -42,7 +42,7 @@ export class IdentityService {
     return this.http.post(this.BaseURI + '/ApplicationUser/Register', body);
   }
 
-  login(formData) {
+  login(formData: any) {
     return this.http.post(this.BaseURI + '/ApplicationUser/Login', formData);
   }
 
@@ -50,16 +50,16 @@ export class IdentityService {
     return this.http.get(this.BaseURI + '/UserProfile');
   }
 
-  roleMatch(allowedRoles): boolean {
-    var isMatch = false;
-    var payLoad = JSON.parse(window.atob(localStorage.getItem('token').split('.')[1]));
-    var userRole = payLoad.role;
-    allowedRoles.forEach(element => {
-      if (userRole == element) {
-        isMatch = true;
-        return false;
-      }
-    });
-    return isMatch;
+  roleMatch(allowedRoles: any[]): boolean {
+     var isMatch = false;
+    // var payLoad = JSON.parse(window.atob(localStorage.getItem('token').split('.')[1]));
+    // var userRole = payLoad.role;
+    // allowedRoles.forEach(element => {
+    //   if (userRole == element) {
+    //     isMatch = true;
+    //     return false;
+    //   }
+    // });
+     return isMatch;
   }
 }
