@@ -52,7 +52,7 @@ export class IdentityService {
   }
 
   login(formData: any) {
-    return this.http.post(this.BaseURI + '/Account/sign-in', formData);
+    return this.http.post(this.BaseURI + '/Account/sign-in', formData);    
   }
 
   getUserProfile() {
@@ -60,6 +60,7 @@ export class IdentityService {
   }
 
   roleMatch(allowedRoles: any[]): boolean {
+
     var isMatch = false;
     var token = localStorage.getItem('token');
     if (token!= null)
@@ -77,5 +78,6 @@ export class IdentityService {
     }
     
     return isMatch;
+   
   }
 }

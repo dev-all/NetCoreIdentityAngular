@@ -48,7 +48,9 @@ export class SignUpComponent implements OnInit {
         return;
       }
       // deberia obtener el id del back para el rol invitado
-      user.roleId='091da15d-3ae4-4f6e-aafb-8160d1c524a5';
+      user.userName =  user.email;
+      user.role ='Customer';
+      //user.roleId='091da15d-3ae4-4f6e-aafb-8160d1c524a5';
       return this.serviceAuth.signUp(user).subscribe(
         user =>{
             localStorage.setItem('isLoggedin', 'true');
