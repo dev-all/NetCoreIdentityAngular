@@ -16,6 +16,12 @@ const routes: Routes = [
     path:'auth',
     loadChildren: () => import('@modules/auth/auth.module').then(m => m.AuthModule)
   },
+
+  {
+    path:'identity',
+    loadChildren: () => import('@modules/identity/identity.module').then(m => m.IdentityModule)
+  },
+
   {
     path: '',
     component: BaseComponent,

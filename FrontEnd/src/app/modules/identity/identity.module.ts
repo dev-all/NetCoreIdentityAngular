@@ -4,12 +4,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignUpIdentityComponent } from './sign-up-identity/sign-up-identity.component';
 import { SignInIdentityComponent } from './sign-in-identity/sign-in-identity.component';
+import { IdentityComponent } from './identity.component';
+import { NoAuthGuard } from '@core/guard/no-auth.guard';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: SignInIdentityComponent,
-    children: [
+  
       {
         path: '',
         redirectTo: 'sign-in',
@@ -17,18 +16,18 @@ const routes: Routes = [
       },
       {
         path: 'sing-in',
-        component: SignInIdentityComponent
+        component: SignInIdentityComponent,
+        canActivate :[NoAuthGuard]  
       },
       {
         path: 'sing-up',
-        component: SignUpIdentityComponent
+        component: SignUpIdentityComponent,
+        canActivate:[NoAuthGuard]
       }
 
-    ]
-  }
 ]
 @NgModule({
-  declarations: [SignUpIdentityComponent, SignInIdentityComponent ],
+  declarations: [ IdentityComponent,SignUpIdentityComponent, SignInIdentityComponent ],
   imports: [
     CommonModule,
     FormsModule,

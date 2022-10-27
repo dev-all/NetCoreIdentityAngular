@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserService } from '@data/services/api/user.service';
 import { IdentityService } from '../service/identity.service';
 
 @Component({
@@ -11,15 +10,19 @@ import { IdentityService } from '../service/identity.service';
 })
 export class SignInIdentityComponent implements OnInit {
 
-  formModel = {
+  public formModel = {
     UserName: '',
     Password: ''
   }
-  constructor(private service: IdentityService, private router: Router) { }
+  constructor(private service: IdentityService, private router: Router) { 
+    debugger;
+  }
 
   ngOnInit() {
-    if (localStorage.getItem('token') != null)
-      this.router.navigateByUrl('/home');
+    // debugger;
+    console.log('onInit');
+    // if (localStorage.getItem('token') != null)
+    //   this.router.navigateByUrl('/home');
   }
 
   onSubmit(form: NgForm) {
