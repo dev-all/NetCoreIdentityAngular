@@ -9,8 +9,8 @@ namespace allshop.api.Models
     {
         public Guid Id { get; set; }
        
-        public string FullName { get; set; }
-        public string UserName { get; set; }
+        public string? FullName { get; set; }
+        public string? UserName { get; set; }
 
         [RegularExpression("^[a-zA-Z0-9_\\.-]+@([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$", ErrorMessage = "E-mail is not valid")]
         public string Email { get; set; }

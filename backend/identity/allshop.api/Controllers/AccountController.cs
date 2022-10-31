@@ -2,11 +2,13 @@
 using allshop.api.Models;
 using allshop.domain.Entities.Auth;
 using allshop.Models.Common;
+using allshop.Models.Response;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -27,7 +29,7 @@ namespace allshop.api.Controllers
         //private readonly ISmsSender _smsSender;
         private readonly ILogger _logger;
         private readonly AppSettings _appSettings;
-
+        private readonly Response _request = new Response();
         public AccountController(
             UserManager<AuthUser> userManager,
             SignInManager<AuthUser> signInManager,
@@ -48,13 +50,22 @@ namespace allshop.api.Controllers
         //POST : /api/ApplicationUser/Login
         public async Task<IActionResult> Login(LoginModel model)
         {
-            var user = await _userManager.FindByNameAsync(model.UserName);
+            //{
+            //    "UserName":"Leonardo148",
+            //    "Email": "leon.andres48@gmail.com",
+            //    "Password": "12345678",
+            //    "Token" : ""
+            //}
+
+      
+            var user = await _userManager.FindByEmailAsync(model.UserName);
             if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
             {
 
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
                 //var result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, false, lockoutOnFailure: false);
+
                 //if (result.Succeeded)
                 //{
                 //    _logger.LogInformation(1, "User logged in.");
@@ -69,8 +80,11 @@ namespace allshop.api.Controllers
                 //if (result.IsLockedOut)
                 //{
                 //    _logger.LogWarning(3, "User account locked out.");
-
                 //}
+
+
+
+             
                 //Get role assigned to the user
                 var role = await _userManager.GetRolesAsync(user);
                 IdentityOptions _options = new IdentityOptions();
@@ -87,7 +101,18 @@ namespace allshop.api.Controllers
                 var tokenHandler = new JwtSecurityTokenHandler();
                 var securityToken = tokenHandler.CreateToken(tokenDescriptor);
                 var token = tokenHandler.WriteToken(securityToken);
-                return Ok(new { token });
+
+                return BadRequest(new { message = "Username or password is incorrect." }); //400
+
+                //return Conflict();
+
+                //_request.Timestamp = DateTime.Now.ToString();
+                //_request.Message = "ok";
+                //_request.Status = 200;               
+                //_request.Data = token;
+                //return Ok(_request);
+
+                //return Ok(new { token });
             }
             else
                 return BadRequest(new { message = "Username or password is incorrect." });
@@ -101,6 +126,14 @@ namespace allshop.api.Controllers
         //POST : /api/ApplicationUser/Register
         public async Task<ActionResult<UserModel>> PostApplicationUser(UserModel model)
         {
+            //{
+            //    "UserName":"Leonardo148",
+            //    "Email": "leon.andres48@gmail.com",
+            //    "Password": "12345678",
+            //    "Token" : "",
+            //    "Role":"Customer"
+            //}
+
             if (ModelState.IsValid)
             {
             model.Role = "Customer";
@@ -108,7 +141,7 @@ namespace allshop.api.Controllers
             {
                 UserName = model.UserName,
                 Email = model.Email,
-                FullName = model.FullName
+                FullName = model.UserName
             };
 
 

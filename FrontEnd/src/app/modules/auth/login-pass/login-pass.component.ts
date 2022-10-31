@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { INTERNAL_ROUTES } from '@data/constants/routes';
 import { UserModel } from '@data/schema';
 import { AuthService } from '@data/services/api/security/auth.service';
 import { faGooglePlusG } from '@fortawesome/free-brands-svg-icons';
@@ -67,18 +68,28 @@ export class LoginPassComponent implements OnInit {
     this.isLoading=true;
     this.isFormSubmitted =true;
     if(!this.loginForm.valid ){
-      this.errorMessage= "Opss!!! revise los datos ingresados";
+      this.errorMessage= "Revise los datos ingresados";
       return;
     }
-    this.serviceAuth.signIn(user).subscribe(
+    this.serviceAuth.signIn(user).subscribe(          
       response => {
-      if(response.status === 201)
-        {
-          this.isLoading=false;
-          this.errorMessage= response.message || "" ;
-          return;
+        debugger;
+        if(response.status === 200)
+          {
+            this.serviceAuth.setUserToLocalStorage(response.data);
+            this.serviceAuth.userSubject$.next(response.data);
+            this.router.navigateByUrl(INTERNAL_ROUTES.PAGE_DEFAULT);
+          }
+        if(response.status === 201)
+          {
+            this.isLoading=false;
+            this.errorMessage= response.message || "" ;
+            return;
+          }
         }
-      }
       );
+
+
+
   }
 }

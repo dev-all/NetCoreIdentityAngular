@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 export class IdentityService {
 
-  readonly BaseURI = 'http://localhost:54277/api';
+  readonly BaseURI = 'https://localhost:7074/api';
   public formModel;
 
   constructor(private fb: FormBuilder, private http: HttpClient) { 

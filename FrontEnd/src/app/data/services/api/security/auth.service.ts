@@ -47,11 +47,11 @@ export class AuthService {
   }
 
   signUp(user : UserModel):Observable<UserModel>{
-debugger;
+
     return this.http.post<Response>(API_ROUTES.AUTH.SIGNUP, user)
     .pipe(
       map(response => {
-        debugger;
+       
         if(response.status === 200)
         {
           // this.setUserToLocalStorage(response.data);
@@ -70,26 +70,32 @@ debugger;
   }
 
   signIn(user : UserModel):Observable<Response>{
-    return this.http.post<Response>(API_ROUTES.AUTH.SIGNIN, user)
-          .pipe(
-            map(response => {
-
-              if(response.status === 200)
-              {
-                this.setUserToLocalStorage(response.data);
-                this.userSubject$.next(response.data);
-                this.router.navigateByUrl(INTERNAL_ROUTES.PAGE_DEFAULT);
-              }
-              return response;
-           }),
-            catchError(e => {
-
-              this.router.navigateByUrl(INTERNAL_ROUTES.ERROR_API);
-              return of(e.message);
-
-            })
-          );
+    user.userName = user.email;
+    user.token = " ";
+    return this.http.post<Response>(API_ROUTES.AUTH.SIGNIN, user);
   }
+  
+  // signIn(user : UserModel):Observable<Response>{
+  //   user.userName = user.email;
+  //   user.token = " ";
+  //   return this.http.post<Response>(API_ROUTES.AUTH.SIGNIN, user)
+  //         .pipe(
+  //           map(response => {
+  //             debugger;
+  //             if(response.status === 200)
+  //             {
+  //               this.setUserToLocalStorage(response.data);
+  //               this.userSubject$.next(response.data);
+  //               this.router.navigateByUrl(INTERNAL_ROUTES.PAGE_DEFAULT);
+  //             }
+  //             return response;
+  //          }),
+  //           catchError(e => {
+  //             this.router.navigateByUrl(INTERNAL_ROUTES.ERROR_API);
+  //             return of(e.message);
+  //           })
+  //         );
+  // }
 
   sendRecoveryLink(user : UserModel):Observable<UserModel>{
     return this.http.post<UserModel>(API_ROUTES.AUTH.SENDRECOVERYLIKN, user)
@@ -125,7 +131,7 @@ debugger;
   //     );
   // }
 
-  private setUserToLocalStorage( user : IApiUserAuthenticated){
+  public setUserToLocalStorage( user : IApiUserAuthenticated){
     localStorage.setItem(this.userLocalStorage, JSON.stringify(user));
   }
 

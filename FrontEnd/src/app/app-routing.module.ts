@@ -55,16 +55,17 @@ const routes: Routes = [
   },
   {
     path: 'error',
-    component: ErrorPageComponent,
+    component: ErrorPageComponent
+    
+  },
+  {
+    path: 'error/:type',
+    component: ErrorPageComponent ,
     data: {
       'type': 404,
       'title': 'Page Not Found',
       'desc': 'Oopps!! The page you were looking for doesn\'t exist.'
-    }
-  },
-  {
-    path: 'error/:type',
-    component: ErrorPageComponent
+    }   
   },
   { path: '**', redirectTo: 'error', pathMatch: 'full' }
 ];
