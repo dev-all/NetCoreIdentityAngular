@@ -13,6 +13,7 @@ import { LoginModel } from '@data/interfaces/api/login.model';
 import { JwtHelperService} from '@auth0/angular-jwt';
 import { UserModel } from '@data/schema';
 import { MmodalComponent } from '@share/components';
+import { FormGroup } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -54,8 +55,8 @@ export class AuthService {
        
         if(response.status === 200)
         {
-          // this.setUserToLocalStorage(response.data);
-          // this.userSubject$.next(response.data);
+          this.setUserToLocalStorage(response.data);
+          this.userSubject$.next(response.data);
           this.router.navigateByUrl(INTERNAL_ROUTES.PAGE_DEFAULT);
         }
         return response;
@@ -74,7 +75,64 @@ export class AuthService {
     user.token = " ";
     return this.http.post<Response>(API_ROUTES.AUTH.SIGNIN, user);
   }
-  
+ 
+ 
+  comparePasswords(fb: FormGroup) {
+    let confirmPswrdCtrl = fb.get('ConfirmPassword');
+    confirmPswrdCtrl?.setErrors({ passwordMismatch: true });
+    ////passwordMismatch
+   // // this.confirmPswrdCtrl.errors={passwordMismatch:true}
+    if (confirmPswrdCtrl?.errors == null || 'passwordMismatch' in confirmPswrdCtrl.errors) {
+      if (fb.get('Password')?.value != confirmPswrdCtrl?.value)
+        confirmPswrdCtrl?.setErrors({ passwordMismatch: true });
+      else
+        confirmPswrdCtrl?.setErrors(null);
+    }
+  }
+  roleMatch(allowedRoles: any[]): boolean {
+
+    var isMatch = false;
+    var token = localStorage.getItem('token');
+    if (token!= null)
+    {    
+    var payLoad = JSON.parse(window.atob(token.split('.')[1]));
+    var userRole = payLoad.role;
+    allowedRoles.forEach(element => {
+      if (userRole == element) {
+        isMatch = true;
+        return false;
+      }else{
+        return isMatch;
+      }
+    });
+    }
+    
+    return isMatch;
+   
+  }
+
+  // signUp(user : UserModel):Observable<UserModel>{
+
+  //   return this.http.post<Response>(API_ROUTES.AUTH.SIGNUP, user)
+  //   .pipe(
+  //     map(response => {
+       
+  //       if(response.status === 200)
+  //       {
+  //         this.setUserToLocalStorage(response.data);
+  //         this.userSubject$.next(response.data);
+  //         this.router.navigateByUrl(INTERNAL_ROUTES.PAGE_DEFAULT);
+  //       }
+  //       return response;
+  //    }),
+  //     catchError(e => {
+
+  //       this.router.navigateByUrl(INTERNAL_ROUTES.ERROR_API);
+  //       return of(e.message);
+
+  //     })
+  //   );
+  // }
   // signIn(user : UserModel):Observable<Response>{
   //   user.userName = user.email;
   //   user.token = " ";

@@ -72,20 +72,22 @@ export class LoginPassComponent implements OnInit {
       return;
     }
     this.serviceAuth.signIn(user).subscribe(          
-      response => {
+       (response: any)  => {        
         debugger;
-        if(response.status === 200)
-          {
-            this.serviceAuth.setUserToLocalStorage(response.data);
-            this.serviceAuth.userSubject$.next(response.data);
+            this.serviceAuth.setUserToLocalStorage(response.token);
+            this.serviceAuth.userSubject$.next(response.token);
             this.router.navigateByUrl(INTERNAL_ROUTES.PAGE_DEFAULT);
-          }
-        if(response.status === 201)
-          {
-            this.isLoading=false;
-            this.errorMessage= response.message || "" ;
-            return;
-          }
+
+        // if(response.status === 200)
+        //   {
+           
+        //   }
+        // if(response.status === 201)
+        //   {
+        //     this.isLoading=false;
+        //     this.errorMessage= response.message || "" ;
+        //     return;
+        //   }
         }
       );
 

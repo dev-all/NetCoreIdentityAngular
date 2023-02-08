@@ -62,29 +62,7 @@ namespace allshop.api.Controllers
             if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
             {
 
-                // This doesn't count login failures towards account lockout
-                // To enable password failures to trigger account lockout, set lockoutOnFailure: true
-                //var result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, false, lockoutOnFailure: false);
-
-                //if (result.Succeeded)
-                //{
-                //    _logger.LogInformation(1, "User logged in.");
-                //    // await SendCode()
-                //}
-
-                //if (result.RequiresTwoFactor)
-                //{
-                //    _logger.LogInformation(2, "RequiresTwoFactor");
-                //}
-
-                //if (result.IsLockedOut)
-                //{
-                //    _logger.LogWarning(3, "User account locked out.");
-                //}
-
-
-
-             
+                
                 //Get role assigned to the user
                 var role = await _userManager.GetRolesAsync(user);
                 IdentityOptions _options = new IdentityOptions();
@@ -102,17 +80,23 @@ namespace allshop.api.Controllers
                 var securityToken = tokenHandler.CreateToken(tokenDescriptor);
                 var token = tokenHandler.WriteToken(securityToken);
 
-                return BadRequest(new { message = "Username or password is incorrect." }); //400
+                // return StatusCode(500, "Internal Server Error. Error el sitio se encuentra fuera de servicio!");
+ 
+                // return BadRequest(new { message = "Username or password is incorrect." }); //400
 
-                //return Conflict();
-
+                //return Conflict();  //409
+                
+                //----------------------------------------------
                 //_request.Timestamp = DateTime.Now.ToString();
                 //_request.Message = "ok";
                 //_request.Status = 200;               
                 //_request.Data = token;
                 //return Ok(_request);
 
-                //return Ok(new { token });
+                return Ok(new { token }); //200
+
+                //return StatusCode(200, new { token });
+
             }
             else
                 return BadRequest(new { message = "Username or password is incorrect." });

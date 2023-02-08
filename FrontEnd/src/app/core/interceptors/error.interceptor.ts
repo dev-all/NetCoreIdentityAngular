@@ -13,13 +13,32 @@ export class ErrorInterceptor implements HttpInterceptor{
       catchError((ex) => {
        debugger;
           console.log(ex)
-          if([400,401,403,404].indexOf(ex.status) !== -1 ){
+          if([400,401,403,404,409].indexOf(ex.status) !== -1 ){
             this.routes.navigateByUrl('/error/'+ ex.status);
           }else{
               this.routes.navigateByUrl('/error');
           }
-        
-         return throwError(() => new Error(ex.status));//throwError(ex);
+          //1 Respuestas informativas (100–199),
+          //2 Respuestas satisfactorias (200–299),
+          //3 Redirecciones (300–399),
+          //4 Errores de los clientes (400–499),
+          //5 y errores de los servidores (500–599).
+          //   debugger;
+          //   if(response.status === 200)
+          //     {
+          //       this.serviceAuth.setUserToLocalStorage(response.data);
+          //       this.serviceAuth.userSubject$.next(response.data);
+          //       this.router.navigateByUrl(INTERNAL_ROUTES.PAGE_DEFAULT);
+          //     }
+          //   if(response.status === 201)
+          //     {
+          //       this.isLoading=false;
+          //       this.errorMessage= response.message || "" ;
+          //       return;
+          //     }
+          //   }
+          // );
+         return throwError(() => new Error(ex.status));
       })
     );
   }
