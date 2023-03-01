@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '@share/services/data/data.service';
 
 @Component({
   selector: 'app-blank',
@@ -7,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlankComponent {
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
 
+cambiarNombre(){
+ this.dataService.nombre$.emit('Leonardo');
+}
 
 }

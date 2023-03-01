@@ -52,7 +52,6 @@ export class AuthService {
     return this.http.post<Response>(API_ROUTES.AUTH.SIGNUP, user)
     .pipe(
       map(response => {
-       
         if(response.status === 200)
         {
           this.setUserToLocalStorage(response.data);
@@ -75,8 +74,7 @@ export class AuthService {
     user.token = " ";
     return this.http.post<Response>(API_ROUTES.AUTH.SIGNIN, user);
   }
- 
- 
+
   comparePasswords(fb: FormGroup) {
     let confirmPswrdCtrl = fb.get('ConfirmPassword');
     confirmPswrdCtrl?.setErrors({ passwordMismatch: true });
@@ -89,12 +87,13 @@ export class AuthService {
         confirmPswrdCtrl?.setErrors(null);
     }
   }
+
   roleMatch(allowedRoles: any[]): boolean {
 
     var isMatch = false;
     var token = localStorage.getItem('token');
     if (token!= null)
-    {    
+    {
     var payLoad = JSON.parse(window.atob(token.split('.')[1]));
     var userRole = payLoad.role;
     allowedRoles.forEach(element => {
@@ -106,9 +105,9 @@ export class AuthService {
       }
     });
     }
-    
+
     return isMatch;
-   
+
   }
 
   // signUp(user : UserModel):Observable<UserModel>{
@@ -116,7 +115,7 @@ export class AuthService {
   //   return this.http.post<Response>(API_ROUTES.AUTH.SIGNUP, user)
   //   .pipe(
   //     map(response => {
-       
+
   //       if(response.status === 200)
   //       {
   //         this.setUserToLocalStorage(response.data);
@@ -199,7 +198,6 @@ export class AuthService {
     this.userSubject$.next(this.user);
     this.router.navigateByUrl(INTERNAL_ROUTES.AUTH_LOGIN);
   }
-
 
   changeTitleModal(m : MmodalComponent )
   {

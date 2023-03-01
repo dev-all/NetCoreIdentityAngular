@@ -1,0 +1,12 @@
+<p>hijo works!</p>
+<!--
+<h5>{{mensaje}}</h5> -->
+
+
+
+<h5 *ngIf="dataService.nombre$ | async as nombre; else sinData">{{ nombre }}</h5>
+<!-- | async automaticamente llama al unsubscribe cdo no se necesita la info -->
+
+<ng-template #sinData>
+  <h5>No hay información </h5>
+</ng-template>

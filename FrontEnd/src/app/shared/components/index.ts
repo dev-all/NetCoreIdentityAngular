@@ -4,6 +4,7 @@ import { CardBasicComponent } from './cards/card-basic/card-basic.component';
 import { CardUserComponent } from './cards/card-user/card-user.component';
 import { ColComponent } from './columns/col/col.component';
 import { RowComponent } from './columns/row/row.component';
+import { HijoComponent } from './hijo/hijo.component';
 import { HookonchangeComponent } from './hookonchange/hookonchange.component';
 import { CardLoaderComponent } from './loaders/card-loader/card-loader.component';
 import { MmodalComponent } from './modals/mmodal/mmodal.component';
@@ -42,7 +43,8 @@ export const components: any[] = [
     MmodalComponent,
 
     // toast
-    ToastComponent
+    ToastComponent,
+    HijoComponent,
 
 ];
 
@@ -61,3 +63,4 @@ export * from './columns/row/row.component';
 export * from './columns/col/col.component';
 export * from './modals/mmodal/mmodal.component';
 export * from './toast/toast.component';
+export * from './hijo/hijo.component';

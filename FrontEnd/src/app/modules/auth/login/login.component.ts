@@ -55,6 +55,7 @@ export class LoginComponent implements OnInit {
   //  if (localStorage.getItem('isLoggedin')) {
   //     }
     //this.serviceAuth.emaillogin = this.loginForm.get('email')?.value;
+
       localStorage.setItem('InitLoginEmail', this.loginForm.get('email')?.value);
       this.router.navigate([`${this.returnUrl}${INTERNAL_ROUTES.AUTH_LOGIN_PASS}`]);
 

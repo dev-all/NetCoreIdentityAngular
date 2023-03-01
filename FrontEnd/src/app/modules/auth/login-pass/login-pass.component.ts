@@ -42,11 +42,13 @@ export class LoginPassComponent implements OnInit {
   }
 
   GetEmail() :string{
+
     let email = localStorage.getItem('InitLoginEmail');
     if (!email) {
       this.serviceAuth.logout()
      }
     return  email || "";
+
   }
 
 
@@ -71,23 +73,12 @@ export class LoginPassComponent implements OnInit {
       this.errorMessage= "Revise los datos ingresados";
       return;
     }
-    this.serviceAuth.signIn(user).subscribe(          
-       (response: any)  => {        
+    this.serviceAuth.signIn(user).subscribe(
+       (response: any)  => {
         debugger;
             this.serviceAuth.setUserToLocalStorage(response.token);
             this.serviceAuth.userSubject$.next(response.token);
             this.router.navigateByUrl(INTERNAL_ROUTES.PAGE_DEFAULT);
-
-        // if(response.status === 200)
-        //   {
-           
-        //   }
-        // if(response.status === 201)
-        //   {
-        //     this.isLoading=false;
-        //     this.errorMessage= response.message || "" ;
-        //     return;
-        //   }
         }
       );
 
