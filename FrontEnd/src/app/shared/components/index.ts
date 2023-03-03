@@ -5,9 +5,14 @@ import { CardUserComponent } from './cards/card-user/card-user.component';
 import { ColComponent } from './columns/col/col.component';
 import { RowComponent } from './columns/row/row.component';
 import { HijoComponent } from './hijo/hijo.component';
+import { HijoaComponent } from './hijoa/hijoa.component';
+import { HijobComponent } from './hijob/hijob.component';
 import { HookonchangeComponent } from './hookonchange/hookonchange.component';
 import { CardLoaderComponent } from './loaders/card-loader/card-loader.component';
 import { MmodalComponent } from './modals/mmodal/mmodal.component';
+import { NietoaComponent } from './nietoa/nietoa.component';
+import { NietobComponent } from './nietob/nietob.component';
+import { PadreComponent } from './padre/padre.component';
 import { FtTbodyComponent } from './tables/full-table/ft-tbody/ft-tbody.component';
 import { FtTfootComponent } from './tables/full-table/ft-tfoot/ft-tfoot.component';
 import { FtTheadComponent } from './tables/full-table/ft-thead/ft-thead.component';
@@ -45,7 +50,7 @@ export const components: any[] = [
     // toast
     ToastComponent,
     HijoComponent,
-
+    PadreComponent, HijoaComponent, HijobComponent, NietoaComponent, NietobComponent,
 ];
 
 export * from './cards/card-user/card-user.component';
@@ -63,4 +68,9 @@ export * from './columns/row/row.component';
 export * from './columns/col/col.component';
 export * from './modals/mmodal/mmodal.component';
 export * from './toast/toast.component';
-export * from './hijo/hijo.component';
+export * from './padre/padre.component';
+export * from './hijoa/hijoa.component';
+export * from './hijob/hijob.component';
+export * from './nietoa/nietoa.component';
+export * from './nietob/nietob.component';
+
