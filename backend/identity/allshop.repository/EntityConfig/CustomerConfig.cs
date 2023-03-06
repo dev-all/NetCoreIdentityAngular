@@ -23,10 +23,15 @@ namespace DataAccess.EntityConfig
             entityBuilder.Property(x => x.Name).HasColumnType("varchar(100)");
             entityBuilder.Property(x => x.FullName).HasColumnType("varchar(250)");
             entityBuilder.Property(x => x.NIF).HasColumnType("varchar(100)");
-            entityBuilder.Property(x => x.Activo)
+            entityBuilder.Property(x => x.Active)
                             .HasColumnType("bit")
                             .HasDefaultValue(true);
-            entityBuilder.Property(x => x.FechaCreacion).HasColumnType("Date");
-        }
+            entityBuilder.Property(x => x.CreatedAt).HasColumnType("Date");
+            entityBuilder.Property(x => x.UpdatedAt).HasColumnType("Date");
+
+                
+
+
+    }
     }
 }

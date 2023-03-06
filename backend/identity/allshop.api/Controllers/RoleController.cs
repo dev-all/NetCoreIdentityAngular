@@ -32,7 +32,7 @@ namespace allshop.api.Controllers
                 if (!roleCheck)
                 {
                     //here in this line we are creating admin role and seed it to the database
-                    roleResult = await _roleManager.CreateAsync(new AuthRole { Name = model.RoleName, Actives = true });
+                    roleResult = await _roleManager.CreateAsync(new AuthRole { Name = model.RoleName, Active = true });
                     if (roleResult.Succeeded)
                     {
                         return Ok();
