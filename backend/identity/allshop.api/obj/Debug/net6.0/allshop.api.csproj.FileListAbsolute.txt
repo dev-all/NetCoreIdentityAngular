@@ -1655,7 +1655,6 @@ C:\Users\31098540\Documents\Angular\NetCoreIdentityAngular\backend\identity\alls
 C:\Users\31098540\Documents\Angular\NetCoreIdentityAngular\backend\identity\allshop.api\obj\Debug\net6.0\allshop.api.AssemblyInfoInputs.cache
 C:\Users\31098540\Documents\Angular\NetCoreIdentityAngular\backend\identity\allshop.api\obj\Debug\net6.0\allshop.api.AssemblyInfo.cs
 C:\Users\31098540\Documents\Angular\NetCoreIdentityAngular\backend\identity\allshop.api\obj\Debug\net6.0\allshop.api.csproj.CoreCompileInputs.cache
-C:\Users\31098540\Documents\Angular\NetCoreIdentityAngular\backend\identity\allshop.api\obj\Debug\net6.0\allshop.api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\31098540\Documents\Angular\NetCoreIdentityAngular\backend\identity\allshop.api\obj\Debug\net6.0\allshop.api.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\31098540\Documents\Angular\NetCoreIdentityAngular\backend\identity\allshop.api\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\31098540\Documents\Angular\NetCoreIdentityAngular\backend\identity\allshop.api\obj\Debug\net6.0\staticwebassets.development.json

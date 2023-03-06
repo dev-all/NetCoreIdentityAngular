@@ -26,12 +26,12 @@ namespace DataAccess.EntityConfig
             entityBuilder.Property(x => x.Active)
                             .HasColumnType("bit")
                             .HasDefaultValue(true);
-            entityBuilder.Property(x => x.CreatedAt).HasColumnType("Date");
-            entityBuilder.Property(x => x.UpdatedAt).HasColumnType("Date");
-
-                
+            entityBuilder.Property(x => x.CreatedAt).HasColumnType("datetime2");
+            entityBuilder.Property(x => x.UpdatedAt).HasColumnType("datetime2");
 
 
-    }
+
+
+        }
     }
 }
