@@ -17,9 +17,9 @@ namespace allshop.domain.Entities
         public string Name { get; set; }
         public string FullName { get; set; }
         public int NIF { get; set; }
+        public bool Active { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
 
-        public Boolean Activo { get; set; }
-        public DateTime FechaCreacion { get; set; }
-    
     }
 }
