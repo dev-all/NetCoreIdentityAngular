@@ -25,6 +25,7 @@ namespace allshop.api.Controllers
 
         private readonly UserManager<AuthUser> _userManager;
         private readonly SignInManager<AuthUser> _signInManager;
+        private readonly IConfiguration _configuration;
         //private readonly IEmailSender _emailSender;
         //private readonly ISmsSender _smsSender;
         private readonly ILogger _logger;
@@ -33,13 +34,13 @@ namespace allshop.api.Controllers
         public AccountController(
             UserManager<AuthUser> userManager,
             SignInManager<AuthUser> signInManager,
-         
+            IConfiguration configuration,
             ILoggerFactory loggerFactory,
             IOptions<AppSettings> appSettings)
         {
             _userManager = userManager;
             _signInManager = signInManager;
-          
+            _configuration = configuration;
             _logger = loggerFactory.CreateLogger<AccountController>();
             _appSettings = appSettings.Value;
         }
@@ -120,7 +121,9 @@ namespace allshop.api.Controllers
 
             if (ModelState.IsValid)
             {
-            model.Role = "Customer";
+                var rolDefault = Convert.ToString(_configuration["AppSettings:RolDefault"]);
+
+                model.Role = "Customer";
             var applicationUser = new AuthUser()
             {
                 UserName = model.UserName,
