@@ -58,12 +58,12 @@ namespace allshop.api.Controllers
             //    "Token" : ""
             //}
 
-      
+
             var user = await _userManager.FindByEmailAsync(model.UserName);
             if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
             {
 
-                
+
                 //Get role assigned to the user
                 var role = await _userManager.GetRolesAsync(user);
                 IdentityOptions _options = new IdentityOptions();
@@ -82,11 +82,11 @@ namespace allshop.api.Controllers
                 var token = tokenHandler.WriteToken(securityToken);
 
                 // return StatusCode(500, "Internal Server Error. Error el sitio se encuentra fuera de servicio!");
- 
+
                 // return BadRequest(new { message = "Username or password is incorrect." }); //400
 
                 //return Conflict();  //409
-                
+
                 //----------------------------------------------
                 //_request.Timestamp = DateTime.Now.ToString();
                 //_request.Message = "ok";
@@ -121,38 +121,44 @@ namespace allshop.api.Controllers
 
             if (ModelState.IsValid)
             {
-            
-            var rolDefault = Convert.ToString(_configuration["AppSettings:RolDefault"]);                              
-            var applicationUser = new AuthUser()
-            {
-                UserName = model.UserName,
-                Email = model.Email,
-                FullName = model.UserName
-            };
 
+                var rolDefault = Convert.ToString(_configuration["AppSettings:RolDefault"]);
+                var applicationUser = new AuthUser()
+                {
+                    UserName = model.UserName,
+                    Email = model.Email,
+                    FullName = model.UserName
+                };
 
-            var result = await _userManager.CreateAsync(applicationUser, model.Password);
-            if (result.Succeeded)
-            {
-                    // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=532713
-                    // Send an email with this link
-                    //var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-                    //var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: HttpContext.Request.Scheme);
-                    //await _emailSender.SendEmailAsync(model.Email, "Confirm your account",
-                    //"Please confirm your account by clicking this link: <a href=\"" + callbackUrl + "\">link</a>");
-                    await _userManager.AddToRoleAsync(applicationUser, rolDefault);
-                    _logger.LogInformation(3, "User created a new account with password.");
-                    return Ok(result);                   
-            }
-            else
-            {
-                return Conflict(); // HTTP:409
-            }
-         
-                            
+                try
+                {
+                    var result = await _userManager.CreateAsync(applicationUser, model.Password);
+                    if (result.Succeeded)
+                    {
+                        // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=532713
+                        // Send an email with this link
+                        //var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                        //var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: HttpContext.Request.Scheme);
+                        //await _emailSender.SendEmailAsync(model.Email, "Confirm your account",
+                        //"Please confirm your account by clicking this link: <a href=\"" + callbackUrl + "\">link</a>");
+                        await _userManager.AddToRoleAsync(applicationUser, rolDefault);
+                        _logger.LogInformation(3, "User created a new account with password.");
+                        return Ok(result);
+                    }
+                    else
+                    {
+                        return Conflict(); // HTTP:409
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    return Conflict(ex.Message.ToString());
+                }
+
             }
             return BadRequest(ModelState);
-                                 
+
         }
 
 
@@ -169,7 +175,7 @@ namespace allshop.api.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> IsEmailInUse(string email)
         {
-          
+
             if (ModelState.IsValid)
             {
                 var user = await _userManager.FindByEmailAsync(email);
