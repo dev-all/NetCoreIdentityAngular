@@ -21,6 +21,7 @@ namespace allshop.api.Controllers
         }
 
         [HttpPost]
+        [Route("add-rol")]
         public async Task<IActionResult> Create(CreateRoleModel model)
         {
          
@@ -51,6 +52,14 @@ namespace allshop.api.Controllers
         
             return BadRequest(ModelState);
         }
+
+
+
+
+
+
+
+
 
 
     }
