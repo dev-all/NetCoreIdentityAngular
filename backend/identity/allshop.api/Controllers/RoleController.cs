@@ -54,7 +54,13 @@ namespace allshop.api.Controllers
         }
 
 
-
+        [HttpGet]
+        [Route("get-roles")]
+        public ActionResult<IEnumerable<AuthRole>> GetRoles()
+        {
+            var roles = _roleManager.Roles.OrderBy(x => x.Name).ToList();
+            return Ok(roles);
+        }
 
 
 

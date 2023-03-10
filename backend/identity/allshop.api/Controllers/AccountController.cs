@@ -59,7 +59,7 @@ namespace allshop.api.Controllers
             //}
 
 
-            var user = await _userManager.FindByEmailAsync(model.UserName);
+            var user = await _userManager.FindByEmailAsync(model.Email);
             if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
             {
 
@@ -82,9 +82,7 @@ namespace allshop.api.Controllers
                 var token = tokenHandler.WriteToken(securityToken);
 
                 // return StatusCode(500, "Internal Server Error. Error el sitio se encuentra fuera de servicio!");
-
                 // return BadRequest(new { message = "Username or password is incorrect." }); //400
-
                 //return Conflict();  //409
 
                 //----------------------------------------------
@@ -145,9 +143,9 @@ namespace allshop.api.Controllers
                         _logger.LogInformation(3, "User created a new account with password.");
                         return Ok(result);
                     }
-                    else
+                    foreach (IdentityError error in result.Errors)
                     {
-                        return Conflict(); // HTTP:409
+                        return Conflict(error.Description);
                     }
 
                 }
