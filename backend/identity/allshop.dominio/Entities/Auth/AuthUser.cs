@@ -10,11 +10,10 @@ namespace allshop.domain.Entities.Auth
 {
     public class AuthUser : IdentityUser
     {
-        [Column(TypeName = "nvarchar(150)")]
-        public string? FullName { get; set; }
+       
+        public string? EmailAlternativo { get; set; }
         public bool Externo { get; set; }
         public bool Active { get; set; }
-        public DateTime CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
 
     }

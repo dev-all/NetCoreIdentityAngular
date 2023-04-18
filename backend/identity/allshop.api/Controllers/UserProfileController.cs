@@ -23,8 +23,7 @@ namespace allshop.api.Controllers
             string userId = User.Claims.First(c => c.Type == "UserID").Value;
             var user = await _userManager.FindByIdAsync(userId);
             return new
-            {
-                user.FullName,
+            {                
                 user.Email,
                 user.UserName
             };

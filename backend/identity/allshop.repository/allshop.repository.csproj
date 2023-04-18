@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Compile Remove="Context\allshopContext.cs" />
+    <Compile Remove="EntityConfig\CustomerConfig - Copia.cs" />
     <Compile Remove="Repositories\RoleRepository.cs" />
     <Compile Remove="Repositories\UserRepository.cs" />
   </ItemGroup>

@@ -98,7 +98,7 @@ namespace allshop.api.Controllers
 
             }
             else
-                return BadRequest(new { message = "Username or password is incorrect." });
+                return BadRequest(new { message = "Username o password es incorrecto." });
 
         }
 
@@ -124,8 +124,7 @@ namespace allshop.api.Controllers
                 var applicationUser = new AuthUser()
                 {
                     UserName = model.UserName,
-                    Email = model.Email,
-                    FullName = model.UserName
+                    Email = model.Email,                    
                 };
 
                 try
@@ -191,8 +190,30 @@ namespace allshop.api.Controllers
         }
 
 
-
-
+        [HttpPost]
+       
+        public async Task<IActionResult> LogOff()
+        {
+            await _signInManager.SignOutAsync();
+            _logger.LogInformation(4, "User logged out.");
+          return Ok();
+        }
+        
+        [HttpGet]
+        public async Task<IActionResult> ConfirmEmail(string userId, string code)
+        {
+            if (userId == null || code == null)
+            {
+                return BadRequest(new { message = "Error" });
+            }
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                return BadRequest(new { message = "Error" });
+            }
+            var result = await _userManager.ConfirmEmailAsync(user, code);
+            return Ok(result.Succeeded ? "ConfirmEmail" : "Error");
+        }
 
     }
 }

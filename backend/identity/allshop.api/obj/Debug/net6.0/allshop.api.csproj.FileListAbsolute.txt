@@ -1666,3 +1666,4 @@ C:\Users\31098540\Documents\Angular\NetCoreIdentityAngular\backend\identity\alls
 C:\Users\31098540\Documents\Angular\NetCoreIdentityAngular\backend\identity\allshop.api\obj\Debug\net6.0\allshop.api.genruntimeconfig.cache
 C:\Users\31098540\Documents\Angular\NetCoreIdentityAngular\backend\identity\allshop.api\bin\Debug\net6.0\nlog.config
 E:\NetCoreIdentityAngular\backend\identity\allshop.api\bin\Debug\net6.0\nlog.config
+C:\Users\31098540\Documents\Angular\NetCoreIdentityAngular\backend\identity\allshop.api\obj\Debug\net6.0\allshop.api.MvcApplicationPartsAssemblyInfo.cs

@@ -5,10 +5,10 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace DataAccess.EntityConfig
 {
-    class CustomerConfig
+    class ClienteConfig
     {
         ////ref https://docs.microsoft.com/es-es/ef/core/modeling/entity-properties?tabs=data-annotations%2Cwithout-nrt
-        public static void SetEntityBuilder(EntityTypeBuilder<Customer> entityBuilder)
+        public static void SetEntityBuilder(EntityTypeBuilder<Cliente> entityBuilder)
         {
                    
             //Configure Column

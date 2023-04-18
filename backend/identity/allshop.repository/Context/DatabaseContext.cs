@@ -5,17 +5,29 @@ using allshop.repository.Contracts;
 using DataAccess.EntityConfig;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
- 
+using System.Reflection;
+
 namespace allshop.repository.Context
 {
     public class DatabaseContext : IdentityDbContext<AuthUser, AuthRole, string>, IAppDBContext
     {
-        //public DbSet<User> Users { get; set; } = null!;
-        //public DbSet<Role> Roles { get; set; }
-        
-        public DbSet<Customer> Customers { get; set; }       
-        public DbSet<AuthUser> AuthUsers { get; set; }
-        public DbSet<AuthRole> AuthRoles { get; set; }
+     
+        public DbSet<AuthUser> AuthUsers => Set<AuthUser>();
+        public DbSet<AuthRole> AuthRoles => Set<AuthRole>();
+        public DbSet<Cliente> Clientes => Set<Cliente>();
+        public DbSet<Direccion> Direcciones => Set<Direccion>();
+        public DbSet<Producto> Productos => Set<Producto>();
+        public DbSet<ProductoMasOpciones> ProductoMasOpciones => Set<ProductoMasOpciones>();
+        public DbSet<ProductoProveedor> ProductoProveedor => Set<ProductoProveedor>();
+        public DbSet<ProductoSize> ProductoSize => Set<ProductoSize>();
+        public DbSet<Proveedor> Proveedores => Set<Proveedor>();
+        public DbSet<Categoria> Categorias => Set<Categoria>();
+        public DbSet<Imputacion> Imputaciones => Set<Imputacion>();
+        public DbSet<ProductoEstado> ProductoEstado => Set<ProductoEstado>();
+        public DbSet<Size> Size => Set<Size>();
+        public DbSet<Pais> Pais => Set<Pais>();
+        public DbSet<Provincia> Provincias => Set<Provincia>();
+        public DbSet<Localidad> Localidad => Set<Localidad>();
 
         public DatabaseContext(DbContextOptions options) : base(options) { }
         public DatabaseContext() { }
@@ -26,10 +38,12 @@ namespace allshop.repository.Context
    
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            CustomerConfig.SetEntityBuilder(modelBuilder.Entity<Customer>());
-
+        {     
             base.OnModelCreating(modelBuilder);
+            /// aplicamos todas las EntityConfig
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+
         }
     }
 }

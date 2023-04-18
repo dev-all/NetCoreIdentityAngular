@@ -12,8 +12,8 @@ using allshop.repository.Context;
 namespace allshop.repository.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20230306191706_SetGuidIdentity_1_0_5")]
-    partial class SetGuidIdentity_1_0_5
+    [Migration("20230315211535_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,6 +23,54 @@ namespace allshop.repository.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+
+            modelBuilder.Entity("allshop.domain.Entities.Archivo", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("CodigoClave")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Extencion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("IdUsuario")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Path")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("ProductoId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("TamanoKb")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Ubicacion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductoId");
+
+                    b.ToTable("Archivo");
+                });
 
             modelBuilder.Entity("allshop.domain.Entities.Auth.AuthRole", b =>
                 {
@@ -75,21 +123,18 @@ namespace allshop.repository.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("EmailAlternativo")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
                     b.Property<bool>("Externo")
                         .HasColumnType("bit");
-
-                    b.Property<string>("FullName")
-                        .HasColumnType("nvarchar(150)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -140,7 +185,7 @@ namespace allshop.repository.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("allshop.domain.Entities.Customer", b =>
+            modelBuilder.Entity("allshop.domain.Entities.Cliente", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -152,27 +197,203 @@ namespace allshop.repository.Migrations
                         .HasColumnType("bit")
                         .HasDefaultValue(true);
 
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("FullName")
+                    b.Property<string>("ApellidoElegido")
                         .IsRequired()
-                        .HasColumnType("varchar(250)");
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("Documento")
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("IdDireccion")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("IdEntidad")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("IdImputacion")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("IdPieNota")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("IdTipoIva")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("IdUsuario")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Movil")
+                        .HasColumnType("varchar(50)");
 
                     b.Property<string>("NIF")
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("NombreElegido")
                         .IsRequired()
                         .HasColumnType("varchar(100)");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("NombreEnDocumento")
+                        .HasColumnType("varchar(250)");
+
+                    b.Property<string>("Observaciones")
+                        .HasColumnType("varchar(max)");
+
+                    b.Property<string>("Telefono")
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Web")
+                        .HasColumnType("varchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Cliente", (string)null);
+                });
+
+            modelBuilder.Entity("allshop.domain.Entities.Producto", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier")
+                        .HasDefaultValueSql("(newid())");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Codigo")
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<string>("CodigoBarras")
+                        .HasColumnType("varchar(250)");
+
+                    b.Property<string>("Descripcion")
+                        .HasColumnType("varchar(350)");
+
+                    b.Property<string>("DescripcionCorta")
                         .IsRequired()
-                        .HasColumnType("varchar(100)");
+                        .HasColumnType("varchar(150)");
+
+                    b.Property<Guid>("IdUsuario")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Observaciones")
+                        .HasColumnType("varchar(max)");
+
+                    b.Property<decimal?>("PrecioAlmacen")
+                        .HasColumnType("decimal(5,2)");
+
+                    b.Property<decimal?>("PrecioCompra")
+                        .HasColumnType("decimal(5,2)");
+
+                    b.Property<decimal?>("PrecioIva")
+                        .HasColumnType("decimal(5,2)");
+
+                    b.Property<decimal?>("PrecioPvp")
+                        .HasColumnType("decimal(5,2)");
+
+                    b.Property<decimal?>("PrecioTienda")
+                        .HasColumnType("decimal(5,2)");
+
+                    b.Property<decimal?>("PrecioWeb")
+                        .HasColumnType("decimal(5,2)");
+
+                    b.Property<string>("Referencia")
+                        .HasColumnType("varchar(250)");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Customers", (string)null);
+                    b.ToTable("Producto", (string)null);
+                });
+
+            modelBuilder.Entity("allshop.domain.Entities.ProductoMasOpciones", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Alto")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Ancho")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("IdMarca")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("IdProducto")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("IdUsuario")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Kilo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Largo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Litro")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Modelo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("ProductoId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("PublicacionWeb")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UnidadPorCaja")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductoId");
+
+                    b.ToTable("ProductoMasOpciones");
+                });
+
+            modelBuilder.Entity("allshop.domain.Entities.ProductoProveedor", b =>
+                {
+                    b.Property<Guid>("IdProducto")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("IdProveedor")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid>("IdUsuario")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Observaciones")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal?>("Precio")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("IdProducto", "IdProveedor");
+
+                    b.ToTable("ProductoProveedor");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -281,6 +502,28 @@ namespace allshop.repository.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("allshop.domain.Entities.Archivo", b =>
+                {
+                    b.HasOne("allshop.domain.Entities.Producto", "Producto")
+                        .WithMany("Archivos")
+                        .HasForeignKey("ProductoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Producto");
+                });
+
+            modelBuilder.Entity("allshop.domain.Entities.ProductoMasOpciones", b =>
+                {
+                    b.HasOne("allshop.domain.Entities.Producto", "Producto")
+                        .WithMany()
+                        .HasForeignKey("ProductoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Producto");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("allshop.domain.Entities.Auth.AuthRole", null)
@@ -330,6 +573,11 @@ namespace allshop.repository.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("allshop.domain.Entities.Producto", b =>
+                {
+                    b.Navigation("Archivos");
                 });
 #pragma warning restore 612, 618
         }
