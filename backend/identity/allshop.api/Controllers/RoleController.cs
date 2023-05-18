@@ -62,49 +62,49 @@ namespace allshop.api.Controllers
             return Ok(roles);
         }
 
-        [HttpDelete("{id}")]
-        [Route("delete-rol")]
-        public async Task<IActionResult> Delete(RoleModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                AuthRole roleCheck = await _roleManager.FindByIdAsync(model.Id);
-                if (roleCheck != null)
-                {
-                    IdentityResult result = await _roleManager.DeleteAsync(roleCheck);
-                    if (result.Succeeded)
-                        return Ok();
+       // [HttpDelete("{id}")]
+        //[Route("delete-rol")]
+        //public async Task<IActionResult> Delete(RoleModel model)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        AuthRole roleCheck = await _roleManager.FindByIdAsync(model.Id);
+        //        if (roleCheck != null)
+        //        {
+        //            IdentityResult result = await _roleManager.DeleteAsync(roleCheck);
+        //            if (result.Succeeded)
+        //                return Ok();
 
-                }
-                else
-                {
-                    return BadRequest(new { message = "No es posible eliminar el rol" });
-                }
+        //        }
+        //        else
+        //        {
+        //            return BadRequest(new { message = "No es posible eliminar el rol" });
+        //        }
 
-            }
+        //    }
 
-            return BadRequest(ModelState);
-        }
+        //    return BadRequest(ModelState);
+        //}
 
 
-        public async Task<IActionResult> Update(RoleModel model)
-        {
+        //public async Task<IActionResult> Update(RoleModel model)
+        //{
           
-            AuthRole role = await _roleManager.FindByIdAsync(model.Id);
-            List<AuthUser> members = new List<AuthUser>();
-            List<AuthUser> nonMembers = new List<AuthUser>();
-            foreach (AuthUser user in _userManager.Users)
-            {
-                var list = await _userManager.IsInRoleAsync(user, role.Name) ? members : nonMembers;
-                list.Add(user);
-            }
-            return Ok(new RoleEdit
-            {
-                Role = role,
-                Members = members,
-                NonMembers = nonMembers
-            });
-        }
+        //    AuthRole role = await _roleManager.FindByIdAsync(model.Id);
+        //    List<AuthUser> members = new List<AuthUser>();
+        //    List<AuthUser> nonMembers = new List<AuthUser>();
+        //    foreach (AuthUser user in _userManager.Users)
+        //    {
+        //        var list = await _userManager.IsInRoleAsync(user, role.Name) ? members : nonMembers;
+        //        list.Add(user);
+        //    }
+        //    return Ok(new RoleEdit
+        //    {
+        //        Role = role,
+        //        Members = members,
+        //        NonMembers = nonMembers
+        //    });
+        //}
 
 
     }

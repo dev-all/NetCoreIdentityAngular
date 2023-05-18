@@ -32,6 +32,9 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "C:\\Users\\31098540\\Documents\\Angular\\NetCoreIdentityAngular\\backend\\identity\\allshop.dominio\\allshop.domain.csproj": {
+                "projectPath": "C:\\Users\\31098540\\Documents\\Angular\\NetCoreIdentityAngular\\backend\\identity\\allshop.dominio\\allshop.domain.csproj"
+              },
               "C:\\Users\\31098540\\Documents\\Angular\\NetCoreIdentityAngular\\backend\\identity\\allshop.repository\\allshop.repository.csproj": {
                 "projectPath": "C:\\Users\\31098540\\Documents\\Angular\\NetCoreIdentityAngular\\backend\\identity\\allshop.repository\\allshop.repository.csproj"
               }
@@ -54,7 +57,7 @@
             },
             "Google.Apis.Gmail.v1": {
               "target": "Package",
-              "version": "[1.57.0.2650, )"
+              "version": "[1.60.0.3035, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
@@ -94,7 +97,7 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.3.0, )"
+              "version": "[6.5.0, )"
             }
           },
           "imports": [

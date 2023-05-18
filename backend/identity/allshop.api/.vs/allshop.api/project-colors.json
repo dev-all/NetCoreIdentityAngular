@@ -20,7 +20,12 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Archivos varios",
       "ColorIndex": -1
+    },
+    "c5ba394d-5164-431b-a1bd-aea3a5ad570f": {
+      "ProjectGuid": "c5ba394d-5164-431b-a1bd-aea3a5ad570f",
+      "DisplayName": "allshop.domain",
+      "ColorIndex": 3
     }
   },
-  "NextColorIndex": 3
+  "NextColorIndex": 4
 }

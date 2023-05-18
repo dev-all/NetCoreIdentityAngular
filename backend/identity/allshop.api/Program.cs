@@ -1,8 +1,6 @@
 
 using allshop.api.Services;
 using allshop.Mappers;
-using allshop.repository.Context;
-using allshop.repository.Contracts;
 
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
@@ -15,6 +13,7 @@ using System;
 using allshop.domain.Entities.Auth;
 using allshop.api.Contracts.Services;
 using allshop.Models.Common;
+using allshop.repository.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 var myAllowSpecificOrigins = builder.Configuration["AppSettings:CorsPolicy"];

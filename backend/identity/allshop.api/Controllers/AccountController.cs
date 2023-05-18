@@ -57,8 +57,6 @@ namespace allshop.api.Controllers
             //    "Password": "12345678",
             //    "Token" : ""
             //}
-
-
             var user = await _userManager.FindByEmailAsync(model.Email);
             if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
             {
@@ -168,52 +166,52 @@ namespace allshop.api.Controllers
         /// 
         /// <returns></returns>
 
-        [AcceptVerbs("Get", "Post")]
-        [AllowAnonymous]
-        public async Task<IActionResult> IsEmailInUse(string email)
-        {
+        //[AcceptVerbs("Get", "Post")]
+        //[AllowAnonymous]
+        //public async Task<IActionResult> IsEmailInUse(string email)
+        //{
 
-            if (ModelState.IsValid)
-            {
-                var user = await _userManager.FindByEmailAsync(email);
-                if (user == null)
-                {
-                    return Ok(true);
-                }
-                else
-                {
-                    return Ok($"Email {email} is already in use.");
-                }
-            }
+        //    if (ModelState.IsValid)
+        //    {
+        //        var user = await _userManager.FindByEmailAsync(email);
+        //        if (user == null)
+        //        {
+        //            return Ok(true);
+        //        }
+        //        else
+        //        {
+        //            return Ok($"Email {email} is already in use.");
+        //        }
+        //    }
 
-            return Ok($"Email {email} is not valid.");
-        }
+        //    return Ok($"Email {email} is not valid.");
+        //}
 
 
-        [HttpPost]
+        //[HttpPost]
        
-        public async Task<IActionResult> LogOff()
-        {
-            await _signInManager.SignOutAsync();
-            _logger.LogInformation(4, "User logged out.");
-          return Ok();
-        }
+        //public async Task<IActionResult> LogOff()
+        //{
+        //    await _signInManager.SignOutAsync();
+        //    _logger.LogInformation(4, "User logged out.");
+        //  return Ok();
+        //}
         
-        [HttpGet]
-        public async Task<IActionResult> ConfirmEmail(string userId, string code)
-        {
-            if (userId == null || code == null)
-            {
-                return BadRequest(new { message = "Error" });
-            }
-            var user = await _userManager.FindByIdAsync(userId);
-            if (user == null)
-            {
-                return BadRequest(new { message = "Error" });
-            }
-            var result = await _userManager.ConfirmEmailAsync(user, code);
-            return Ok(result.Succeeded ? "ConfirmEmail" : "Error");
-        }
+        //[HttpGet]
+        //public async Task<IActionResult> ConfirmEmail(string userId, string code)
+        //{
+        //    if (userId == null || code == null)
+        //    {
+        //        return BadRequest(new { message = "Error" });
+        //    }
+        //    var user = await _userManager.FindByIdAsync(userId);
+        //    if (user == null)
+        //    {
+        //        return BadRequest(new { message = "Error" });
+        //    }
+        //    var result = await _userManager.ConfirmEmailAsync(user, code);
+        //    return Ok(result.Succeeded ? "ConfirmEmail" : "Error");
+        //}
 
     }
 }

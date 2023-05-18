@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Entities\Factura - Copia.cs" />
     <Compile Remove="Entities\Menu.cs" />
     <Compile Remove="Entities\Permission.cs" />
   </ItemGroup>
